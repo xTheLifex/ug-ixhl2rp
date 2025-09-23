@@ -100,9 +100,14 @@ function Schema:PlayerMessageSend(speaker, chatType, text, anonymous, receivers,
     local separator = ix.config.Get("separatorVC", nil) != "" and ix.config.Get("separatorVC", nil) or nil
 
 	if chatType == "ic" or chatType == "w" or chatType == "y" or chatType == "dispatch" or (ix.config.Get("radioVCAllow", true) and chatType == "radio") then
-		local class = self.voices.GetClass(speaker)
+		local classes = self.voices.GetClass(speaker)
+        
+        -- Dispatch can only be dispatch
+        if (chatType == "dispatch") then
+            classes = {"dispatch"}
+        end
 
-		for k, v in pairs(class) do
+		for k, v in pairs(classes) do
             local texts = GetVoiceCommands(rawText, v, separator)
             local isGlobal = false
             local completetext
@@ -135,7 +140,7 @@ function Schema:PlayerMessageSend(speaker, chatType, text, anonymous, receivers,
                         table.insert(sounds, "NPC_MetroPolice.Radio.Off")
                     end
 
-                    local _ = !isGlobal and ix.util.EmitQueuedSounds(speaker, sounds, nil, nil, volume) or netstream.Start(nil, "PlayQueuedSound", nil, sounds, nil, nil, volume)
+                    local _ = !isGlobal and ix.util.EmitQueuedSounds(speaker, sounds, nil, 0, volume) or netstream.Start(nil, "PlayQueuedSound", nil, sounds, nil, nil, volume)
 
                     if chatType == "radio" then
                         volume = ix.config.Get("radioVCVolume", 60)
@@ -144,7 +149,7 @@ function Schema:PlayerMessageSend(speaker, chatType, text, anonymous, receivers,
                         else
                             for k3, v3 in pairs(receivers) do
                                 if v3 == speaker then continue end
-                                ix.util.EmitQueuedSounds(v3, sounds, nil, nil, volume)
+                                ix.util.EmitQueuedSounds(v3, sounds, nil, 0, volume)
                             end
                         end
                     end

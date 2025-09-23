@@ -274,7 +274,7 @@ function Schema:PlayerMessageSend(speaker, chatType, text, anonymous, receivers,
 							sounds[#sounds + 1] = "NPC_MetroPolice.Radio.Off"
 						end
 
-						ix.util.EmitQueuedSounds(speaker, sounds, nil, nil, volume)
+						ix.util.EmitQueuedSounds(speaker, sounds, 0, 0, volume)
 					end
 				end
 
