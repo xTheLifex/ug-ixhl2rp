@@ -7,19 +7,17 @@ FACTION.models = {"models/combine_soldier.mdl"}
 FACTION.isDefault = false
 FACTION.isGloballyRecognized = true
 FACTION.runSounds = {[0] = "NPC_CombineS.RunFootstepLeft", [1] = "NPC_CombineS.RunFootstepRight"}
+FACTION.canSeeWaypoints = true
+FACTION.canAddWaypoints = true
+FACTION.canRemoveWaypoints = true
+FACTION.canUpdateWaypoints = true
 
 function FACTION:OnCharacterCreated(client, character)
-	local inventory = character:GetInventory()
 
-	inventory:Add("pistol", 1)
-	inventory:Add("pistolammo", 2)
-
-	inventory:Add("ar2", 1)
-	inventory:Add("ar2ammo", 2)
 end
 
 function FACTION:GetDefaultName(client)
-	return "OTA-ECHO.OWS-" .. Schema:ZeroNumber(math.random(1, 99999), 5), true
+	return "OTA:OWS." .. Schema:ZeroNumber(math.random(1, 99999), 5), true
 end
 
 function FACTION:OnTransferred(character)

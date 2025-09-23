@@ -1,0 +1,4 @@
+
+LANGUAGE = {
+	optRunechatEnable = "Enable Runechat",
+}

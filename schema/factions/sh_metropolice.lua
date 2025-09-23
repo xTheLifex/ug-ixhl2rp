@@ -32,8 +32,10 @@ FACTION.models = {
 		"models/ug/humans/male_17.mdl"
 }
 
-
-FACTION.weapons = {"ix_stunstick"}
+FACTION.canSeeWaypoints = true
+FACTION.canAddWaypoints = true
+FACTION.canRemoveWaypoints = true
+FACTION.canUpdateWaypoints = true
 FACTION.isDefault = false
 FACTION.runSounds = {[0] = "NPC_MetroPolice.RunFootstepLeft", [1] = "NPC_MetroPolice.RunFootstepRight"}
 
@@ -51,8 +53,16 @@ end
 
 function FACTION:OnNameChanged(client, oldValue, value)
 	local character = client:GetCharacter()
-	
 
+	
+	-- if (!Schema:IsCombineRank(oldValue, "RCT") and Schema:IsCombineRank(value, "RCT")) then
+	-- 	character:JoinClass(CLASS_MPR)
+	-- elseif (!Schema:IsCombineRank(oldValue, "OfC") and Schema:IsCombineRank(value, "OfC")) then
+	-- 	character:SetModel("models/policetrench.mdl")
+	-- elseif (!Schema:IsCombineRank(oldValue, "EpU") and Schema:IsCombineRank(value, "EpU")) then
+	-- 	character:JoinClass(CLASS_EMP)
+	-- end
+	
 end
 
 FACTION_MPF = FACTION.index
