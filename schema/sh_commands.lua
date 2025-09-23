@@ -1,3 +1,7 @@
+/* -------------------------------------------------------------------------- */
+/*                                  Dispatch                                  */
+/* -------------------------------------------------------------------------- */
+
 do
 	local COMMAND = {}
 	COMMAND.arguments = ix.type.text
@@ -13,9 +17,14 @@ do
 	ix.command.Add("Dispatch", COMMAND)
 end
 
+/* -------------------------------------------------------------------------- */
+/*                                    Radio                                   */
+/* -------------------------------------------------------------------------- */
+
 do
 	local COMMAND = {}
 	COMMAND.arguments = ix.type.text
+	COMMAND.alias = {"R"}
 
 	function COMMAND:OnRun(client, message)
 		local character = client:GetCharacter()
@@ -46,6 +55,10 @@ do
 	ix.command.Add("Radio", COMMAND)
 end
 
+/* -------------------------------------------------------------------------- */
+/*                                   SetFreq                                  */
+/* -------------------------------------------------------------------------- */
+
 do
 	local COMMAND = {}
 	COMMAND.arguments = ix.type.number
@@ -67,6 +80,10 @@ do
 
 	ix.command.Add("SetFreq", COMMAND)
 end
+
+/* -------------------------------------------------------------------------- */
+/*                                   Request                                  */
+/* -------------------------------------------------------------------------- */
 
 do
 	local COMMAND = {}
@@ -93,6 +110,10 @@ do
 	ix.command.Add("Request", COMMAND)
 end
 
+/* -------------------------------------------------------------------------- */
+/*                                  Broadcast                                 */
+/* -------------------------------------------------------------------------- */
+
 do
 	local COMMAND = {}
 	COMMAND.arguments = ix.type.text
@@ -107,6 +128,10 @@ do
 
 	ix.command.Add("Broadcast", COMMAND)
 end
+
+/* -------------------------------------------------------------------------- */
+/*                                 PermitGive                                 */
+/* -------------------------------------------------------------------------- */
 
 do
 	local COMMAND = {}
@@ -126,6 +151,10 @@ do
 
 	ix.command.Add("PermitGive", COMMAND)
 end
+
+/* -------------------------------------------------------------------------- */
+/*                                 PermitTake                                 */
+/* -------------------------------------------------------------------------- */
 
 do
 	local COMMAND = {}
@@ -148,6 +177,10 @@ do
 	ix.command.Add("PermitTake", COMMAND)
 end
 
+/* -------------------------------------------------------------------------- */
+/*                                  ViewData                                  */
+/* -------------------------------------------------------------------------- */
+
 do
 	local COMMAND = {}
 	COMMAND.arguments = ix.type.character
@@ -165,6 +198,10 @@ do
 	ix.command.Add("ViewData", COMMAND)
 end
 
+/* -------------------------------------------------------------------------- */
+/*                               ViewObjectives                               */
+/* -------------------------------------------------------------------------- */
+
 do
 	local COMMAND = {}
 
@@ -178,6 +215,10 @@ do
 
 	ix.command.Add("ViewObjectives", COMMAND)
 end
+
+/* -------------------------------------------------------------------------- */
+/*                                 CharSearch                                 */
+/* -------------------------------------------------------------------------- */
 
 do
 	local COMMAND = {}
@@ -224,4 +265,43 @@ do
 	end
 
 	ix.command.Add("CharSearch", COMMAND)
+end
+
+/* -------------------------------------------------------------------------- */
+/*                                Check Edicts                                */
+/* -------------------------------------------------------------------------- */
+
+do
+	ix.command.Add("CheckEdicts", {
+		description = "Displays how many entities there are on the map.",
+		adminOnly = true,
+		OnRun = function(self, client)
+			local count = 0
+		
+			for k, v in pairs(ents.GetAll()) do
+				count=count+1
+			end
+
+			local countLeft = 8192 - count
+		
+			client:Notify(string.format("There are currently %s entities on the map. You can have %s more.", count, countLeft))
+		end;
+	})
+end
+
+/* -------------------------------------------------------------------------- */
+/*                                Clear Decals                                */
+/* -------------------------------------------------------------------------- */
+
+do
+	ix.command.Add("ClearDecals", {
+		description = "Clears all decals for all players.",
+		adminOnly = true,
+		OnRun = function(self, client)
+			for k, v in pairs(player.GetAll()) do
+				v:ConCommand("r_cleardecals");
+				client:Notify("You have cleared all decals.")
+			end;
+		end;
+	})
 end
