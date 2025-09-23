@@ -181,6 +181,8 @@ end
 
 do
 	local COMMAND = {}
+	local SEARCH_DISTANCE = 192
+	local CONSENT_TIMEOUT = 20 -- seconds
 
 	function COMMAND:OnRun(client, arguments)
 		local data = {}
@@ -193,7 +195,30 @@ do
 			if (!client:IsRestricted()) then
 				Schema:SearchPlayer(client, target)
 			else
-				return "@notNow"
+				client.nextSearchAttempt = client.nextSearchAttempt or 0
+				if (client.nextSearchAttempt > CurTime()) then
+					return "Please wait before trying to search again!"
+				end
+
+				if (target.pendingSearch) then
+					if (target.pendingSearch.requester != client) then
+						target.pendingSearch = nil
+					elseif (CurTime() > target.pendingSearch.expireTime) then
+						target.pendingSearch = nil
+					else
+						Schema:SearchPlayer(client, target)
+						return
+					end
+				end
+
+				target.pendingSearch = {
+					requester = client,
+					expireTime = CurTime() + CONSENT_TIMEOUT
+				}
+
+				target:Notify(client:GetName() .. " wants to search you. Type /AcceptSearch to allow. Expires in " .. CONSENT_TIMEOUT .. " seconds.")
+				client.nextSearchAttempt = CurTime() + 2
+				return "Search request sent..."
 			end
 		end
 	end
