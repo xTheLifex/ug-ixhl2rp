@@ -29,6 +29,7 @@ end
 do
 	local COMMAND = {}
 	COMMAND.arguments = ix.type.text
+	COMMAND.alias = {"RadioDisp", "DispRadio"}
 	function COMMAND:OnRun(client, message)
 		if (!client:IsRestricted()) then
 			ix.chat.Send(client, "radio", message, true)
