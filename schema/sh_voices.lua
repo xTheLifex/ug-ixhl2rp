@@ -901,12 +901,184 @@ Schema.voices.Add("APF", "Callout Code", "Callout Code: two winder zero... Confi
 Schema.voices.Add("APF", "Biodate Update", "Updating biodat... Audibles: 3. Lightvis: 15. Over.", "ug/npc/soldiers/overwatchsuppressor/idle_12.wav");
 Schema.voices.Add("APF", "Locked and ready", "Locked and ready.", "ug/npc/soldiers/overwatchsuppressor/combat_idle_102custom2.wav");
 
+/* -------------------------------------------------------------------------- */
+/*                                   Scanner                                  */
+/* -------------------------------------------------------------------------- */
+
+Schema.voices.Add("Scanner", "404 Zone.", "404 ZONE.", "npc/overwatch/radiovoice/404zone.wav");
+Schema.voices.Add("Scanner", "Accomplices.", "PROTECTION TEAMS, BE ADVISED, ACCOMPLICES OPERATING IN AREA.", "npc/overwatch/radiovoice/accomplicesoperating.wav");
+Schema.voices.Add("Scanner", "Administer.", "ADMINISTER.", "npc/overwatch/radiovoice/administer.wav");
+Schema.voices.Add("Scanner", "Activity.", "AIRWATCH COPIES NO ACTIVITY IN LOCATION.", "npc/overwatch/radiovoice/airwatchcopiesnoactivity.wav");
+Schema.voices.Add("Scanner", "Miscount.", "AIRWATCH REPORTS POSSIBLE MISCOUNT.", "npc/overwatch/radiovoice/airwatchreportspossiblemiscount.wav");
+Schema.voices.Add("Scanner", "62.", "62, ALARMS.", "npc/overwatch/radiovoice/alarms62.wav");
+Schema.voices.Add("Scanner", "Code 3.", "ALL TEAMS, RESPONSE CODE 3.", "npc/overwatch/radiovoice/allteamsrespondcode3.wav");
+Schema.voices.Add("Scanner", "Pressure.", "ALL UNITS, APPLY FORWARD PRESSURE.", "npc/overwatch/radiovoice/allunitsapplyforwardpressure.wav");
+Schema.voices.Add("Scanner", "All Units.", "ALL UNITS AT.", "npc/overwatch/radiovoice/allunitsat.wav");
+Schema.voices.Add("Scanner", "Witness.", "ALL UNITS BEGIN WITNESS STERILIZATION.", "npc/overwatch/radiovoice/allunitsbeginwhitnesssterilization.wav");
+Schema.voices.Add("Scanner", "BOL 243.", "ALL UNITS, BOL FOR 243 SUSPECT.", "npc/overwatch/radiovoice/allunitsbolfor243suspect.wav");
+Schema.voices.Add("Scanner", "Terminal.", "ALL UNITS, DELIVER TERMINAL VERDICT IMMEDIATELY.", "npc/overwatch/radiovoice/allunitsdeliverterminalverdict.wav");
+Schema.voices.Add("Scanner", "Code 12.", "ALL UNITS, RETURN TO CODE 12.", "npc/overwatch/radiovoice/allunitsreturntocode12.wav");
+Schema.voices.Add("Scanner", "Verdict Code.", "ALL UNITS, VERDICT CODE IS.", "npc/overwatch/radiovoice/allunitsverdictcodeis.wav");
+Schema.voices.Add("Scanner", "Verdict Suspect.", "ALL UNITS, VERDICT CODE ON SUSPECT.", "npc/overwatch/radiovoice/allunitsverdictcodeonsuspect.wav");
+Schema.voices.Add("Scanner", "Amputate.", "AMPUTATE.", "npc/overwatch/radiovoice/amputate.wav");
+Schema.voices.Add("Scanner", "Anti-Citizen.", "ANTI-CITIZEN.", "npc/overwatch/radiovoice/anticitizen.wav");
+Schema.voices.Add("Scanner", "Fatigue.", "ANTI-FATIGUE RATION IS NOW: 3 MILLIGRAMS.", "npc/overwatch/radiovoice/antifatigueration3mg.wav");
+Schema.voices.Add("Scanner", "Apply.", "APPLY.", "npc/overwatch/radiovoice/apply.wav");
+Schema.voices.Add("Scanner", "243.", "243, ASSAULT ON PROTECTION TEAM.", "npc/overwatch/radiovoice/assault243.wav");
+Schema.voices.Add("Scanner", "27.", "27, ATTEMPTED CRIME.", "npc/overwatch/radiovoice/attemptedcrime27.wav");
+Schema.voices.Add("Scanner", "Attention.", "ATTENTION.", "npc/overwatch/radiovoice/attention.wav");
+Schema.voices.Add("Scanner", "Attention Charged.", "ATTENTION, YOU HAVE BEEN CHARGED WITH.", "npc/overwatch/radiovoice/attentionyouhavebeenchargedwith.wav");
+Schema.voices.Add("Scanner", "10-0.", "10-0, BEGIN SCANNING.", "npc/overwatch/radiovoice/beginscanning10-0.wav");
+Schema.voices.Add("Scanner", "Block.", "BLOCK.", "npc/overwatch/radiovoice/block.wav");
+Schema.voices.Add("Scanner", "Canal Block.", "CANAL BLOCK.", "npc/overwatch/radiovoice/canalblock.wav");
+Schema.voices.Add("Scanner", "Capital.", "CAPITAL MALCOMPLIANCE.", "npc/overwatch/radiovoice/capitalmalcompliance.wav");
+Schema.voices.Add("Scanner", "Cauterize.", "CAUTERIZE.", "npc/overwatch/radiovoice/cauterize.wav");
+Schema.voices.Add("Scanner", "Citizen.", "CITIZEN.", "npc/overwatch/radiovoice/citizen.wav");
+Schema.voices.Add("Scanner", "Sentencing.", "ALL PROTECTION TEAM UNITS, COMPLETE SENTENCING AT WILL.", "npc/overwatch/radiovoice/completesentencingatwill.wav");
+Schema.voices.Add("Scanner", "CZ.", "CONDEMNED ZONE.", "npc/overwatch/radiovoice/condemnedzone.wav");
+Schema.voices.Add("Scanner", "Confirm UPI.", "TEAM, CONFIRM UPI ALERT.", "npc/overwatch/radiovoice/confirmupialert.wav");
+Schema.voices.Add("Scanner", "PCS.", "POLITI-CONTROL SECTION.", "npc/overwatch/radiovoice/controlsection.wav");
+Schema.voices.Add("Scanner", "63.", "63, CRIMINAL TRESPASS.", "npc/overwatch/radiovoice/criminaltrespass63.wav");
+Schema.voices.Add("Scanner", "Defender.", "DEFENDER.", "npc/overwatch/radiovoice/defender.wav");
+Schema.voices.Add("Scanner", "Restricted.", "RESTRICTED BLOCK.", "npc/overwatch/radiovoice/deservicedarea.wav");
+Schema.voices.Add("Scanner", "Destruction.", "DESTRUCTION OF CORPORAL SOCIAL PROTECTION UNITS.", "npc/overwatch/radiovoice/destrutionofcpt.wav");
+Schema.voices.Add("Scanner", "Sociocidal.", "DEVISIVE SOCIOCIDAL COUNTER OBEYANCE.", "npc/overwatch/radiovoice/devisivesociocidal.wav");
+Schema.voices.Add("Scanner", "Disassociation.", "DISASSOCIATION FROM THE CIVIC POPULUS.", "npc/overwatch/radiovoice/disassociationfromcivic.wav");
+Schema.voices.Add("Scanner", "Disengaged.", "647-E DISENGAGED FROM WORKFORCE.", "npc/overwatch/radiovoice/disengaged647e.wav");
+Schema.voices.Add("Scanner", "DB.", "DISTRIBUTION BLOCK.", "npc/overwatch/radiovoice/distributionblock.wav");
+Schema.voices.Add("Scanner", "10-103.", "10-103M, DISTURBANCE BY MENTALLY UNFIT.", "npc/overwatch/radiovoice/disturbancemental10-103m.wav");
+Schema.voices.Add("Scanner", "415.", "415, CIVIC DISUNITY.", "npc/overwatch/radiovoice/disturbingunity415.wav");
+Schema.voices.Add("Scanner", "Document.", "DOCUMENT.", "npc/overwatch/radiovoice/document.wav");
+Schema.voices.Add("Scanner", "8.", "8.", "npc/overwatch/radiovoice/eight.wav");
+Schema.voices.Add("Scanner", "Examine.", "EXAMINE.", "npc/overwatch/radiovoice/examine.wav");
+Schema.voices.Add("Scanner", "EJ.", "EXTERNAL JURISDICTION.", "npc/overwatch/radiovoice/externaljurisdiction.wav");
+Schema.voices.Add("Scanner", "Civil Will.", "FAILURE TO COMPLY WITH THE CIVIL WILL.", "npc/overwatch/radiovoice/failuretocomply.wav");
+Schema.voices.Add("Scanner", "Outbreak.", "STABILIZATION TEAM, FAILURE TO TREAT IDENTIFIED LOCAL OUTBREAK WILL FORSEE RECALL AND RECYCLE.", "npc/overwatch/radiovoice/failuretotreatoutbreak.wav");
+Schema.voices.Add("Scanner", "Final Verdict.", "FINAL VERDICT ADMINISTERED.", "npc/overwatch/radiovoice/finalverdictadministered.wav");
+Schema.voices.Add("Scanner", "5.", "5.", "npc/overwatch/radiovoice/five.wav");
+Schema.voices.Add("Scanner", "Skyshield.", "SKYSHIELD.", "npc/overwatch/radiovoice/fmil_region 073.wav");
+Schema.voices.Add("Scanner", "4.", "4.", "npc/overwatch/radiovoice/four.wav");
+Schema.voices.Add("Scanner", "17F.", "17F, FUGITIVE DETACHMENT.", "npc/overwatch/radiovoice/fugitive17f.wav");
+Schema.voices.Add("Scanner", "Rank Points.", "50 PERCENT RANK POINTS.", "npc/overwatch/radiovoice/halfrankpoints.wav");
+Schema.voices.Add("Scanner", "Hero.", "HERO.", "npc/overwatch/radiovoice/hero.wav");
+Schema.voices.Add("Scanner", "HPR.", "HIGH PRIORITY REGION.", "npc/overwatch/radiovoice/highpriorityregion.wav");
+Schema.voices.Add("Scanner", "95.", "95, ILLEGAL CARRYING.", "npc/overwatch/radiovoice/illegalcarrying95.wav");
+Schema.voices.Add("Scanner", "63S.", "63S, ILLEGAL IN OPERATION.", "npc/overwatch/radiovoice/illegalinoperation63s.wav");
+Schema.voices.Add("Scanner", "Immediate.", "IMMEDIATE AMPUTATION.", "npc/overwatch/radiovoice/immediateamputation.wav");
+Schema.voices.Add("Scanner", "IZ.", "INDUSTRIAL ZONE.", "npc/overwatch/radiovoice/industrialzone.wav");
+Schema.voices.Add("Scanner", "Infection.", "INFECTION.", "npc/overwatch/radiovoice/infection.wav");
+Schema.voices.Add("Scanner", "Infested.", "INFESTED ZONE.", "npc/overwatch/radiovoice/infestedzone.wav");
+Schema.voices.Add("Scanner", "Inject.", "INJECT.", "npc/overwatch/radiovoice/inject.wav");
+Schema.voices.Add("Scanner", "Innoculate.", "INNOCULATE.", "npc/overwatch/radiovoice/innoculate.wav");
+Schema.voices.Add("Scanner", "Progress.", "IN PROGRESS.", "npc/overwatch/radiovoice/inprogress.wav");
+Schema.voices.Add("Scanner", "Intercede.", "INTERCEDE.", "npc/overwatch/radiovoice/intercede.wav");
+Schema.voices.Add("Scanner", "Interlock.", "INTERLOCK.", "npc/overwatch/radiovoice/interlock.wav");
+Schema.voices.Add("Scanner", "Investigate.", "INVESTIGATE.", "npc/overwatch/radiovoice/investigate.wav");
+Schema.voices.Add("Scanner", "Investigate Report.", "INVESTIGATE AND REPORT.", "npc/overwatch/radiovoice/investigateandreport.wav");
+Schema.voices.Add("Scanner", "Now.", "IS NOW.", "npc/overwatch/radiovoice/isnow.wav");
+Schema.voices.Add("Scanner", "Isolate.", "ISOLATE.", "npc/overwatch/radiovoice/isolate.wav");
+Schema.voices.Add("Scanner", "Leaders.", "ATTENTION, STABILIZATION TEAM LEADERS, REPORT DESERVICED UNIT TO STERILIZED BODYCOUNT RATIOS FOR REINFORCEMENT, REWARD OR REMOVAL PROCESSING.", "npc/overwatch/radiovoice/leadersreportratios.wav");
+Schema.voices.Add("Scanner", "Level 5.", "LEVEL 5 ANTI-CIVIL ACTIVITY.", "npc/overwatch/radiovoice/level5anticivilactivity.wav");
+Schema.voices.Add("Scanner", "Line.", "LINE.", "npc/overwatch/radiovoice/line.wav");
+Schema.voices.Add("Scanner", "Lock.", "LOCK.", "npc/overwatch/radiovoice/lock.wav");
+Schema.voices.Add("Scanner", "Sacrifice.", "PROTECTION TEAM, LOCK DOWN YOUR LOCATION, SACRIFICE CODE.", "npc/overwatch/radiovoice/lockdownlocationsacrificecode.wav");
+Schema.voices.Add("Scanner", "9.", "9.", "npc/overwatch/radiovoice/nine.wav");
+Schema.voices.Add("Scanner", "Non-Citizen.", "NON-CITIZEN.", "npc/overwatch/radiovoice/noncitizen.wav");
+Schema.voices.Add("Scanner", "NPR.", "NON-PATROL REGION.", "npc/overwatch/radiovoice/nonpatrolregion.wav");
+Schema.voices.Add("Scanner", "51.", "51, NON-SANCTIONED ARSON.", "npc/overwatch/radiovoice/nonsanctionedarson51.wav");
+Schema.voices.Add("Scanner", "Closing Suspect.", "OFFICER CLOSING ON SUSPECT.", "npc/overwatch/radiovoice/officerclosingonsuspect.wav");
+Schema.voices.Add("Scanner", "1.", "1.", "npc/overwatch/radiovoice/one.wav");
+Schema.voices.Add("Scanner", "OZ.", "OUTLAND ZONE.", "npc/overwatch/radiovoice/outlandzone.wav");
+Schema.voices.Add("Scanner", "Patrol.", "PATROL.", "npc/overwatch/radiovoice/patrol.wav");
+Schema.voices.Add("Scanner", "Off World.", "PERMANENT OFF WORLD SERVICE ASSIGNMENT.", "npc/overwatch/radiovoice/permanentoffworld.wav");
+Schema.voices.Add("Scanner", "69.", "69, POSESSION OF RESOURCES.", "npc/overwatch/radiovoice/posession69.wav");
+Schema.voices.Add("Scanner", "Premature.", "PREMATURE MISSION TERMINATION WILL RESULT IN.", "npc/overwatch/radiovoice/prematuremissiontermination.wav");
+Schema.voices.Add("Scanner", "Prepare.", "PREPARE FOR FINAL SENTENCING.", "npc/overwatch/radiovoice/prepareforfinalsentencing.wav");
+Schema.voices.Add("Scanner", "Prepare Innoculate.", "ALL LOCAL PROTECTION UNITS, PREPARE TO INNOCULATE.", "npc/overwatch/radiovoice/preparetoinnoculate.wav");
+Schema.voices.Add("Scanner", "Verdict.", "PREPARE TO RECEIVE VERDICT.", "npc/overwatch/radiovoice/preparetoreceiveverdict.wav");
+Schema.voices.Add("Scanner", "Visual.", "ATTENTION, PREPARE VISUAL DOWNLOAD OF ANTI-CITIZEN ONE.", "npc/overwatch/radiovoice/preparevisualdownload.wav");
+Schema.voices.Add("Scanner", "Preserve.", "PRESERVE.", "npc/overwatch/radiovoice/preserve.wav");
+Schema.voices.Add("Scanner", "Pressure.", "PRESSURE.", "npc/overwatch/radiovoice/pressure.wav");
+Schema.voices.Add("Scanner", "PB.", "PRODUCTION BLOCK.", "npc/overwatch/radiovoice/productionblock.wav");
+Schema.voices.Add("Scanner", "Promoting.", "PROMOTING COMMUNAL UNREST.", "npc/overwatch/radiovoice/promotingcommunalunrest.wav");
+Schema.voices.Add("Scanner", "Prosecute.", "PROSECUTE.", "npc/overwatch/radiovoice/prosecute.wav");
+Schema.voices.Add("Scanner", "507.", "507, PUBLIC NON-COMPLIANCE.", "npc/overwatch/radiovoice/publicnoncompliance507.wav");
+Schema.voices.Add("Scanner", "Quick.", "QUICK.", "npc/overwatch/radiovoice/quick.wav");
+Schema.voices.Add("Scanner", "Scan.", "TEAMS, RECALIBRATE SOCIO-SCAN.", "npc/overwatch/radiovoice/recalibratesocioscan.wav");
+Schema.voices.Add("Scanner", "Conflicting.", "WE ARE RECEIVING CONFLICTING DATA.", "npc/overwatch/radiovoice/recievingconflictingdata.wav");
+Schema.voices.Add("Scanner", "99.", "99, RECKLESS OPERATION.", "npc/overwatch/radiovoice/recklessoperation99.wav");
+Schema.voices.Add("Scanner", "Reinforcement.", "REINFORCEMENT TEAMS, CODE 3.", "npc/overwatch/radiovoice/reinforcementteamscode3.wav");
+Schema.voices.Add("Scanner", "Zone.", "ZONE.", "npc/overwatch/radiovoice/zone.wav");
+Schema.voices.Add("Scanner", "Zero.", "ZERO.", "npc/overwatch/radiovoice/zero.wav");
+Schema.voices.Add("Scanner", "Guilty.", "YOU ARE JUDGED GUILTY BY CIVIL PROTECTION TEAMS.", "npc/overwatch/radiovoice/youarejudgedguilty.wav");
+Schema.voices.Add("Scanner", "Charged.", "YOU ARE CHARGED WITH TERMINAL VIOLATION 148, 243, 245.", "npc/overwatch/radiovoice/youarechargedwithterminal.wav");
+Schema.voices.Add("Scanner", "Yellow.", "YELLOW.", "npc/overwatch/radiovoice/yellow.wav");
+Schema.voices.Add("Scanner", "Xray", "XRAY.", "npc/overwatch/radiovoice/xray.wav");
+Schema.voices.Add("Scanner", "WFIH.", "WORKFORCE INTAKE HUB.", "npc/overwatch/radiovoice/workforceintake.wav");
+Schema.voices.Add("Scanner", "94.", "94, WEAPON.", "npc/overwatch/radiovoice/weapon94.wav");
+Schema.voices.Add("Scanner", "Waste.", "WASTE RIVER.", "npc/overwatch/radiovoice/wasteriver.wav");
+Schema.voices.Add("Scanner", "Civic Trust.", "VIOLATION OF CIVIC TRUST.", "npc/overwatch/radiovoice/violationofcivictrust.wav");
+Schema.voices.Add("Scanner", "Victor.", "VICTOR.", "npc/overwatch/radiovoice/victor.wav");
+Schema.voices.Add("Scanner", "Vice.", "VICE.", "npc/overwatch/radiovoice/vice.wav");
+Schema.voices.Add("Scanner", "UPI.", "UPI.", "npc/overwatch/radiovoice/upi.wav");
+Schema.voices.Add("Scanner", "603.", "603, UNLAWFUL ENTRY.", "npc/overwatch/radiovoice/unlawfulentry603.wav");
+Schema.voices.Add("Scanner", "Unit Down.", "UNIT DOWN AT.", "npc/overwatch/radiovoice/unitdownat.wav");
+Schema.voices.Add("Scanner", "Deserviced.", "UNIT DESERVICED.", "npc/overwatch/radiovoice/unitdeserviced.wav");
+Schema.voices.Add("Scanner", "Union.", "UNION.", "npc/overwatch/radiovoice/union.wav");
+Schema.voices.Add("Scanner", "2.", "TWO.", "npc/overwatch/radiovoice/two.wav");
+Schema.voices.Add("Scanner", "Transit.", "TRANSIT BLOCK.", "npc/overwatch/radiovoice/transitblock.wav");
+Schema.voices.Add("Scanner", "3.", "THREE.", "npc/overwatch/radiovoice/three.wav");
+Schema.voices.Add("Scanner", "51B.", "51B, THREAT TO PROPERTY.", "npc/overwatch/radiovoice/threattoproperty51b.wav");
+Schema.voices.Add("Scanner", "Status.", "LOCAL CIVIL PROTECTION TEAMS, REPORT STATUS.", "npc/overwatch/radiovoice/teamsreportstatus.wav");
+Schema.voices.Add("Scanner", "Tap.", "TAP.", "npc/overwatch/radiovoice/tap.wav");
+Schema.voices.Add("Scanner", "Tac 5.", "ALL UNITS, SWITCH COMM TO TAC 5 AND REPORT IN TO COMMAND POINT.", "npc/overwatch/radiovoice/switchtotac5reporttocp.wav");
+Schema.voices.Add("Scanner", "Tac 3.", "ALL UNITS, SWITCH COMM TO TAC 3.", "npc/overwatch/radiovoice/switchcomtotac3.wav");
+Schema.voices.Add("Scanner", "Negotiation.", "SUSPEND NEGOTIATION.", "npc/overwatch/radiovoice/suspendnegotiations.wav");
+Schema.voices.Add("Scanner", "Suspend.", "SUSPEND.", "npc/overwatch/radiovoice/suspend.wav");
+Schema.voices.Add("Scanner", "Suspect Malignant.", "SUSPECT IS JUDGED MALIGNANT, VERDICT CODE IS.", "npc/overwatch/radiovoice/suspectmalignantverdictcodeis.wav");
+Schema.voices.Add("Scanner", "187.", "SUSPECT IS NOW 187.", "npc/overwatch/radiovoice/suspectisnow187.wav");
+Schema.voices.Add("Scanner", "Subject.", "SUBJECT.", "npc/overwatch/radiovoice/subject.wav");
+Schema.voices.Add("Scanner", "SS.", "STORM SYSTEM.", "npc/overwatch/radiovoice/stormsystem.wav");
+Schema.voices.Add("Scanner", "Stick.", "STICK.", "npc/overwatch/radiovoice/stick.wav");
+Schema.voices.Add("Scanner", "Sterilize.", "STERILIZE.", "npc/overwatch/radiovoice/sterilize.wav");
+Schema.voices.Add("Scanner", "243 Status.", "ALL UNITS, REPORT STATUS ON 243 SUSPECT.", "npc/overwatch/radiovoice/statuson243suspect.wav");
+Schema.voices.Add("Scanner", "Station.", "STATION BLOCK.", "npc/overwatch/radiovoice/stationblock.wav");
+Schema.voices.Add("Scanner", "SJ.", "STABILIZATION JURISDICTION.", "npc/overwatch/radiovoice/stabilizationjurisdiction.wav");
+Schema.voices.Add("Scanner", "Socio.", "SOCIOSTABILIZATION RESTORED.", "npc/overwatch/radiovoice/sociostabilizationrestored.wav");
+Schema.voices.Add("Scanner", "Sociocide.", "SOCIOCIDE.", "npc/overwatch/radiovoice/sociocide.wav");
+Schema.voices.Add("Scanner", "Social Fracture.", "SOCIAL FRACTURE IN PROGRESS, RESPOND.", "npc/overwatch/radiovoice/socialfractureinprogress.wav");
+Schema.voices.Add("Scanner", "6.", "SIX.", "npc/overwatch/radiovoice/six.wav");
+Schema.voices.Add("Scanner", "7.", "SEVEN.", "npc/overwatch/radiovoice/seven.wav");
+Schema.voices.Add("Scanner", "Serve.", "SERVE.", "npc/overwatch/radiovoice/serve.wav");
+Schema.voices.Add("Scanner", "Sector.", "SERVE.", "npc/overwatch/radiovoice/sector.wav");
+Schema.voices.Add("Scanner", "Search.", "SEARCH.", "npc/overwatch/radiovoice/search.wav");
+Schema.voices.Add("Scanner", "Roller.", "ROLLER.", "npc/overwatch/radiovoice/roller.wav");
+Schema.voices.Add("Scanner", "404.", "404, RIOT.", "npc/overwatch/radiovoice/riot404.wav");
+Schema.voices.Add("Scanner", "Reward Notice.", "REWARD NOTICE, PROTECTION TEAM MEMBER, YOUR FAMILY COHESION IS PRESERVED.", "npc/overwatch/radiovoice/rewardnotice.wav");
+Schema.voices.Add("Scanner", "Restricted Incursion.", "RESTRICTED INCURSION IN PROGRESS.", "npc/overwatch/radiovoice/restrictedincursioninprogress.wav");
+Schema.voices.Add("Scanner", "Restricted Block.", "RESTRICTED BLOCK.", "npc/overwatch/radiovoice/restrictedblock.wav");
+Schema.voices.Add("Scanner", "Restrict.", "RESTRICT.", "npc/overwatch/radiovoice/restrict.wav");
+Schema.voices.Add("Scanner", "Respond.", "RESPOND.", "npc/overwatch/radiovoice/respond.wav");
+Schema.voices.Add("Scanner", "148.", "148, RESISTING ARREST.", "npc/overwatch/radiovoice/resistingpacification148.wav");
+Schema.voices.Add("Scanner", "RB.", "RESIDENTIAL BLOCK.", "npc/overwatch/radiovoice/residentialblock.wav");
+Schema.voices.Add("Scanner", "Repurposed.", "REPURPOSED AREA.", "npc/overwatch/radiovoice/repurposedarea.wav");
+Schema.voices.Add("Scanner", "Report Please.", "REPORT PLEASE.", "npc/overwatch/radiovoice/reportplease.wav");
+Schema.voices.Add("Scanner", "Report On.", "LOCAL PROTECTION TEAM UNITS, REPORT ON.", "npc/overwatch/radiovoice/reporton.wav");
+Schema.voices.Add("Scanner", "Memory Replacement.", "REMINDER, MEMORY REPLACEMENT IS THE FIRST STEP TOWARD RANK PRIVILEGES.", "npc/overwatch/radiovoice/remindermemoryreplacement.wav");
+Schema.voices.Add("Scanner", "Non-mechanical.", "RANK LEADERS, REMINDER, 100 STERILIZED CREDITS QUALIFIES NON-MECHANICAL REPRODUCTION SIMULATION.", "npc/overwatch/radiovoice/reminder100credits.wav");
+Schema.voices.Add("Scanner", "Contain.", "REMAINING UNITS CONTAIN.", "npc/overwatch/radiovoice/remainingunitscontain.wav");
+
+
 Schema.voices.AddClass("Combine", function(client)
 	return client:IsCombine()
 end)
 
 Schema.voices.AddClass("Dispatch", function(client)
 	return client:IsDispatch()
+end)
+
+Schema.voices.AddClass("Scanner", function(client)
+	return client:IsAirwatch()
 end)
 
 /* ------------------------------- Placeholder ------------------------------ */

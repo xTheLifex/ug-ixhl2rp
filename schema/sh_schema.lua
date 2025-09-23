@@ -35,7 +35,7 @@ function Schema:ZeroNumber(number, length)
 end
 
 function Schema:IsCombineRank(text, rank)
-	return string.find(text, "%f[%w]" .. rank .. "%f[%W]")
+	return string.find(text, rank, 1, true)
 end
 
 do
@@ -44,7 +44,7 @@ do
 	CLASS.format = "Dispatch broadcasts \"%s\""
 
 	function CLASS:CanSay(speaker, text)
-		if (!speaker:IsDispatch()) then
+		if (!speaker:IsDispatch() and !speaker:IsAdmin()) then
 			speaker:NotifyLocalized("notAllowed")
 
 			return false
