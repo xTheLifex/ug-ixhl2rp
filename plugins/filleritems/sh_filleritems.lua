@@ -65,7 +65,7 @@ local items = {
         name = "Ration Coupon",
         category = "misc",
         desc = "This token lets you get an extra ration by resetting your ration delay timer.",
-        model = "models/bioshockinfinite/hext_coin.mdl",
+        model = "models/ug_imports/uubranded/bioshockinfinite/coin.mdl",
         OnUse = {
             name = "Use",
             tip = "Get a second ration",
@@ -73,11 +73,13 @@ local items = {
             OnCanRun = function (item, data)
                 local client = item.player
                 local cid = client:GetCharacter():GetInventory():HasItem("cid")
+                if not cid then return false end
                 return (cid:GetData("nextRationTime", 0) > os.time())
             end,
             OnRun = function (item)
                 local client = item.player
                 local cid = client:GetCharacter():GetInventory():HasItem("cid")
+                if not cid then return false end
                 cid:SetData("nextRationTime", os.time())
                 client:NotifyLocalized("You've used your ration coupon.")
                 return true

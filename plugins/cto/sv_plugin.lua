@@ -41,11 +41,10 @@ function PLUGIN:DoPostBiosignalLoss(client)
 	client:SetNetVar("IsBiosignalGone", true)
 
 	local location = client:GetArea() != "" and client:GetArea() or "unknown location"
-	local digits = string.match(client:Name(), "%d%d%d%d?%d?") or 0
 
 	-- Alert all other units.
 	Schema:AddCombineDisplayMessage("Downloading lost biosignal...", Color(255, 255, 255, 255))
-	Schema:AddCombineDisplayMessage("WARNING! Biosignal lost for protection team unit " .. digits .. " at " .. location .. "...", Color(255, 0, 0, 255))
+	Schema:AddCombineDisplayMessage("WARNING! Biosignal lost for protection team unit " .. client:GetName() .. " at " .. location .. "...", Color(255, 0, 0, 255))
 
 	local soundQueue = {
 		"npc/metropolice/vo/on" .. math.random(1, 2) .. ".wav",
@@ -99,11 +98,9 @@ function PLUGIN:SetPlayerBiosignal(client, bEnable)
 
 				client:AddCombineDisplayMessage("Connection restored...", Color(0, 255, 0, 255)) -- Alert this unit.
 
-				local digits = string.match(client:Name(), "%d%d%d%d?%d?") or 0
-
 				-- Alert all units.
 				Schema:AddCombineDisplayMessage("Downloading found biosignal...", Color(255, 255, 255, 255))
-				Schema:AddCombineDisplayMessage("ALERT! Noncohesive biosignal found for protection team unit " .. digits.." at " .. location .. "...", Color(0, 255, 0, 255))
+				Schema:AddCombineDisplayMessage("ALERT! Noncohesive biosignal found for protection team unit " .. client:GetName().." at " .. location .. "...", Color(0, 255, 0, 255))
 
 				local soundQueue = {
 					"npc/metropolice/vo/on" .. math.random(1, 2) .. ".wav",

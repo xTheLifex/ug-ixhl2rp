@@ -38,3 +38,14 @@ PLUGIN.CAMERA_ENABLE = 2
 function PLUGIN:isCameraEnabled(camera)
 	return camera:GetSequenceName(camera:GetSequence()) == "idlealert"
 end
+
+function PLUGIN:SaveData()
+	local data = {}
+	data["socioStatus"] = self.socioStatus or "GREEN"
+	self:SetData(data)
+end
+
+function PLUGIN:LoadData()
+	local data = self:GetData() or {}
+	self.socioStatus = data["socioStatus"] or "GREEN"
+end

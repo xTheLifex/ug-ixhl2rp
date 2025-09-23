@@ -68,7 +68,6 @@ end
 
 function PLUGIN:HUDPaint()
 	local client = LocalPlayer()
-	local socioStatus = self:GetData()
 
 	if (client:IsCombine()) then
 		local colorRed = Color(255, 0, 0, 255)
@@ -90,19 +89,18 @@ function PLUGIN:HUDPaint()
 		local beholderEyePos = beholder:EyePos()
 
 		local biosignalExpiry = ix.config.Get("expireBiosignals")
-
-		local socioColor = self.sociostatusColors[socioStatus] or color_white
+		local socioColor = self.sociostatusColors[string.upper(self.socioStatus or "GREEN")] or color_white
 
 		local info = {x = ScrW() - 8, y = 8}
 
-		if (socioStatus == "BLACK") then
+		if (self.socioStatus == "BLACK") then
 			local tsin = TimedSin(1, 0, 255, 0)
 			socioColor = Color(tsin, tsin, tsin)
 		end
 
 		socioColor = Color(socioColor.r, socioColor.g, socioColor.b, 255)
 
-		draw.SimpleText("<:: Sociostatus = " .. socioStatus .. " ::>", "BudgetLabel", info.x, info.y, socioColor, TEXT_ALIGN_RIGHT)
+		draw.SimpleText("<:: Sociostatus = " .. self.socioStatus .. " ::>", "BudgetLabel", info.x, info.y, socioColor, TEXT_ALIGN_RIGHT)
 		info.y = info.y + fontHeight
 
 		for k, v in ipairs(self.hudObjectives) do
