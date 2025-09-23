@@ -1,401 +1,905 @@
+ 
+/* -------------------------------------------------------------------------- */
+/*                              Standard Combine                              */
+/* -------------------------------------------------------------------------- */
 
-Schema.voices.Add("Combine", "0", "Zero.", "npc/metropolice/vo/zero.wav")
-Schema.voices.Add("Combine", "1", "One.", "npc/metropolice/vo/one.wav")
-Schema.voices.Add("Combine", "10", "Ten.", "npc/metropolice/vo/ten.wav")
-Schema.voices.Add("Combine", "10-0 HUNTING", "10-0, 10-0, viscerator is hunting!", "npc/metropolice/vo/tenzerovisceratorishunting.wav")
-Schema.voices.Add("Combine", "100", "One-hundred.", "npc/metropolice/vo/onehundred.wav")
-Schema.voices.Add("Combine", "10-103 TAG", "Possible 10-103, my location, alert TAG units.", "npc/metropolice/vo/possible10-103alerttagunits.wav")
-Schema.voices.Add("Combine", "10-107", "I have a 10-107 here, send AirWatch for tag.", "npc/metropolice/vo/gota10-107sendairwatch.wav")
-Schema.voices.Add("Combine", "10-108", "We have a 10-108!", "npc/metropolice/vo/wehavea10-108.wav")
-Schema.voices.Add("Combine", "10-14", "Holding on 10-14 duty, eh, code four.", "npc/metropolice/vo/holdingon10-14duty.wav")
-Schema.voices.Add("Combine", "10-15", "Prepare for 10-15.", "npc/metropolice/vo/preparefor1015.wav")
-Schema.voices.Add("Combine", "10-2", "10-2.", "npc/metropolice/vo/ten2.wav")
-Schema.voices.Add("Combine", "10-25", "Any unit, report in with 10-25 as suspect.", "npc/metropolice/vo/unitreportinwith10-25suspect.wav")
-Schema.voices.Add("Combine", "10-30", "I have a 10-30, my 10-20, responding, code two.", "npc/metropolice/vo/Ihave10-30my10-20responding.wav")
-Schema.voices.Add("Combine", "10-4", "10-4.", "npc/metropolice/vo/ten4.wav")
-Schema.voices.Add("Combine", "10-65", "Unit is 10-65.", "npc/metropolice/vo/unitis10-65.wav")
-Schema.voices.Add("Combine", "10-78", "Dispatch, I need 10-78, officer in trouble!", "npc/metropolice/vo/dispatchIneed10-78.wav")
-Schema.voices.Add("Combine", "10-8 standing by", "10-8, standing by.", "npc/metropolice/vo/ten8standingby.wav")
-Schema.voices.Add("Combine", "10-8", "Unit is on-duty, 10-8.", "npc/metropolice/vo/unitisonduty10-8.wav")
-Schema.voices.Add("Combine", "10-91D", "10-91d count is...", "npc/metropolice/vo/ten91dcountis.wav")
-Schema.voices.Add("Combine", "10-97 GOA", "10-97, that suspect is GOA.", "npc/metropolice/vo/ten97suspectisgoa.wav")
-Schema.voices.Add("Combine", "10-97", "10-97.", "npc/metropolice/vo/ten97.wav")
-Schema.voices.Add("Combine", "10-99", "Officer down, I am 10-99, I repeat, I am 10-99!", "npc/metropolice/vo/officerdownIam10-99.wav")
-Schema.voices.Add("Combine", "11-44", "Get that 11-44 inbound, we're cleaning up now.", "npc/metropolice/vo/get11-44inboundcleaningup.wav")
-Schema.voices.Add("Combine", "11-6", "Suspect 11-6, my 10-20 is...", "npc/metropolice/vo/suspect11-6my1020is.wav")
+
+Schema.voices.Add("Combine", "Final Verdict.", "Final verdict administered.", "npc/metropolice/vo/finalverdictadministered.wav");
+Schema.voices.Add("Combine", "First Warning.", "First warning, move away!.", "npc/metropolice/vo/firstwarningmove.wav");
+Schema.voices.Add("Combine", "Final Warning.", "Final warning.", "npc/metropolice/vo/finalwarning.wav");
+Schema.voices.Add("Combine", "1.", "One.", "npc/metropolice/vo/one.wav");
+Schema.voices.Add("Combine", "2.", "Two.", "npc/metropolice/vo/two.wav");
+Schema.voices.Add("Combine", "3.", "Three.", "npc/metropolice/vo/three.wav");
+Schema.voices.Add("Combine", "4.", "Four.", "npc/metropolice/vo/four.wav");
+Schema.voices.Add("Combine", "5.", "Five.", "npc/metropolice/vo/five.wav");
+Schema.voices.Add("Combine", "6.", "Six.", "npc/metropolice/vo/six.wav");
+Schema.voices.Add("Combine", "7.", "Seven.", "npc/metropolice/vo/seven.wav");
+Schema.voices.Add("Combine", "8.", "Eight.", "npc/metropolice/vo/eight.wav");
+Schema.voices.Add("Combine", "9.", "Nine.", "npc/metropolice/vo/nine.wav");
+Schema.voices.Add("Combine", "10.", "Ten.", "npc/metropolice/vo/ten.wav");
+Schema.voices.Add("Combine", "11.", "Eleven.", "npc/metropolice/vo/eleven.wav");
+Schema.voices.Add("Combine", "12.", "Twelve.", "npc/metropolice/vo/twelve.wav");
+Schema.voices.Add("Combine", "13.", "Thirteen.", "npc/metropolice/vo/thirteen.wav");
+Schema.voices.Add("Combine", "14.", "Fourteen.", "npc/metropolice/vo/fourteen.wav");
+Schema.voices.Add("Combine", "15.", "Fifteen.", "npc/metropolice/vo/fifteen.wav");
+Schema.voices.Add("Combine", "16.", "Sixteen.", "npc/metropolice/vo/sixteen.wav");
+Schema.voices.Add("Combine", "17.", "Seventeen.", "npc/metropolice/vo/seventeen.wav");
+Schema.voices.Add("Combine", "18.", "Eighteen.", "npc/metropolice/vo/eighteen.wav");
+Schema.voices.Add("Combine", "19.", "Nineteen.", "npc/metropolice/vo/nineteen.wav");
+Schema.voices.Add("Combine", "20.", "Twenty.", "npc/metropolice/vo/twenty.wav");
+Schema.voices.Add("Combine", "30.", "Thirty.", "npc/metropolice/vo/thirty.wav");
+Schema.voices.Add("Combine", "40.", "Fourty.", "npc/metropolice/vo/fourty.wav");
+Schema.voices.Add("Combine", "50.", "Fifty.", "npc/metropolice/vo/fifty.wav");
+Schema.voices.Add("Combine", "60.", "Sixty.", "npc/metropolice/vo/sixty.wav");
+Schema.voices.Add("Combine", "70.", "Seventy.", "npc/metropolice/vo/seventy.wav");
+Schema.voices.Add("Combine", "80.", "Eighty.", "npc/metropolice/vo/eighty.wav");
+Schema.voices.Add("Combine", "90.", "Ninety.", "npc/metropolice/vo/ninety.wav");
+Schema.voices.Add("Combine", "100.", "One Hundred.", "npc/metropolice/vo/onehundred.wav");
+Schema.voices.Add("Combine", "200.", "Two Hundred", "npc/metropolice/vo/twohundred.wav");
+Schema.voices.Add("Combine", "300.", "Three Hundred", "npc/metropolice/vo/threehundred.wav");
+Schema.voices.Add("Combine", "10-4.", "10-4.", "npc/metropolice/vo/ten4.wav");
+Schema.voices.Add("Combine", "10-2.", "10-2.", "npc/metropolice/vo/ten2.wav");
+Schema.voices.Add("Combine", "10-8.", "Unit is on duty, 10-8.","npc/metropolice/vo/unitisonduty10-8.wav");
+Schema.voices.Add("Combine", "10-8s.", "10-8, standing by.", "npc/metropolice/vo/ten8standingby.wav");
+Schema.voices.Add("Combine", "Is 10-8.", "Unit is 10-8, standing by.", "npc/metropolice/vo/unitis10-8standingby.wav");
+Schema.voices.Add("Combine", "10-14.", "Holding on 10-14 duty at code 4.", "npc/metropolice/vo/holdingon10-14duty.wav");
+Schema.voices.Add("Combine", "Prepare 10-15.", "Prepare for 10-15","npc/metropolice/vo/preparefor1015.wav");
+Schema.voices.Add("Combine", "A 10-30.", "I have a 10-30 at my 10-20, responding code 2.", "npc/metropolice/vo/ihave10-30my10-20responding.wav");
+Schema.voices.Add("Combine", "11-44.", "Get that 11-44 inbound, we're cleaning up now.", "npc/metropolice/vo/get11-44inboundcleaningup.wav");
+Schema.voices.Add("Combine", "10-65.", "Unit is 10-65.", "npc/metropolice/vo/ten97.wav");
+Schema.voices.Add("Combine", "10-91.", "10-91d count is..", "npc/metropolice/vo/ten91dcountis.wav");
+Schema.voices.Add("Combine", "10-97.", "10-97.", "npc/metropolice/vo/ten97.wav");
+Schema.voices.Add("Combine", "10-99.", "Officer down I am 10-99! Repeat I am 10-99!", "npc/metropolice/vo/officerdownIam10-99.wav");
+Schema.voices.Add("Combine", "10-108.", "We have a 10-108!","npc/metropolice/vo/wehavea10-108.wav");
+Schema.voices.Add("Combine", "Tag 10-107.", "I have a 10-107 here, send Airwatch for tag.", "npc/metropolice/vo/gota10-107sendairwatch.wav");
+Schema.voices.Add("Combine", "408.", "I've got a 408 here at location.", "npc/metropolice/vo/Ivegot408hereatlocation.wav");
+Schema.voices.Add("Combine", "Officer code 3.", "Officer down, request all units Code 3 to my 10-20!", "npc/metropolice/vo/officerdowncode3tomy10-20.wav");
+Schema.voices.Add("Combine", "Code 7.", "Code 7.", "npc/metropolice/vo/code7.wav");
+Schema.voices.Add("Combine", "Malcompliant 10-107.", "Malcompliant 10-107 at my 10-20, preparing to prosecute.", "npc/metropolice/vo/malcompliant10107my1020.wav");
+Schema.voices.Add("Combine", "A grenade.", "That's a grenade!", "npc/metropolice/vo/thatsagrenade.wav");
+Schema.voices.Add("Combine", "Suspect moved.", "Suspect has moved now to..", "npc/metropolice/vo/suspecthasmovednowto.wav");
+Schema.voices.Add("Combine", "Is Ready.", "Is ready to go!", "npc/metropolice/vo/isreadytogo.wav");
+Schema.voices.Add("Combine", "Loyalty Check.", "Uh, roger that, we'll run standard loyalty check procedure 243, my 10-22 intake station, over.", "npc/metropolice/vo/standardloyaltycheck.wav");
+Schema.voices.Add("Combine", "Report status.", "Local CP teams report status.", "npc/metropolice/vo/localcptreportstatus.wav");
+Schema.voices.Add("Combine", "Failure check.", "Oh, I have a failure to comply with loyalty check, tag is possible 10-103m.", "npc/metropolice/vo/loyaltycheckfailure.wav");
+Schema.voices.Add("Combine", "Take a look.", "Going to take a look!", "npc/metropolice/vo/goingtotakealook.wav");
+Schema.voices.Add("Combine", "Need any help.", "Need any help with this one?", "npc/metropolice/vo/needanyhelpwiththisone.wav");
+Schema.voices.Add("Combine", "Get in.", "Get in.", "vo/trainyard/ba_getin.wav");
+Schema.voices.Add("Combine", "Get in here.", "Get in here.", "vo/trainyard/ba_inhere01.wav");
+Schema.voices.Add("Combine", "Come with me.", "You citizen, come with me.", "vo/trainyard/ba_youcomewith.wav");
+Schema.voices.Add("Combine", "Go on.", "Go on.", "vo/trainyard/ba_goon.wav");
+Schema.voices.Add("Combine", "Im good.", "No, I'm good.", "vo/trainyard/ba_noimgood.wav");
+Schema.voices.Add("Combine", "Back up.", "Back up.", "vo/trainyard/ba_backup.wav");
+Schema.voices.Add("Combine", "I said move.", "I said move!", "vo/trainyard/ba_move01.wav");
+Schema.voices.Add("Combine", "Tag 10-91d.", "Tag 10-91d.", "npc/metropolice/vo/tag10-91d.wav");
+Schema.voices.Add("Combine", "Tag Bug.", "Tag One Bug", "npc/metropolice/vo/tagonebug.wav");
+Schema.voices.Add("Combine", "Tag Necrotic.", "Tag one necrotic.", "npc/metropolice/vo/tagonenecrotic.wav");
+Schema.voices.Add("Combine", "Tag Parasitic.", "Tag one parasitic.", "npc/metropolice/vo/tagoneparasitic.wav");
+Schema.voices.Add("Combine", "There he is.", "There he is!", "npc/metropolice/vo/thereheis.wav");
+Schema.voices.Add("Combine", "Hunting.", "10-0, 10-0, viscerator is hunting.", "npc/metropolice/vo/tenzerovisceratorishunting.wav");
+Schema.voices.Add("Combine", "Responding.", "Responding.", "npc/metropolice/vo/responding2.wav");
+Schema.voices.Add("Combine", "Contact 243.", "Contact with 243 suspect. My 10-20 is..", "npc/metropolice/vo/contactwith243suspect.wav");
+Schema.voices.Add("Combine", "Roller.", "Roller.", "npc/metropolice/vo/roller.wav");
+Schema.voices.Add("Combine", "Line.", "Line.", "npc/metropolice/vo/line.wav");
+Schema.voices.Add("Combine", "Grenade.", "Grenade!", "npc/metropolice/vo/grenade.wav");
+Schema.voices.Add("Combine", "Hold.", "Hold it.", "npc/metropolice/vo/holdit.wav");
+Schema.voices.Add("Combine", "Hold position.", "Protection team, hold this position.", "npc/metropolice/vo/holdthisposition.wav");
+Schema.voices.Add("Combine", "Is Down.", "Is down!", "npc/metropolice/vo/isdown.wav");
+Schema.voices.Add("Combine", "Take him down.", "Take him down!", "npc/metropolice/takedown.wav");
+Schema.voices.Add("Combine", "Sacrifice Code.", "All units sacrifice code 1 and maintain this CP.", "npc/metropolice/vo/sacrificecode1maintaincp.wav");
+Schema.voices.Add("Combine", "Stick.", "Stick.", "npc/metropolice/vo/stick.wav");
+Schema.voices.Add("Combine", "On Visual.", "Acquiring on visual.", "npc/metropolice/vo/acquiringonvisual.wav");
+Schema.voices.Add("Combine", "Affirmative.", "Affirmative.", "npc/metropolice/vo/affirmative.wav");
+Schema.voices.Add("Combine", "34s.", "All Units, BOL, We have 34s At...", "npc/metropolice/vo/allunitsbol34sat.wav");
+Schema.voices.Add("Combine", "Code 2.", "All units, Code two.", "npc/metropolice/vo/allunitscode2.wav");
+Schema.voices.Add("Combine", "647e reading.", "Anyone else pickup a 647-E reading?", "npc/metropolice/vo/anyonepickup647e.wav");
+Schema.voices.Add("Combine", "im out.", "Back me up, I'm out!", "npc/metropolice/vo/backmeupImout.wav");
+Schema.voices.Add("Combine", "Break his cover.", "Break his cover!", "npc/metropolice/vo/breakhiscover.wav");
+Schema.voices.Add("Combine", "No 647.", "Clear, no 647, no 10-107.", "npc/metropolice/vo/clearno647no10-107.wav");
+Schema.voices.Add("Combine", "DB count is.", "DB Count is...", "npc/metropolice/vo/dbcountis.wav");
+Schema.voices.Add("Combine", "Deserviced area.", "Deserviced Area.", "npc/metropolice/vo/deservicedarea.wav");
+Schema.voices.Add("Combine", "Perimiter at.", "CP We need to establish perimiter at...", "npc/metropolice/vo/cpweneedtoestablishperimiterat.wav");
+Schema.voices.Add("Combine", "Check for miscount.", "Check for miscount.", "npc/metropolice/vo/checkformiscount.wav");
+Schema.voices.Add("Combine", "Airwatch 243.", "CP we need Airwatch to BOL for that 243.", "npc/metropolice/vo/cpbolforthat243.wav");
+Schema.voices.Add("Combine", "Bugs loose.", "We have bugs on the loose.", "npc/metropolice/vo/bugsontheloose.wav");
+Schema.voices.Add("Combine", "Is Passive.", "Is Passive.", "npc/metropolice/vo/ispassive.wav");
+Schema.voices.Add("Combine", "Move along 2.", "Move along.", "npc/metropolice/vo/movealong.wav");
+Schema.voices.Add("Combine", "Move it.", "Move it.", "npc/metropolice/vo/moveit2.wav");
+Schema.voices.Add("Combine", "Suspect 11-6.", "Suspect 11-6 my 10-20 is..", "npc/metropolice/vo/suspect11-6my1020is.wav");
+Schema.voices.Add("Combine", "Non Tagged viromes.", "Non tagged viromes here.", "npc/metropolice/vo/nontaggedviromeshere.wav");
+Schema.voices.Add("Combine", "Under fire.", "Officer under fire, taking cover!", "npc/metropolice/vo/officerunderfiretakingcover.wav");
+Schema.voices.Add("Combine", "Quick.", "Quick!", "npc/metropolice/vo/quick.wav");
+Schema.voices.Add("Combine", "Got him again.", "Got him again. Suspect is 10-20 at..", "npc/metropolice/vo/gothimagainsuspect10-20at.wav");
+Schema.voices.Add("Combine", "Accomplice.", "I got one accomplice here.", "npc/metropolice/vo/gotoneaccomplicehere.wav");
+Schema.voices.Add("Combine", "Code 100.", "Code 100.","npc/metropolice/vo/code100.wav");
+Schema.voices.Add("Combine", "10-78.", "Dispatch I need 10-78, officer in trouble!","npc/metropolice/vo/dispatchIneed10-78.wav");
+Schema.voices.Add("Combine", "Units Close On Suspect.", "All Units! Close on Suspect!","npc/metropolice/vo/allunitscloseonsuspect.wav");
+Schema.voices.Add("Combine", "We Stable.", "We are socio-stable at this location.", "npc/metropolice/vo/wearesociostablethislocation.wav");
+Schema.voices.Add("Combine", "DB Here.", "Uhh, we have a DB here, cancel that 11-42.", "npc/metropolice/vo/wegotadbherecancel10-102.wav");
+Schema.voices.Add("Combine", "Preparing 10-107.", "Preparing to judge a 10-107, be advised.", "npc/metropolice/vo/preparingtojudge10-107.wav");
+Schema.voices.Add("Combine", "Possible 647e.", "Possible 647e here, request Airwatch tag.", "npc/metropolice/vo/possible647erequestairwatch.wav");
+Schema.voices.Add("Combine", "Possible 10-103.", "Possible 10-103, my location, alert tag units.", "npc/metropolice/vo/possible10-103alerttagunits.wav");
+Schema.voices.Add("Combine", "Position to contain.", "Position to contain.", "npc/metropolice/vo/positiontocontain.wav");
+Schema.voices.Add("Combine", "Outland Biotic.", "I got an outland biotic in here.", "npc/metropolice/vo/outlandbioticinhere.wav");
+Schema.voices.Add("Combine", "Arrest Positions.", "All units move to arrest positions.","npc/metropolice/vo/movetoarrestpositions.wav");
+Schema.voices.Add("Combine", "Pacifying.", "Pacifying!","npc/metropolice/vo/pacifying.wav");
+Schema.voices.Add("Combine", "Ready Prosecute Final.", "Ready to prosecute malcompliant citizen final warning issued!","npc/metropolice/vo/readytoprosecutefinalwarning.wav");
+Schema.voices.Add("Combine", "Still 647e.", "Still getting a 647e from local surveillance.","npc/metropolice/vo/stillgetting647e.wav");
+Schema.voices.Add("Combine", "Blip.", "Catch that blip on the stabilization readout?","npc/metropolice/vo/catchthatbliponstabilization.wav");
+Schema.voices.Add("Combine", "CZ.", "Condemned zone.", "npc/metropolice/vo/condemnedzone.wav");
+Schema.voices.Add("Combine", "Confirm 1.", "Confirm priority 1 sighted.", "npc/metropolice/vo/confirmpriority1sighted.wav");
+Schema.voices.Add("Combine", "Converging.", "Converging.", "npc/metropolice/vo/converging.wav");
+Schema.voices.Add("Combine", "CP Compromised.", "CP is compromised. Re-establish!", "npc/metropolice/vo/cpiscompromised.wav");
+Schema.voices.Add("Combine", "Overrun.", "CP is overrun, we have no containment!", "npc/metropolice/vo/cpisoverrunwehavenocontainment.wav");
+Schema.voices.Add("Combine", "Location report.", "CP requests all units..uh..location report in.", "npc/metropolice/vo/cprequestsallunitsreportin.wav");
+Schema.voices.Add("Combine", "Designate suspect.", "Designate suspect as..", "npc/metropolice/vo/designatesuspectas.wav");
+Schema.voices.Add("Combine", "Dismounting HP.", "Dismounting hardpoint.", "npc/metropolice/vo/dismountinghardpoint.wav");
+Schema.voices.Add("Combine", "Disp Report.", "Disp reports, suspect incursion at location.", "npc/metropolice/vo/dispreportssuspectincursion.wav");
+Schema.voices.Add("Combine", "Disp APB.", "Disp updating APB likeness.", "npc/metropolice/vo/dispupdatingapb.wav");
+Schema.voices.Add("Combine", "DB.", "Distribution block.", "npc/metropolice/vo/distributionblock.wav");
+Schema.voices.Add("Combine", "Hardpoint Scanning.", "Hardpoint scanning.", "npc/metropolice/vo/hardpointscanning.wav");
+Schema.voices.Add("Combine", "Gone 148.", "He's gone 148!", "npc/metropolice/vo/hesgone148.wav");
+Schema.voices.Add("Combine", "Up there.", "He's up there!", "npc/metropolice/vo/hesupthere.wav");
+Schema.voices.Add("Combine", "Last seen.", "Hiding, last seen at range..", "npc/metropolice/vo/hidinglastseenatrange.wav");
+Schema.voices.Add("Combine", "HPR.", "High priority region.", "npc/metropolice/vo/highpriorityregion.wav");
+Schema.voices.Add("Combine", "IZ.", "Industrial zone.", "npc/metropolice/vo/industrialzone.wav");
+Schema.voices.Add("Combine", "Infested.", "Infested zone.", "npc/metropolice/vo/infestedzone.wav");
+Schema.voices.Add("Combine", "At hardpoint.", "In position at hardpoint.", "npc/metropolice/vo/inpositionathardpoint.wav");
+Schema.voices.Add("Combine", "Position 1.", "In position on 1 ready.", "npc/metropolice/vo/inpositionononeready.wav");
+Schema.voices.Add("Combine", "At hardpoint ready.", "Is at hardpoint, ready to prosecute.", "npc/metropolice/vo/isathardpointreadytoprosecute.wav");
+Schema.voices.Add("Combine", "Is closing.", "Is closing on suspect!", "npc/metropolice/vo/isclosingonsuspect.wav");
+Schema.voices.Add("Combine", "Proceed.", "Proceed to designated checkpoints.", "npc/metropolice/vo/proceedtocheckpoints.wav");
+Schema.voices.Add("Combine", "At location.", "Protect team's at location, report in.", "npc/metropolice/vo/ptatlocationreport.wav");
+Schema.voices.Add("Combine", "PT go again.", "PT go again.", "npc/metropolice/vo/ptgoagain.wav");
+Schema.voices.Add("Combine", "Code 3.", "Reinforcement teams, code 3!", "npc/metropolice/vo/reinforcementteamscode3.wav");
+Schema.voices.Add("Combine", "Possible accomplice.", "Report sightings of possible accomplice.", "npc/metropolice/vo/reportsightingsaccomplices.wav");
+Schema.voices.Add("Combine", "RA.", "Repurposed area.", "npc/metropolice/vo/repurposedarea.wav");
+Schema.voices.Add("Combine", "Low on on verdicts.", "Running low on verdicts, taking cover!", "npc/metropolice/vo/runninglowonverdicts.wav");
+Schema.voices.Add("Combine", "Shots fired.", "Shots fired, hostile malignants here.", "npc/metropolice/vo/shotsfiredhostilemalignants.wav");
+Schema.voices.Add("Combine", "SJ.", "Stabilization jurisdiction.", "npc/metropolice/vo/stabilizationjurisdiction.wav");
+Schema.voices.Add("Combine", "High speed.", "All units be advised, subject is now high speed.", "npc/metropolice/vo/subjectisnowhighspeed.wav");
+Schema.voices.Add("Combine", "UTL.", "UTL suspect.", "npc/metropolice/vo/utlsuspect.wav");
+Schema.voices.Add("Combine", "UTL suspect.", "UTL that suspect.", "npc/metropolice/vo/utlthatsuspect.wav");
+Schema.voices.Add("Combine", "NPR.", "Non patrol region.", "npc/metropolice/vo/nonpatrolregion.wav");
+Schema.voices.Add("Combine", "Noncitizen.", "Non-citizen.", "npc/metropolice/vo/noncitizen.wav");
+Schema.voices.Add("Combine", "No contact.", "No contact.", "npc/metropolice/vo/nocontact.wav");
+Schema.voices.Add("Combine", "Hardpoint 2.", "Moving to hardpoint!", "npc/metropolice/vo/movingtohardpoint2.wav");
+Schema.voices.Add("Combine", "Match APB.", "I have a match on APB likeness.", "npc/metropolice/vo/matchonapblikeness.wav");
+Schema.voices.Add("Combine", "Firing to expose.", "Firing to expose target!", "npc/metropolice/vo/firingtoexposetarget.wav");
+Schema.voices.Add("Combine", "Heads Up.", "Heads up.", "npc/metropolice/deploy01.wav");
+Schema.voices.Add("Combine", "Let loose.", "Let 'em loose!", "npc/metropolice/deploy02.wav");
+Schema.voices.Add("Combine", "Give Chase.", "Give chase.", "npc/metropolice/deploy03.wav");
+Schema.voices.Add("Combine", "Heads.", "Heads!", "npc/metropolice/deploy04.wav");
+Schema.voices.Add("Combine", "Deploying Remote.", "Deploying remote!", "npc/metropolice/deploy05.wav");
+Schema.voices.Add("Combine", "Release.", "Release!", "npc/metropolice/deploy06.wav");
+Schema.voices.Add("Combine", "Drop Weapon.", "Drop your weapon, get down!", "npc/metropolice/dropweapon.wav");
+Schema.voices.Add("Combine", "Freeze.", "Freeze!", "npc/metropolice/freeze.wav");
+Schema.voices.Add("Combine", "Get On Ground.", "Stay where you are, get on the ground! Do it now!", "npc/metropolice/getonground.wav");
+Schema.voices.Add("Combine", "Get Out Of There.", "Get out of there!", "npc/metropolice/hiding01.wav");
+Schema.voices.Add("Combine", "No Point Hiding.", "There's no point in hiding.", "npc/metropolice/hiding02.wav");
+Schema.voices.Add("Combine", "No Escape.", "You have no chance of escape.", "npc/metropolice/hiding03.wav");
+Schema.voices.Add("Combine", "You Are Surrounded.", "You're surrounded.", "npc/metropolice/hiding04.wav");
+Schema.voices.Add("Combine", "You covered.", "We have you covered.", "npc/metropolice/hiding05.wav");
+Schema.voices.Add("Combine", "Over There.", "Over there!", "npc/metropolice/pointer01.wav");
+Schema.voices.Add("Combine", "There.", "There!", "npc/metropolice/pointer02.wav");
+Schema.voices.Add("Combine", "Look.", "Look!", "npc/metropolice/pointer03.wav");
+Schema.voices.Add("Combine", "Dont Let Him Get Away.", "Don't let him get away!", "npc/metropolice/pointer04.wav");
+Schema.voices.Add("Combine", "Hes Getting Away.", "He's getting away!", "npc/metropolice/pointer06.wav");
+Schema.voices.Add("Combine", "Got Him.", "Got him!", "npc/metropolice/shooter01.wav");
+Schema.voices.Add("Combine", "I Have Him.", "I have him!", "npc/metropolice/shooter02.wav");
+Schema.voices.Add("Combine", "Hes Mine.", "He's mine!", "npc/metropolice/shooter03.wav");
+Schema.voices.Add("Combine", "Right.", "Right.", "npc/metropolice/shooter04.wav");
+Schema.voices.Add("Combine", "I See Him.", "Yes, I see him.", "npc/metropolice/shooter05.wav");
+Schema.voices.Add("Combine", "What the.", "What the?", "npc/metropolice/surprise1.wav");
+Schema.voices.Add("Combine", "Huh.", "Huh?", "npc/metropolice/surprise2.wav");
+Schema.voices.Add("Combine", "What the 2.", "What the?", "npc/metropolice/surprise3.wav");
+Schema.voices.Add("Combine", "What the hell.", "What the hell?", "npc/metropolice/surprise4.wav");
+Schema.voices.Add("Combine", "Hes In Water.", "He's in the water.", "npc/metropolice/water01.wav");
+Schema.voices.Add("Combine", "Hold Back remotes.", "Hold back the remotes.", "npc/metropolice/water02.wav");
+Schema.voices.Add("Combine", "Hes Gone Below.", "He's gone below!", "npc/metropolice/water03.wav");
+Schema.voices.Add("Combine", "Believe What You Want.", "Believe what you want.", "npc/metropolice/mc1ans_believewhatyouwant.wav");
+Schema.voices.Add("Combine", "Quit Your Bellyachin.", "Quit your bellyaching.", "npc/metropolice/mc1ans_bellyaching.wav");
+Schema.voices.Add("Combine", "Could Be.", "Eh, could be.", "npc/metropolice/mc1ans_couldbe.wav");
+Schema.voices.Add("Combine", "Dont Be Ridiculous.", "Don't be ridiculous.", "npc/metropolice/mc1ans_dontberidic.wav");
+Schema.voices.Add("Combine", "I Dont Wanna Talk About It.", "I don't wanna talk about it.", "npc/metropolice/mc1ans_dontwannatalk.wav");
+Schema.voices.Add("Combine", "Enough.", "That's enough outta you.", "npc/metropolice/mc1ans_enoughouttayou.wav");
+Schema.voices.Add("Combine", "Fascinating.", "Fascinating.", "npc/metropolice/mc1ans_fascinating.wav");
+Schema.voices.Add("Combine", "Figures.", "Figures.", "npc/metropolice/mc1ans_figures.wav");
+Schema.voices.Add("Combine", "I had to get you.", "I had to get you for a partner.", "npc/metropolice/mc1ans_hadtopartner.wav");
+Schema.voices.Add("Combine", "You in mood.", "You're in helluva a mood.", "npc/metropolice/mc1ans_helluvamood.wav");
+Schema.voices.Add("Combine", "Hm.", "Hm.", "npc/metropolice/mc1ans_hm.wav");
+Schema.voices.Add("Combine", "Figures 3.", "Huh, figures.", "npc/metropolice/mc1ans_huhfigures.wav");
+Schema.voices.Add("Combine", "Let Me Think About That.", "Let me think about that.", "npc/metropolice/mc1ans_letmethink.wav");
+Schema.voices.Add("Combine", "Might Be.", "Might be.", "npc/metropolice/mc1ans_mightbe.wav");
+Schema.voices.Add("Combine", "Might Could.", "Might could.", "npc/metropolice/mc1ans_mightcould.wav");
+Schema.voices.Add("Combine", "Might Not.", "Might not.", "npc/metropolice/mc1ans_mightnot.wav");
+Schema.voices.Add("Combine", "Nope.", "Nope.", "npc/metropolice/mc1ans_nope.wav");
+Schema.voices.Add("Combine", "Rather Not Talk.", "I'd rather not talk about that.", "npc/metropolice/mc1ans_rathernottalk.wav");
+Schema.voices.Add("Combine", "Rather Not Think.", "I'd rather not think about that.", "npc/metropolice/mc1ans_rathernotthink.wav");
+Schema.voices.Add("Combine", "Shut Up.", "Shut up about that.", "npc/metropolice/mc1ans_shutup.wav");
+Schema.voices.Add("Combine", "Stop Whining.", "Stop whining.", "npc/metropolice/mc1ans_stopwhining.wav");
+Schema.voices.Add("Combine", "Theres Your Problem.", "There's your problem right there.", "npc/metropolice/mc1ans_theresyerproblem.wav");
+Schema.voices.Add("Combine", "Think So.", "Think so.", "npc/metropolice/mc1ans_thinkso.wav");
+Schema.voices.Add("Combine", "Watch Your Mouth.", "Watch your mouth.", "npc/metropolice/mc1ans_watchyermouth.wav");
+Schema.voices.Add("Combine", "Yeah.", "Yeah.", "npc/metropolice/mc1ans_yeah.wav");
+Schema.voices.Add("Combine", "Yep.", "Yep.", "npc/metropolice/mc1ans_yep.wav");
+Schema.voices.Add("Combine", "You Expect Me To Believe.", "You expect me to believe that?", "npc/metropolice/mc1ans_youexpectme.wav");
+Schema.voices.Add("Combine", "You Really Believe.", "You really believe that?", "npc/metropolice/mc1ans_youreallybelieve.wav");
+Schema.voices.Add("Combine", "Got Better Things.", "I got better things to do.", "npc/metropolice/mc1que_betterthings.wav");
+Schema.voices.Add("Combine", "Career.", "Yep, this was definitely the best career choice I've ever made.", "npc/metropolice/mc1que_career.wav");
+Schema.voices.Add("Combine", "Thinking About Enlisting.", "So, I'm thinking about enlisting.", "npc/metropolice/mc1que_enlisting.wav");
+Schema.voices.Add("Combine", "This is everything i hoped.", "This is everything I hoped it would be.", "npc/metropolice/mc1que_everythingihoped.wav");
+Schema.voices.Add("Combine", "Feeling Good.", "I'm feeling pretty good about myself today.", "npc/metropolice/mc1que_feelinggood.wav");
+Schema.voices.Add("Combine", "Feet Killing.", "My feet are killing me.", "npc/metropolice/mc1que_feetkillin.wav");
+Schema.voices.Add("Combine", "Not this place.", "This whole place is going to hell. Well, not this place.", "npc/metropolice/mc1que_goingtohell.wav");
+Schema.voices.Add("Combine", "Maybe not.", "I just thought of something. Uh, wait... Maybe not.", "npc/metropolice/mc1que_justthought.wav");
+Schema.voices.Add("Combine", "Wouldnt Have Kids.", "I wouldn't have kids even if they let me.", "npc/metropolice/mc1que_kids.wav");
+Schema.voices.Add("Combine", "Beats Last Job.", "Beats the shit out of my last job.", "npc/metropolice/mc1que_lastjob.wav");
+Schema.voices.Add("Combine", "Get Pay Cut.", "What do you bet we get a pay cut?", "npc/metropolice/mc1que_paycut.wav");
+Schema.voices.Add("Combine", "People Suck.", "People suck. Well, except for us.", "npc/metropolice/mc1que_peoplesuck.wav");
+Schema.voices.Add("Combine", "Getting Perks.", "So, you getting the perks they promised you?", "npc/metropolice/mc1que_perks.wav");
+Schema.voices.Add("Combine", "Raise Next Week.", "Supposedly we're getting a raise next week.", "npc/metropolice/mc1que_raise.wav");
+Schema.voices.Add("Combine", "Use Another Stimpatch.", "I could use another stimpatch.", "npc/metropolice/mc1que_stimpatch.wav");
+Schema.voices.Add("Combine", "Stomach Killing.", "My stomach is killing me.", "npc/metropolice/mc1que_stomach.wav");
+Schema.voices.Add("Combine", "New Stunsticks.", "I heard we weren't getting those new stun sticks this year.", "npc/metropolice/mc1que_stunsticks.wav");
+Schema.voices.Add("Combine", "This Is Ridiculous.", "This is ridiculous.", "npc/metropolice/mc1que_thisridiculous.wav");
+Schema.voices.Add("Combine", "Your Wife Doesnt Like Me.", "Your wife doesn't like me, does she?", "npc/metropolice/mc1que_yourwife.wav");
+Schema.voices.Add("Combine", "Believe What You Want 2.", "Believe what you want.", "npc/metropolice/mc2ans_believewhatyouwant.wav");
+Schema.voices.Add("Combine", "Quit Your Bellyaching 2.", "Quit your bellyaching.", "npc/metropolice/mc2ans_bellyaching.wav");
+Schema.voices.Add("Combine", "Could Be 2.", "Eh, could be.", "npc/metropolice/mc2ans_couldbe.wav");
+Schema.voices.Add("Combine", "Dont Be Ridiculous 2.", "Don't be ridiculous.", "npc/metropolice/mc2ans_dontridiculous.wav");
+Schema.voices.Add("Combine", "Dont Wanna Talk 2.", "I don't want to talk about it.", "npc/metropolice/mc2ans_dontwannatalk.wav");
+Schema.voices.Add("Combine", "Dont Wanna Talk.", "I don't want to talk about it.", "npc/metropolice/mc2ans_dontwannatalk2.wav");
+Schema.voices.Add("Combine", "Enough 2.", "That's enough outta you.", "npc/metropolice/mc2ans_enoughouttayou.wav");
+Schema.voices.Add("Combine", "Fascinating 2.", "Fascinating.", "npc/metropolice/mc2ans_fascinating.wav");
+Schema.voices.Add("Combine", "Figures 2.", "Figures.", "npc/metropolice/mc2ans_figures.wav");
+Schema.voices.Add("Combine", "Youre Mood 2.", "You're in helluva a mood.", "npc/metropolice/mc2ans_helluvamood.wav");
+Schema.voices.Add("Combine", "Let Me Think About 2.", "Let me think about that.", "npc/metropolice/mc2ans_lemmethink.wav");
+Schema.voices.Add("Combine", "Might Be 2.", "Might be.", "npc/metropolice/mc2ans_mightbe.wav");
+Schema.voices.Add("Combine", "Might Could 2.", "Might could.", "npc/metropolice/mc2ans_mightcould.wav");
+Schema.voices.Add("Combine", "Might Not 2.", "Might not.", "npc/metropolice/mc2ans_mightnot.wav");
+Schema.voices.Add("Combine", "Nope 2.", "Nope.", "npc/metropolice/mc2ans_nope.wav");
+Schema.voices.Add("Combine", "Nope 3.", "Nope.", "npc/metropolice/mc2ans_nope2.wav");
+Schema.voices.Add("Combine", "Rather Not Think About 2.", "I'd rather not think about that.", "npc/metropolice/mc2ans_rathernotthink.wav");
+Schema.voices.Add("Combine", "Shut Up 2.", "Shut up about that.", "npc/metropolice/mc2ans_shutup.wav");
+Schema.voices.Add("Combine", "Stop Whining 2.", "Stop whining.", "npc/metropolice/mc2ans_stopwhining.wav");
+Schema.voices.Add("Combine", "Stop Whining 3.", "Stop whining.", "npc/metropolice/mc2ans_stopwhining2.wav");
+Schema.voices.Add("Combine", "Your Problem 1.", "There's your problem right there.", "npc/metropolice/mc2ans_theresyerproblem.wav");
+Schema.voices.Add("Combine", "Your Problem 2.", "There's your problem right there.", "npc/metropolice/mc2ans_theresyerproblem2.wav");
+Schema.voices.Add("Combine", "Think So 2.", "Think so.", "npc/metropolice/mc2ans_thinkso.wav");
+Schema.voices.Add("Combine", "Watch Your Mouth 2.", "Watch your mouth.", "npc/metropolice/mc2ans_watchmouth.wav");
+Schema.voices.Add("Combine", "Yeah 2.", "Yeah.", "npc/metropolice/mc2ans_yeah.wav");
+Schema.voices.Add("Combine", "Yep 2.", "Yep.", "npc/metropolice/mc2ans_yep.wav");
+Schema.voices.Add("Combine", "You Expect Me To Believe 2.", "You expect me to believe that?", "npc/metropolice/mc2ans_youexpectme.wav");
+Schema.voices.Add("Combine", "Had To Partner 2.", "I had to get you for a partner.", "npc/metropolice/mc2ans_youforpartner.wav");
+Schema.voices.Add("Combine", "You Really Believe 2.", "You really believe that?", "npc/metropolice/mc2ans_youreallybelieve.wav");
+Schema.voices.Add("Combine", "You Really Believe 3.", "You really believe that?", "npc/metropolice/mc2ans_youreallybelieve2.wav");
+Schema.voices.Add("Combine", "Yup.", "Yup.", "npc/metropolice/mc2ans_yup.wav");
+Schema.voices.Add("Combine", "Yup 2.", "Yup.", "npc/metropolice/mc2ans_yup2.wav");
+Schema.voices.Add("Combine", "Got Better Things 2.", "I got better things to do.", "npc/metropolice/mc2que_betterthings.wav");
+Schema.voices.Add("Combine", "Best Career Choice 2.", "Yep, this was definitely the best career choice I've ever made.", "npc/metropolice/mc2que_career.wav");
+Schema.voices.Add("Combine", "Thinking About Enlisting 2.", "So, I'm thinking about enlisting.", "npc/metropolice/mc2que_enlisting.wav");
+Schema.voices.Add("Combine", "Everything I Hoped 2.", "This is everything I hoped it would be.", "npc/metropolice/mc2que_everythingihoped.wav");
+Schema.voices.Add("Combine", "Feeling Good2.", "I'm feeling pretty good about myself today.", "npc/metropolice/mc2que_feelinggood.wav");
+Schema.voices.Add("Combine", "Feet Killing2.", "My feet are killing me.", "npc/metropolice/mc1que_feetkilling.wav");
+Schema.voices.Add("Combine", "Feet Killing3.", "My feet are killing me.", "npc/metropolice/mc1que_feetkilling2.wav");
+Schema.voices.Add("Combine", "Place Going To Hell3.", "This whole place is going to hell. No. Not this place.", "npc/metropolice/mc2que_goingtohell.wav");
+Schema.voices.Add("Combine", "Place Going To Hell2.", "This whole place is going to hell. Well, not this place.", "npc/metropolice/mc2que_goingtohell2.wav");
+Schema.voices.Add("Combine", "Just Thought Something2.", "I just thought of something. Uh, wait... Maybe not.", "npc/metropolice/mc2que_justthought.wav");
+Schema.voices.Add("Combine", "Just Thought Something3.", "I just thought of something. Uh, wait... Maybe not.", "npc/metropolice/mc2que_justthought2.wav");
+Schema.voices.Add("Combine", "Wouldnt Have Kids2.", "I wouldn't have kids even if they let me.", "npc/metropolice/mc2que_kids.wav");
+Schema.voices.Add("Combine", "Beats Last Job2.", "Beats the shit out of my last job.", "npc/metropolice/mc2que_lastjob.wav");
+Schema.voices.Add("Combine", "Get Pay Cut2.", "What do you bet we get a pay cut?", "npc/metropolice/mc2que_paycut.wav");
+Schema.voices.Add("Combine", "People Suck Except Us2.", "People suck. Well, except for us.", "npc/metropolice/mc2que_peoplesuck.wav");
+Schema.voices.Add("Combine", "Getting Perks2.", "So, you getting the perks they promised you?", "npc/metropolice/mc2que_perks.wav");
+Schema.voices.Add("Combine", "Raise Next Week2.", "Supposedly we're getting a raise next week.", "npc/metropolice/mc2que_raise.wav");
+Schema.voices.Add("Combine", "Use Another Stimpatch2.", "I could use another stimpatch.", "npc/metropolice/mc2que_stimpatch.wav");
+Schema.voices.Add("Combine", "Stomach Killing2.", "My stomach is killing me.", "npc/metropolice/mc2que_stomach.wav");
+Schema.voices.Add("Combine", "Stomach Killing3.", "My stomach is killing me.", "npc/metropolice/mc2que_stomach2.wav");
+Schema.voices.Add("Combine", "Getting New Stunsticks2.", "I heard we're not getting those new stun sticks this year.", "npc/metropolice/mc2que_stunsticks.wav");
+Schema.voices.Add("Combine", "Your Wife Doesnt Like Me2.", "Your wife doesn't like me, does she?", "npc/metropolice/mc2que_yourwife.wav");
+Schema.voices.Add("Combine", "Affirmative2.", "Affirmative.", "npc/metropolice/vo/affirmative2.wav");
+Schema.voices.Add("Combine", "Airwatch Subject Is 505.", "Dispatch, we need airwatch, subject is 505.", "npc/metropolice/vo/airwatchsubjectis505.wav");
+Schema.voices.Add("Combine", "All Units Maintain CP.", "All units maintain this CP.", "npc/metropolice/vo/allunitsmaintainthiscp.wav");
+Schema.voices.Add("Combine", "All Report Location Of Suspect.", "All units report location of suspect.", "npc/metropolice/vo/allunitsreportlocationsuspect.wav");
+Schema.voices.Add("Combine", "AP Advance.", "Assault point secure, advance!", "npc/metropolice/vo/assaultpointsecureadvance.wav");
+Schema.voices.Add("Combine", "At CP.", "At checkpoint.", "npc/metropolice/vo/atcheckpoint.wav");
+Schema.voices.Add("Combine", "Block.", "Block.", "npc/metropolice/vo/block.wav");
+Schema.voices.Add("Combine", "Block Holding.", "Block is holding, cohesive.", "npc/metropolice/vo/blockisholdingcohesive.wav");
+Schema.voices.Add("Combine", "Bugs.", "Bugs.", "npc/metropolice/vo/bugs.wav");
+Schema.voices.Add("Combine", "Canal.", "Canal.", "npc/metropolice/vo/canal.wav");
+Schema.voices.Add("Combine", "CB.", "Canal block.", "npc/metropolice/vo/canalblock.wav");
+Schema.voices.Add("Combine", "Cauterize.", "Cauterize.", "npc/metropolice/vo/cauterize.wav");
+Schema.voices.Add("Combine", "Citizen Summoned.", "Reporting citizen summoned to voluntary conscription for general service public detail T94-322.", "npc/metropolice/vo/citizensummoned.wav");
+Schema.voices.Add("Combine", "Subject DB.", "Classify subject name as DB this block ready for cleanout.", "npc/metropolice/vo/classifyasdbthisblockready.wav");
+Schema.voices.Add("Combine", "Confirm ADW.", "Confirmed ADW on that suspect. 10-0.", "npc/metropolice/vo/confirmadw.wav");
+Schema.voices.Add("Combine", "Contact Priority 2.", "Contact with a priority 2.", "npc/metropolice/vo/contactwithpriority2.wav");
+Schema.voices.Add("Combine", "Control 100.", "Control is 100 percent this location. No sign of that 647-E.", "npc/metropolice/vo/control100percent.wav");
+Schema.voices.Add("Combine", "CS.", "Control section.", "npc/metropolice/vo/controlsection.wav");
+Schema.voices.Add("Combine", "Need Perimeter At.", "CP we need to establish a perimeter at.", "npc/metropolice/vo/cpweneedtoestablishaperimeterat.wav");
+Schema.voices.Add("Combine", "Defender.", "Defender!", "npc/metropolice/vo/defender.wav");
+Schema.voices.Add("Combine", "Docoument.", "Document.", "npc/metropolice/vo/document.wav");
+Schema.voices.Add("Combine", "Establish New CP.", "Fall out, establish a new CP.", "npc/metropolice/vo/establishnewcp.wav");
+Schema.voices.Add("Combine", "Examine.", "Examine.", "npc/metropolice/vo/examine.wav");
+Schema.voices.Add("Combine", "Expired.", "Expired.", "npc/metropolice/vo/expired.wav");
+Schema.voices.Add("Combine", "EJ.", "External jurisdiction.", "npc/metropolice/vo/externaljurisdiction.wav");
+Schema.voices.Add("Combine", "Fire to dislocate.", "Fire to dislocate that interpose!", "npc/metropolice/vo/firetodislocateinterpose.wav");
+Schema.voices.Add("Combine", "Freeman.", "Freeman.", "npc/metropolice/vo/freeman.wav");
+Schema.voices.Add("Combine", "Free Necrotics.", "I have free necrotics.", "npc/metropolice/vo/freenecrotics.wav");
+Schema.voices.Add("Combine", "Hero.", "Hero!", "npc/metropolice/vo/hero.wav");
+Schema.voices.Add("Combine", "Infection.", "Infection.", "npc/metropolice/vo/infection.wav");
+Schema.voices.Add("Combine", "Innoculate.", "Innoculate.", "npc/metropolice/vo/innoculate.wav");
+Schema.voices.Add("Combine", "In Position.", "In position.", "npc/metropolice/vo/inposition.wav");
+Schema.voices.Add("Combine", "Intercede.", "Intercede.", "npc/metropolice/vo/intercede.wav");
+Schema.voices.Add("Combine", "Interlock.", "Interlock.", "npc/metropolice/vo/interlock.wav");
+Schema.voices.Add("Combine", "Investigate.", "Investigate.", "npc/metropolice/vo/investigate.wav");
+Schema.voices.Add("Combine", "Investigating 10-103.", "Investigating 10-103.", "npc/metropolice/vo/investigating10-103.wav");
+Schema.voices.Add("Combine", "Is 10-108.", "Is 10-108!", "npc/metropolice/vo/is10-108.wav");
+Schema.voices.Add("Combine", "Is 415B.", "Is 415B.", "npc/metropolice/vo/is415b.wav");
+Schema.voices.Add("Combine", "Is Go.", "Is go.", "npc/metropolice/vo/isgo.wav");
+Schema.voices.Add("Combine", "Is Moving In.", "Is moving in.", "npc/metropolice/vo/ismovingin.wav");
+Schema.voices.Add("Combine", "Level 3 Privacy.", "I have a level 3 civil privacy violator here.", "npc/metropolice/vo/level3civilprivacyviolator.wav");
+Schema.voices.Add("Combine", "Rogue Viscerator.", "Look out, rogue viscerator!", "npc/metropolice/vo/lookoutrogueviscerator.wav");
+Schema.voices.Add("Combine", "Loose Parasitics.", "Loose parasitics!", "npc/metropolice/vo/looseparasitics.wav");
+Schema.voices.Add("Combine", "Malignant.", "Malignant.", "npc/metropolice/vo/malignant.wav");
+Schema.voices.Add("Combine", "Meters.", "Meters!", "npc/metropolice/vo/meters.wav");
+Schema.voices.Add("Combine", "Moving To Cover.", "Moving to cover!", "npc/metropolice/vo/movingtocover.wav");
+Schema.voices.Add("Combine", "Non-Tagged Viromes.", "Non-tagged viromes here", "npc/metropolice/vo/non-taggedviromeshere.wav");
+Schema.voices.Add("Combine", "No UPI.", "No visual on UPI at this time.", "npc/metropolice/vo/novisualonupi.wav");
+Schema.voices.Add("Combine", "Outbreak.", "Outbreak.", "npc/metropolice/vo/outbreak.wav");
+Schema.voices.Add("Combine", "OZ.", "Outland zone.", "npc/metropolice/vo/outlandzone.wav");
+Schema.voices.Add("Combine", "Picking Up Non Corplex Indy.", "Picking up a non corplex indy over here.", "npc/metropolice/vo/pickingupnoncorplexindy.wav");
+Schema.voices.Add("Combine", "PB.", "Production block.", "npc/metropolice/vo/productionblock.wav");
+Schema.voices.Add("Combine", "Ready Judge.", "Ready to judge.", "npc/metropolice/vo/readytojudge.wav");
+Schema.voices.Add("Combine", "Ready Prosecute.", "Ready to prosecute.", "npc/metropolice/vo/readytoprosecute.wav");
+Schema.voices.Add("Combine", "Request Secondary Viscerator.", "Request secondary viscerator, primary is in cap.", "npc/metropolice/vo/requestsecondaryviscerator.wav");
+Schema.voices.Add("Combine", "RB.", "Residential Block.", "npc/metropolice/vo/residentialblock.wav");
+Schema.voices.Add("Combine", "Suspect No Status.", "Searching for suspect, no status.", "npc/metropolice/vo/searchingforsuspect.wav");
+Schema.voices.Add("Combine", "Second Warning Given.", "Second warning given.", "npc/metropolice/vo/secondwarning.wav");
+Schema.voices.Add("Combine", "Sociocide.", "Sociocide.", "npc/metropolice/vo/sociocide.wav");
+Schema.voices.Add("Combine", "SB.", "Station block.", "npc/metropolice/vo/stationblock.wav");
+Schema.voices.Add("Combine", "SS.", "Storm System.", "npc/metropolice/vo/stormsystem.wav");
+Schema.voices.Add("Combine", "Subject.", "Subject.", "npc/metropolice/vo/subject.wav");
+Schema.voices.Add("Combine", "Suspect has moved to.", "Suspect has moved now to...", "npc/metropolice/vo/supsecthasmovednowto.wav");
+Schema.voices.Add("Combine", "Suspect In SS.", "All units, suspect is in storm runoff system at...", "npc/metropolice/vo/suspectinstormrunoff.wav");
+Schema.voices.Add("Combine", "Suspect Bleeding.", "Suspect is bleeding from multiple wounds.", "npc/metropolice/vo/suspectisbleeding.wav");
+Schema.voices.Add("Combine", "Suspend.", "Suspend.", "npc/metropolice/vo/suspend.wav");
+Schema.voices.Add("Combine", "Sweeping For Suspect.", "Sweeping for suspect.", "npc/metropolice/vo/sweepingforsuspect.wav");
+Schema.voices.Add("Combine", "Tap.", "Tap.", "npc/metropolice/vo/tap.wav");
+Schema.voices.Add("Combine", "Tac.", "Tac.", "npc/metropolice/vo/tap.wav");
+Schema.voices.Add("Combine", "Team Advance.", "Team in position, advance.", "npc/metropolice/vo/teaminpositionadvance.wav");
+Schema.voices.Add("Combine", "He is at.", "There he goes, he's at.", "npc/metropolice/vo/therehegoeshesat.wav");
+Schema.voices.Add("Combine", "TB.", "Transit block.", "npc/metropolice/vo/transitblock.wav");
+Schema.voices.Add("Combine", "Is 10-65.", "Unit is 10-65.", "npc/metropolice/vo/unitis10-65.wav");
+Schema.voices.Add("Combine", "Report 10-25.", "Any unit, report in with 10-25 suspect.", "npc/metropolice/vo/unitreportinwith10-25suspect.wav");
+Schema.voices.Add("Combine", "UPI.", "UPI.", "npc/metropolice/vo/upi.wav");
+Schema.voices.Add("Combine", "Viscerator Deployed.", "Viscerator deployed.", "npc/metropolice/vo/visceratordeployed.wav");
+Schema.voices.Add("Combine", "Viscerator OC.", "Viscerator is OC!", "npc/metropolice/vo/visceratorisoc.wav");
+Schema.voices.Add("Combine", "Viscerator Off-Grid.", "Viscerator is off grid", "npc/metropolice/vo/visceratorisoffgrid.wav");
+Schema.voices.Add("Combine", "Waste river.", "Waste river.", "npc/metropolice/vo/wasteriver.wav");
+Schema.voices.Add("Combine", "Workforce intake.", "Workforce intake.", "npc/metropolice/vo/workforceintake.wav");
+Schema.voices.Add("Combine", "Yellow.", "Yellow.", "npc/metropolice/vo/yellow.wav");
+Schema.voices.Add("Combine", "Get Against Wall.", "Get against the wall.", "vo/trainyard/ba_againstwall.wav");
+Schema.voices.Add("Combine", "Get Away from There.", "Get away from there!", "vo/trainyard/ba_awayfrom.wav");
+Schema.voices.Add("Combine", "Back Off.", "Back off!", "vo/trainyard/ba_backoff.wav");
+Schema.voices.Add("Combine", "Get Up There.", "Get up there.", "vo/trainyard/ba_getupthere.wav");
+Schema.voices.Add("Combine", "Go On Up.", "Go on up.", "vo/trainyard/ba_goonup.wav");
+Schema.voices.Add("Combine", "In Here.", "In here, let's go.", "vo/trainyard/ba_inhere.wav");
+Schema.voices.Add("Combine", "Keep Moving 2.", "Keep moving!", "vo/trainyard/ba_keepmoving.wav");
+Schema.voices.Add("Combine", "Move 2.", "Move!", "vo/trainyard/ba_move.wav");
+Schema.voices.Add("Combine", "Not In There.", "Not in there.", "vo/trainyard/ba_notthere.wav");
+Schema.voices.Add("Combine", "Out Of the Way.", "Out of the way!", "vo/trainyard/ba_outofway.wav");
+Schema.voices.Add("Combine", "Over Here.", "Over here.", "vo/trainyard/ba_overhere.wav");
+Schema.voices.Add("Combine", "Gonna Need Some Privacy.", "Yeah. I'm gonna need some privacy for this.", "vo/trainyard/ba_privacy.wav");
+Schema.voices.Add("Combine", "Thats It.", "Yeah, that's it.", "vo/trainyard/ba_thatsit.wav");
+Schema.voices.Add("Combine", "Get Up Here.", "Get up here!", "vo/trainyard/ba_uphere.wav");
+Schema.voices.Add("Combine", "Now.", "Now.", "vo/trainyard/ba_thatbeer01.wav");
+Schema.voices.Add("Combine", "Suspect location unknown.", "Suspect location unknown.", "npc/metropolice/vo/suspectlocationunknown.wav");
+Schema.voices.Add("Combine", "Suspect canals at.", "Suspect is using restricted canals at...", "npc/metropolice/vo/suspectusingrestrictedcanals.wav");
+Schema.voices.Add("Combine", "Want malcompliance", "You want malcompliance verdict?", "npc/metropolice/vo/youwantamalcomplianceverdict.wav");
+Schema.voices.Add("Combine", "Knocked it over.", "You knocked it over, pick it up.", "npc/metropolice/vo/youknockeditover.wav");
+Schema.voices.Add("Combine", "Watch it.", "Watch it!", "npc/metropolice/vo/watchit.wav");
+Schema.voices.Add("Combine", "Vacate.", "Vacate citizen.", "npc/metropolice/vo/vacatecitizen.wav");
+Schema.voices.Add("Combine", "Vice.", "Vice!", "npc/metropolice/vo/vice.wav");
+Schema.voices.Add("Combine", "Victor.", "Victor!", "npc/metropolice/vo/victor.wav");
+Schema.voices.Add("Combine", "603.", "603, unlawful entry.", "npc/metropolice/vo/unlawfulentry603.wav");
+Schema.voices.Add("Combine", "Union.", "Union!", "npc/metropolice/vo/union.wav");
+Schema.voices.Add("Combine", "TRZ.", "Terminal Restriction Zone.", "npc/metropolice/vo/terminalrestrictionzone.wav");
+Schema.voices.Add("Combine", "GOA Suspect.", "10-97, Suspect is GOA.", "npc/metropolice/vo/ten97suspectisgoa.wav");
+Schema.voices.Add("Combine", "Sterilize.", "Sterilize.", "npc/metropolice/vo/sterilize.wav");
+Schema.voices.Add("Combine", "Restricted Block.", "Restricted Block.", "npc/metropolice/vo/restrictedblock.wav");
+Schema.voices.Add("Combine", "Restrict.", "Restrict.", "npc/metropolice/vo/restrict.wav");
+Schema.voices.Add("Combine", "Ready Amputate.", "Ready to amputate.", "npc/metropolice/vo/readytoamputate.wav");
+Schema.voices.Add("Combine", "Trash Can 1.", "Now put it in the trash can.", "npc/metropolice/vo/putitinthetrash1.wav");
+Schema.voices.Add("Combine", "Trash Can 2.", "I said, put it in the trash can.", "npc/metropolice/vo/putitinthetrash2.wav");
+Schema.voices.Add("Combine", "Complete.", "Protection complete.", "npc/metropolice/vo/protectioncomplete.wav");
+Schema.voices.Add("Combine", "Judgement.", "Suspect prepare to receive civil judgement!", "npc/metropolice/vo/prepareforjudgement.wav");
+Schema.voices.Add("Combine", "Preserve.", "Preserve.", "npc/metropolice/vo/preserve.wav");
+Schema.voices.Add("Combine", "Possible 404.", "Preserve.", "npc/metropolice/vo/possible404here.wav");
+Schema.voices.Add("Combine", "Can1.", "Pick up the can.", "npc/metropolice/vo/pickupthecan1.wav");
+Schema.voices.Add("Combine", "Can2.", "Pick... up... the can.", "npc/metropolice/vo/pickupthecan2.wav");
+Schema.voices.Add("Combine", "Can3.", "I said pick up the can!", "npc/metropolice/vo/pickupthecan3.wav");
+Schema.voices.Add("Combine", "Got 11-99.", "Officer needs assistance, i've got an 11-99!", "npc/metropolice/vo/officerneedsassistance.wav");
 Schema.voices.Add("Combine", "11-99", "11-99, officer needs assistance!", "npc/metropolice/vo/11-99officerneedsassistance.wav")
-Schema.voices.Add("Combine", "2", "Two.", "npc/metropolice/vo/two.wav")
-Schema.voices.Add("Combine", "20", "Twenty.", "npc/metropolice/vo/twenty.wav")
-Schema.voices.Add("Combine", "200", "Two-hundred.", "npc/metropolice/vo/twohundred.wav")
-Schema.voices.Add("Combine", "3", "Three.", "npc/metropolice/vo/three.wav")
-Schema.voices.Add("Combine", "30", "Thirty.", "npc/metropolice/vo/thirty.wav")
-Schema.voices.Add("Combine", "300", "Three-hundred.", "npc/metropolice/vo/threehundred.wav")
-Schema.voices.Add("Combine", "34S AT", "All units, BOL, we have 34-S at...", "npc/metropolice/vo/allunitsbol34sat.wav")
-Schema.voices.Add("Combine", "4", "Four.", "npc/metropolice/vo/four.wav")
-Schema.voices.Add("Combine", "40", "Fourty.", "npc/metropolice/vo/fourty.wav")
-Schema.voices.Add("Combine", "404", "404 zone.", "npc/metropolice/vo/404zone.wav")
-Schema.voices.Add("Combine", "408", "I've got a 408 here at location.", "npc/metropolice/vo/Ivegot408hereatlocation.wav")
-Schema.voices.Add("Combine", "415B", "Is 415b.", "npc/metropolice/vo/is415b.wav")
-Schema.voices.Add("Combine", "5", "Five.", "npc/metropolice/vo/five.wav")
-Schema.voices.Add("Combine", "50", "Fifty.", "npc/metropolice/vo/fifty.wav")
-Schema.voices.Add("Combine", "505", "Dispatch, we need AirWatch, subject is 505!", "npc/metropolice/vo/airwatchsubjectis505.wav")
-Schema.voices.Add("Combine", "6", "Six.", "npc/metropolice/vo/six.wav")
-Schema.voices.Add("Combine", "60", "Sixty.", "npc/metropolice/vo/sixty.wav")
-Schema.voices.Add("Combine", "603", "603, unlawful entry.", "npc/metropolice/vo/unlawfulentry603.wav")
-Schema.voices.Add("Combine", "63", "63, criminal trespass.", "npc/metropolice/vo/criminaltrespass63.wav")
-Schema.voices.Add("Combine", "7", "Seven.", "npc/metropolice/vo/seven.wav")
-Schema.voices.Add("Combine", "70", "Seventy.", "npc/metropolice/vo/seventy.wav")
-Schema.voices.Add("Combine", "8", "Eight.", "npc/metropolice/vo/eight.wav")
-Schema.voices.Add("Combine", "80", "Eighty.", "npc/metropolice/vo/eighty.wav")
-Schema.voices.Add("Combine", "9", "Nine.", "npc/metropolice/vo/nine.wav")
-Schema.voices.Add("Combine", "90", "Ninety.", "npc/metropolice/vo/ninety.wav")
-Schema.voices.Add("Combine", "THAT'S A GRENADE", "That's a grenade!", "npc/metropolice/vo/thatsagrenade.wav")
-Schema.voices.Add("Combine", "ACQUIRING", "Acquiring on visual!", "npc/metropolice/vo/acquiringonvisual.wav")
-Schema.voices.Add("Combine", "ADMINISTER", "Administer.", "npc/metropolice/vo/administer.wav")
-Schema.voices.Add("Combine", "CONFIRMED ADW", "Confirmed as ADW on that suspect, 10-0.", "npc/metropolice/vo/confirmadw.wav")
-Schema.voices.Add("Combine", "AFFIRMATIVE", "Affirmative.", "npc/metropolice/vo/affirmative.wav")
-Schema.voices.Add("Combine", "ALL UNITS MOVE", "All units, move in!", "npc/metropolice/vo/allunitsmovein.wav")
-Schema.voices.Add("Combine", "AMPUTATE", "Amputate.", "npc/metropolice/vo/amputate.wav")
-Schema.voices.Add("Combine", "ANTICITIZEN", "Anti-citizen.", "npc/metropolice/vo/anticitizen.wav")
-Schema.voices.Add("Combine", "ANTISEPTIC", "Antiseptic.", "npc/combine_soldier/vo/antiseptic.wav")
-Schema.voices.Add("Combine", "APEX", "Apex.", "npc/combine_soldier/vo/apex.wav")
-Schema.voices.Add("Combine", "APPLY", "Apply.", "npc/metropolice/vo/apply.wav")
-Schema.voices.Add("Combine", "ARREST POSITIONS", "All units, move to arrest positions!", "npc/metropolice/vo/movetoarrestpositions.wav")
-Schema.voices.Add("Combine", "AT CHECKPOINT", "At checkpoint.", "npc/metropolice/vo/atcheckpoint.wav")
-Schema.voices.Add("Combine", "AT LOCATION REPORT", "Protection-teams at location, report in.", "npc/metropolice/vo/ptatlocationreport.wav")
-Schema.voices.Add("Combine", "BACK ME UP", "Back me up, I'm out!", "npc/metropolice/vo/backmeupImout.wav")
-Schema.voices.Add("Combine", "BACKUP", "Backup!", "npc/metropolice/vo/backup.wav")
-Schema.voices.Add("Combine", "BLADE", "Blade.", "npc/combine_soldier/vo/blade.wav")
-Schema.voices.Add("Combine", "BLEEDING", "Suspect is bleeding from multiple wounds!", "npc/metropolice/vo/suspectisbleeding.wav")
-Schema.voices.Add("Combine", "BLIP", "Catch that blip on the stabilization readout?", "npc/metropolice/vo/catchthatbliponstabilization.wav")
-Schema.voices.Add("Combine", "BLOCK HOLDING", "Block is holding, cohesive.", "npc/metropolice/vo/blockisholdingcohesive.wav")
-Schema.voices.Add("Combine", "BLOCK", "Block!", "npc/metropolice/vo/block.wav")
-Schema.voices.Add("Combine", "BOL 243", "CP, we need AirWatch to BOL for that 243.", "npc/metropolice/vo/cpbolforthat243.wav")
-Schema.voices.Add("Combine", "BOOMER", "Boomer.", "npc/combine_soldier/vo/boomer.wav")
-Schema.voices.Add("Combine", "BREAK COVER", "Break his cover!", "npc/metropolice/vo/breakhiscover.wav")
-Schema.voices.Add("Combine", "CAN1", "Pick up that can.", "npc/metropolice/vo/pickupthecan1.wav")
-Schema.voices.Add("Combine", "CAN2", "Pick up the can!", "npc/metropolice/vo/pickupthecan2.wav")
-Schema.voices.Add("Combine", "CAN3", "I said, pick up the can!", "npc/metropolice/vo/pickupthecan3.wav")
-Schema.voices.Add("Combine", "CAN4", "Now, put it in the trash-can.", "npc/metropolice/vo/putitinthetrash1.wav")
-Schema.voices.Add("Combine", "CAN5", "I said, put it in the trash-can!", "npc/metropolice/vo/putitinthetrash2.wav")
-Schema.voices.Add("Combine", "CAN6", "You knocked it over, pick it up!", "npc/metropolice/vo/youknockeditover.wav")
-Schema.voices.Add("Combine", "CANAL", "Canal.", "npc/metropolice/vo/canal.wav")
-Schema.voices.Add("Combine", "CANALBLOCK", "Canalblock!", "npc/metropolice/vo/canalblock.wav")
-Schema.voices.Add("Combine", "CAUTERIZE", "Cauterize.", "npc/metropolice/vo/cauterize.wav")
-Schema.voices.Add("Combine", "CHECK MISCOUNT", "Check for miscount.", "npc/metropolice/vo/checkformiscount.wav")
-Schema.voices.Add("Combine", "CHECKPOINTS", "Proceed to designated checkpoints.", "npc/metropolice/vo/proceedtocheckpoints.wav")
-Schema.voices.Add("Combine", "CITIZEN SUMMONED", "Reporting citizen summoned into voluntary conscription for channel open service detail T94-332.", "npc/metropolice/vo/citizensummoned.wav")
-Schema.voices.Add("Combine", "CITIZEN", "Citizen.", "npc/metropolice/vo/citizen.wav")
-Schema.voices.Add("Combine", "CLASSIFY DB", "Classify subject name as 'DB'; this block ready for clean-out.", "npc/metropolice/vo/classifyasdbthisblockready.wav")
-Schema.voices.Add("Combine", "CLEANED", "Cleaned.", "npc/combine_soldier/vo/cleaned.wav")
-Schema.voices.Add("Combine", "CLEAR CODE 100", "Clear and code one-hundred.", "npc/metropolice/vo/clearandcode100.wav")
-Schema.voices.Add("Combine", "CLOSE ON SUSPECT", "All units, close on suspect!", "npc/metropolice/vo/allunitscloseonsuspect.wav")
-Schema.voices.Add("Combine", "CLOSING", "Closing!", {"npc/combine_soldier/vo/closing.wav", "npc/combine_soldier/vo/closing2.wav"})
-Schema.voices.Add("Combine", "CODE 100", "Code one-hundred.", "npc/metropolice/vo/code100.wav")
-Schema.voices.Add("Combine", "CODE 2", "All units, code two!", "npc/metropolice/vo/allunitscode2.wav")
-Schema.voices.Add("Combine", "CODE 3", "Officer down, request all units, code three to my 10-20!", "npc/metropolice/vo/officerdowncode3tomy10-20.wav")
-Schema.voices.Add("Combine", "CODE 7", "Code seven.", "npc/metropolice/vo/code7.wav")
-Schema.voices.Add("Combine", "CONDEMNED", "Condemned zone!", "npc/metropolice/vo/condemnedzone.wav")
-Schema.voices.Add("Combine", "CONTACT 243", "Contact with 243 suspect, my 10-20 is...", "npc/metropolice/vo/contactwith243suspect.wav")
-Schema.voices.Add("Combine", "CONTACT PRIORITY", "I have contact with a priority two!", "npc/metropolice/vo/contactwithpriority2.wav")
-Schema.voices.Add("Combine", "CONTACT", "Contact!", "npc/combine_soldier/vo/contact.wav")
-Schema.voices.Add("Combine", "CONTAINED", "Contained.", "npc/combine_soldier/vo/contained.wav")
-Schema.voices.Add("Combine", "CONTROL 100", "Control is one-hundred percent this location, no sign of that 647-E.", "npc/metropolice/vo/control100percent.wav")
-Schema.voices.Add("Combine", "CONTROLSECTION", "Control-section!", "npc/metropolice/vo/controlsection.wav")
-Schema.voices.Add("Combine", "CONVERGING", "Converging.", "npc/metropolice/vo/converging.wav")
-Schema.voices.Add("Combine", "COPY THAT", "Copy that.", "npc/combine_soldier/vo/copythat.wav")
-Schema.voices.Add("Combine", "COPY", "Copy.", "npc/metropolice/vo/copy.wav")
-Schema.voices.Add("Combine", "COVER", "Cover!", "npc/combine_soldier/vo/coverhurt.wav")
-Schema.voices.Add("Combine", "CP COMPROMISED", "CP is compromised, re-establish!", "npc/metropolice/vo/cpiscompromised.wav")
-Schema.voices.Add("Combine", "CP ESTABLISH", "CP, we need to establish our perimeter at...", "npc/metropolice/vo/cpweneedtoestablishaperimeterat.wav")
-Schema.voices.Add("Combine", "CP OVERRUN", "CP is overrun, we have no containment!", "npc/metropolice/vo/cpisoverrunwehavenocontainment.wav")
-Schema.voices.Add("Combine", "DAGGER", "Dagger.", "npc/combine_soldier/vo/dagger.wav")
-Schema.voices.Add("Combine", "DASH", "Dash.", "npc/combine_soldier/vo/dash.wav")
-Schema.voices.Add("Combine", "DB COUNT", "DB count is...", "npc/metropolice/vo/dbcountis.wav")
-Schema.voices.Add("Combine", "DEFENDER", "Defender!", "npc/metropolice/vo/defender.wav")
-Schema.voices.Add("Combine", "DESERVICED AREA", "Deserviced area.", "npc/metropolice/vo/deservicedarea.wav")
-Schema.voices.Add("Combine", "DESIGNATE SUSPECT", "Designate suspect as...", "npc/metropolice/vo/designatesuspectas.wav")
-Schema.voices.Add("Combine", "DESTROY COVER", "Destroy that cover!", "npc/metropolice/vo/destroythatcover.wav")
-Schema.voices.Add("Combine", "DISLOCATE INTERPOSE", "Fire to dislocate that interpose!", "npc/metropolice/vo/firetodislocateinterpose.wav")
-Schema.voices.Add("Combine", "DISMOUNTING HARDPOINT", "Dismounting hardpoint.", "npc/metropolice/vo/dismountinghardpoint.wav")
-Schema.voices.Add("Combine", "DISP APB", "Disp updating APB likeness.", "npc/metropolice/vo/dispupdatingapb.wav")
-Schema.voices.Add("Combine", "DISTRIBUTION BLOCK", "Distribution block.", "npc/metropolice/vo/distributionblock.wav")
-Schema.voices.Add("Combine", "DOCUMENT", "Document.", "npc/metropolice/vo/document.wav")
-Schema.voices.Add("Combine", "DONT MOVE", "Don't move!", "npc/metropolice/vo/dontmove.wav")
-Schema.voices.Add("Combine", "ECHO", "Echo.", "npc/combine_soldier/vo/echo.wav")
-Schema.voices.Add("Combine", "ENGAGING", "Engaging!", "npc/combine_soldier/vo/engaging.wav")
-Schema.voices.Add("Combine", "ESTABLISH NEW CP", "Fall down, establish a new CP!", "npc/metropolice/vo/establishnewcp.wav")
-Schema.voices.Add("Combine", "EXPOSE TARGET", "Firing to expose target!", "npc/metropolice/vo/firingtoexposetarget.wav")
-Schema.voices.Add("Combine", "EXTERNAL", "External jurisdiction.", "npc/metropolice/vo/externaljurisdiction.wav")
-Schema.voices.Add("Combine", "FINAL VERDICT", "Final verdict administered.", "npc/metropolice/vo/finalverdictadministered.wav")
-Schema.voices.Add("Combine", "FINAL WARNING", "Final warning!", "npc/metropolice/vo/finalwarning.wav")
-Schema.voices.Add("Combine", "FIRST WARNING", "First warning, move away!", "npc/metropolice/vo/firstwarningmove.wav")
-Schema.voices.Add("Combine", "FIST", "Fist.", "npc/combine_soldier/vo/fist.wav")
-Schema.voices.Add("Combine", "FLASH", "Flash.", "npc/combine_soldier/vo/flash.wav")
-Schema.voices.Add("Combine", "FLATLINE", "Flatline.", "npc/combine_soldier/vo/flatline.wav")
-Schema.voices.Add("Combine", "FLUSH", "Flush.", "npc/combine_soldier/vo/flush.wav")
-Schema.voices.Add("Combine", "FREE NECROTICS", "I have free necrotics!", "npc/metropolice/vo/freenecrotics.wav")
-Schema.voices.Add("Combine", "GET DOWN", "Get down!", "npc/metropolice/vo/getdown.wav")
-Schema.voices.Add("Combine", "GET OUT", "Get out of here!", "npc/metropolice/vo/getoutofhere.wav")
-Schema.voices.Add("Combine", "GETTING 647E", "Still getting that 647-E from local surveillance.", "npc/metropolice/vo/stillgetting647e.wav")
-Schema.voices.Add("Combine", "GHOST", "Ghost.", "npc/combine_soldier/vo/ghost.wav")
-Schema.voices.Add("Combine", "GO AGAIN", "PT, go again.", "npc/metropolice/vo/ptgoagain.wav")
-Schema.voices.Add("Combine", "GO SHARP", "Go sharp!", "npc/combine_soldier/vo/gosharp.wav")
-Schema.voices.Add("Combine", "GOING IN", "Cover me, I'm going in!", "npc/metropolice/vo/covermegoingin.wav")
-Schema.voices.Add("Combine", "GOT A DB", "Uh, we got a DB here, cancel that 11-42.", "npc/metropolice/vo/wegotadbherecancel10-102.wav")
-Schema.voices.Add("Combine", "GOT HIM AGAIN", "Got him again, suspect is 10-20 at...", "npc/metropolice/vo/gothimagainsuspect10-20at.wav")
-Schema.voices.Add("Combine", "GOT ONE ACCOMPLICE", "I got one accomplice here!", "npc/metropolice/vo/gotoneaccomplicehere.wav")
-Schema.voices.Add("Combine", "GOT SUSPECT ONE", "I got suspect one here!", "npc/metropolice/vo/gotsuspect1here.wav")
-Schema.voices.Add("Combine", "GRENADE", "Grenade!", "npc/metropolice/vo/grenade.wav")
-Schema.voices.Add("Combine", "GRID", "Grid.", "npc/combine_soldier/vo/grid.wav")
-Schema.voices.Add("Combine", "HAHA", "Haha.", "npc/metropolice/vo/chuckle.wav")
-Schema.voices.Add("Combine", "HAMMER", "Hammer.", "npc/combine_soldier/vo/hammer.wav")
-Schema.voices.Add("Combine", "HARDPOINT PROSECUTE", "Is at hardpoint, ready to prosecute!", "npc/metropolice/vo/isathardpointreadytoprosecute.wav")
-Schema.voices.Add("Combine", "HARDPOINT SCANNING", "Hardpoint scanning.", "npc/metropolice/vo/hardpointscanning.wav")
-Schema.voices.Add("Combine", "HELIX", "Helix.", "npc/combine_soldier/vo/helix.wav")
-Schema.voices.Add("Combine", "HELP", "Help!", "npc/metropolice/vo/help.wav")
-Schema.voices.Add("Combine", "HERO", "Hero!", "npc/metropolice/vo/hero.wav")
-Schema.voices.Add("Combine", "HES 148", "He's gone 148!", "npc/metropolice/vo/hesgone148.wav")
-Schema.voices.Add("Combine", "HIGH PRIORITY", "High-priority region.", "npc/metropolice/vo/highpriorityregion.wav")
-Schema.voices.Add("Combine", "HOLD IT", "Hold it right there!", "npc/metropolice/vo/holditrightthere.wav")
-Schema.voices.Add("Combine", "HOLD POSITION", "Protection-team, hold this position.", "npc/metropolice/vo/holdthisposition.wav")
-Schema.voices.Add("Combine", "HOLD", "Hold it!", "npc/metropolice/vo/holdit.wav")
-Schema.voices.Add("Combine", "HUNTER", "Hunter.", "npc/combine_soldier/vo/hunter.wav")
-Schema.voices.Add("Combine", "HURRICANE", "Hurricane.", "npc/combine_soldier/vo/hurricane.wav")
-Schema.voices.Add("Combine", "I SAID MOVE", "I said move along.", "npc/metropolice/vo/Isaidmovealong.wav")
-Schema.voices.Add("Combine", "ICE", "Ice.", "npc/combine_soldier/vo/ice.wav")
-Schema.voices.Add("Combine", "IN POSITION", "In position.", "npc/metropolice/vo/inposition.wav")
-Schema.voices.Add("Combine", "INBOUND", "Inbound.", "npc/combine_soldier/vo/inbound.wav")
-Schema.voices.Add("Combine", "INFECTED", "Infected.", "npc/combine_soldier/vo/infected.wav")
-Schema.voices.Add("Combine", "INFECTION", "Infection!", "npc/metropolice/vo/infection.wav")
-Schema.voices.Add("Combine", "INFESTED", "Infested zone.", "npc/metropolice/vo/infestedzone.wav")
-Schema.voices.Add("Combine", "INJECT", "Inject!", "npc/metropolice/vo/inject.wav")
-Schema.voices.Add("Combine", "INOCULATE", "Inoculate.", "npc/metropolice/vo/innoculate.wav")
-Schema.voices.Add("Combine", "INTERCEDE", "Intercede!", "npc/metropolice/vo/intercede.wav")
-Schema.voices.Add("Combine", "INTERLOCK", "Interlock!", "npc/metropolice/vo/interlock.wav")
-Schema.voices.Add("Combine", "INVESTIGATE", "Investigate.", "npc/metropolice/vo/investigate.wav")
-Schema.voices.Add("Combine", "INVESTIGATING", "Investigating 10-103.", "npc/metropolice/vo/investigating10-103.wav")
-Schema.voices.Add("Combine", "ION", "Ion.", "npc/combine_soldier/vo/ion.wav")
-Schema.voices.Add("Combine", "IS 10-108", "Is 10-108!", "npc/metropolice/vo/is10-108.wav")
-Schema.voices.Add("Combine", "IS 10-8", "Unit is 10-8, standing by.", "npc/metropolice/vo/unitis10-8standingby.wav")
-Schema.voices.Add("Combine", "IS CLOSING", "Is closing on suspect!", "npc/metropolice/vo/isclosingonsuspect.wav")
-Schema.voices.Add("Combine", "IS DOWN", "Is down!", "npc/metropolice/vo/isdown.wav")
-Schema.voices.Add("Combine", "IS INBOUND", "Unit is inbound.", "npc/combine_soldier/vo/unitisinbound.wav")
-Schema.voices.Add("Combine", "IS MOVING IN", "Unit is moving in.", "npc/combine_soldier/vo/unitismovingin.wav")
-Schema.voices.Add("Combine", "IS MOVING", "Is moving in!", "npc/metropolice/vo/ismovingin.wav")
-Schema.voices.Add("Combine", "IS PASSIVE", "Is passive.", "npc/metropolice/vo/ispassive.wav")
-Schema.voices.Add("Combine", "IS READY TO GO", "Is ready to go!", "npc/metropolice/vo/isreadytogo.wav")
-Schema.voices.Add("Combine", "ISOLATE", "Isolate!", "npc/metropolice/vo/isolate.wav")
-Schema.voices.Add("Combine", "JET", "Jet.", "npc/combine_soldier/vo/jet.wav")
-Schema.voices.Add("Combine", "JUDGE", "Judge.", "npc/combine_soldier/vo/judge.wav")
-Schema.voices.Add("Combine", "JUDGMENT", "Suspect, prepare to receive civil judgment!", "npc/metropolice/vo/prepareforjudgement.wav")
-Schema.voices.Add("Combine", "JURISDICTION", "Stabilization-jurisdiction.", "npc/metropolice/vo/stabilizationjurisdiction.wav")
-Schema.voices.Add("Combine", "JURY", "Jury!", "npc/metropolice/vo/jury.wav")
-Schema.voices.Add("Combine", "KEEP MOVING", "Keep moving!", "npc/metropolice/vo/keepmoving.wav")
-Schema.voices.Add("Combine", "KILO", "Kilo.", "npc/combine_soldier/vo/kilo.wav")
-Schema.voices.Add("Combine", "KING", "King!", "npc/metropolice/vo/king.wav")
-Schema.voices.Add("Combine", "LAST SEEN AT", "Hiding, last seen at range...", "npc/metropolice/vo/hidinglastseenatrange.wav")
-Schema.voices.Add("Combine", "LEADER", "Leader.", "npc/combine_soldier/vo/leader.wav")
-Schema.voices.Add("Combine", "LEVEL 3", "I have a level three civil-privacy violator here!", "npc/metropolice/vo/level3civilprivacyviolator.wav")
-Schema.voices.Add("Combine", "LINE", "Line!", "npc/metropolice/vo/line.wav")
-Schema.voices.Add("Combine", "LOCATION", "Location?", "npc/metropolice/vo/location.wav")
-Schema.voices.Add("Combine", "LOCK POSITION", "All units, lock your position!", "npc/metropolice/vo/lockyourposition.wav")
-Schema.voices.Add("Combine", "LOCK", "Lock!", "npc/metropolice/vo/lock.wav")
-Schema.voices.Add("Combine", "LOOK OUT", "Look out!", "npc/metropolice/vo/lookout.wav")
-Schema.voices.Add("Combine", "LOOSE PARASITICS", "Loose parasitics!", "npc/metropolice/vo/looseparasitics.wav")
-Schema.voices.Add("Combine", "LOST CONTACT", "Lost contact!", "npc/combine_soldier/vo/lostcontact.wav")
-Schema.voices.Add("Combine", "LOW ON", "Running low on verdicts, taking cover!", "npc/metropolice/vo/runninglowonverdicts.wav")
-Schema.voices.Add("Combine", "MACE", "Mace.", "npc/combine_soldier/vo/mace.wav")
-Schema.voices.Add("Combine", "MAINTAIN CP", "All units, maintain this CP!", "npc/metropolice/vo/allunitsmaintainthiscp.wav")
-Schema.voices.Add("Combine", "MALCOMPLIANCE", "Issuing malcompliance citation.", "npc/metropolice/vo/issuingmalcompliantcitation.wav")
-Schema.voices.Add("Combine", "MALCOMPLIANT 10-107", "Malcompliant 10-107 at my 10-20, preparing to prosecute.", "npc/metropolice/vo/malcompliant10107my1020.wav")
-Schema.voices.Add("Combine", "MALIGNANT", "Malignant!", "npc/metropolice/vo/malignant.wav")
-Schema.voices.Add("Combine", "MATCH ON APB", "I have a match on APB likeness.", "npc/metropolice/vo/matchonapblikeness.wav")
-Schema.voices.Add("Combine", "MINOR HITS", "Minor hits, continuing prosecution!", "npc/metropolice/vo/minorhitscontinuing.wav")
-Schema.voices.Add("Combine", "MOVE ALONG", "Move along!", "npc/metropolice/vo/movealong.wav")
-Schema.voices.Add("Combine", "MOVE BACK", "Move back, right now!", "npc/metropolice/vo/movebackrightnow.wav")
-Schema.voices.Add("Combine", "MOVE IN", "Move in!", "npc/combine_soldier/vo/movein.wav")
-Schema.voices.Add("Combine", "MOVE IT", "Move it!", "npc/metropolice/vo/moveit.wav")
-Schema.voices.Add("Combine", "MOVE", "Move!", "npc/metropolice/vo/move.wav")
-Schema.voices.Add("Combine", "MOVING TO COVER", "Moving to cover!", "npc/metropolice/vo/movingtocover.wav")
-Schema.voices.Add("Combine", "MOVING TO HARDPOINT", "Moving to hardpoint!", "npc/metropolice/vo/movingtohardpoint.wav")
-Schema.voices.Add("Combine", "NECROTICS", "Necrotics!", "npc/metropolice/vo/necrotics.wav")
-Schema.voices.Add("Combine", "NEED ANY HELP", "Need any help with this one?", "npc/metropolice/vo/needanyhelpwiththisone.wav")
-Schema.voices.Add("Combine", "NEEDS ASSISTANCE", "Officer needs assistance, I am 11-99!", "npc/metropolice/vo/officerneedsassistance.wav")
-Schema.voices.Add("Combine", "NEEDS HELP", "Officer needs help!", "npc/metropolice/vo/officerneedshelp.wav")
-Schema.voices.Add("Combine", "NO 647", "Clear, no 647, no 10-107.", "npc/metropolice/vo/clearno647no10-107.wav")
-Schema.voices.Add("Combine", "NO CONTACT", "No contact!", "npc/metropolice/vo/nocontact.wav")
-Schema.voices.Add("Combine", "NO I'M GOOD", "No, I'm good.", "vo/trainyard/ba_noimgood.wav")
-Schema.voices.Add("Combine", "NO VISUAL ON", "No visual on UPI at this time.", "npc/metropolice/vo/novisualonupi.wav")
-Schema.voices.Add("Combine", "NOMAD", "Nomad.", "npc/combine_soldier/vo/nomad.wav")
-Schema.voices.Add("Combine", "NONCITIZEN", "Noncitizen.", "npc/metropolice/vo/noncitizen.wav")
-Schema.voices.Add("Combine", "NONPATROL", "Non-patrol region.", "npc/metropolice/vo/nonpatrolregion.wav")
-Schema.voices.Add("Combine", "NONTAGGED VIROMES", "Non-tagged viromes here!", "npc/metropolice/vo/non-taggedviromeshere.wav")
-Schema.voices.Add("Combine", "NOVA", "Nova.", "npc/combine_soldier/vo/nova.wav")
-Schema.voices.Add("Combine", "NOW GET OUT", "Now, get out of here!", "npc/metropolice/vo/nowgetoutofhere.wav")
-Schema.voices.Add("Combine", "NOW", "Now.", "vo/trainyard/ba_thatbeer01.wav")
-Schema.voices.Add("Combine", "OUTBREAK", "Outbreak!", "npc/combine_soldier/vo/outbreak.wav")
-Schema.voices.Add("Combine", "OUTBREAK", "Outbreak!", "npc/metropolice/vo/outbreak.wav")
-Schema.voices.Add("Combine", "OVERWATCH", "Overwatch.", "npc/combine_soldier/vo/overwatch.wav")
-Schema.voices.Add("Combine", "PACIFYING", "Pacifying!", "npc/metropolice/vo/pacifying.wav")
-Schema.voices.Add("Combine", "PAIN1", "Ugh!", "npc/metropolice/pain1.wav")
-Schema.voices.Add("Combine", "PAIN2", "Uagh!", "npc/metropolice/pain2.wav")
-Schema.voices.Add("Combine", "PAIN3", "Augh!", "npc/metropolice/pain3.wav")
-Schema.voices.Add("Combine", "PAIN4", "Agh!", "npc/metropolice/pain4.wav")
-Schema.voices.Add("Combine", "PATROL", "Patrol!", "npc/metropolice/vo/patrol.wav")
-Schema.voices.Add("Combine", "PAYBACK", "Payback.", "npc/combine_soldier/vo/payback.wav")
-Schema.voices.Add("Combine", "PHANTOM", "Phantom.", "npc/combine_soldier/vo/phantom.wav")
-Schema.voices.Add("Combine", "PICKUP 647E", "Anyone else pick up a, uh... 647-E reading?", "npc/metropolice/vo/anyonepickup647e.wav")
-Schema.voices.Add("Combine", "POSITION AT HARDPOINT", "In position at hardpoint.", "npc/metropolice/vo/inpositionathardpoint.wav")
-Schema.voices.Add("Combine", "POSITION TO CONTAIN", "Position to contain.", "npc/metropolice/vo/positiontocontain.wav")
-Schema.voices.Add("Combine", "POSSIBLE 404", "Possible 404 here!", "npc/metropolice/vo/possible404here.wav")
-Schema.voices.Add("Combine", "POSSIBLE 647E", "Possible 647-E here, request AirWatch tag.", "npc/metropolice/vo/possible647erequestairwatch.wav")
-Schema.voices.Add("Combine", "POSSIBLE ACCOMPLICE", "Report sightings of possible accomplice.", "npc/metropolice/vo/reportsightingsaccomplices.wav")
-Schema.voices.Add("Combine", "POSSIBLE LEVEL 3", "Possible level three civil-privacy violator here!", "npc/metropolice/vo/possiblelevel3civilprivacyviolator.wav")
-Schema.voices.Add("Combine", "PREPARING TO JUDGE", "Preparing to judge a 10-107, be advised.", "npc/metropolice/vo/preparingtojudge10-107.wav")
-Schema.voices.Add("Combine", "PRESERVE", "Preserve!", "npc/metropolice/vo/preserve.wav")
-Schema.voices.Add("Combine", "PRESSURE", "Pressure!", "npc/metropolice/vo/pressure.wav")
-Schema.voices.Add("Combine", "PRIORITY 1", "Confirm, priority-one sighted.", "npc/metropolice/vo/confirmpriority1sighted.wav")
-Schema.voices.Add("Combine", "PRIORITY 2", "I have a priority-two anti-citizen here!", "npc/metropolice/vo/priority2anticitizenhere.wav")
-Schema.voices.Add("Combine", "PRODUCTION BLOCK", "Production-block.", "npc/metropolice/vo/productionblock.wav")
-Schema.voices.Add("Combine", "PROSECUTE MALCOMPLIANT", "Ready to prosecute malcompliant citizen, final warning issued!", "npc/metropolice/vo/readytoprosecutefinalwarning.wav")
-Schema.voices.Add("Combine", "PROSECUTE", "Prosecute!", "npc/metropolice/vo/prosecute.wav")
-Schema.voices.Add("Combine", "PROSECUTING", "Prosecuting.", "npc/combine_soldier/vo/prosecuting.wav")
-Schema.voices.Add("Combine", "PROTECTION COMPLETE", "Protection complete.", "npc/metropolice/vo/protectioncomplete.wav")
-Schema.voices.Add("Combine", "QUICK", "Quick!", "npc/metropolice/vo/quick.wav")
-Schema.voices.Add("Combine", "QUICKSAND", "Quicksand.", "npc/combine_soldier/vo/quicksand.wav")
-Schema.voices.Add("Combine", "RANGE", "Range.", "npc/combine_soldier/vo/range.wav")
-Schema.voices.Add("Combine", "RANGER", "Ranger.", "npc/combine_soldier/vo/ranger.wav")
-Schema.voices.Add("Combine", "RAZOR", "Razor.", "npc/combine_soldier/vo/razor.wav")
-Schema.voices.Add("Combine", "READY AMPUTATE", "Ready to amputate!", "npc/metropolice/vo/readytoamputate.wav")
-Schema.voices.Add("Combine", "READY CHARGES", "Ready charges!", "npc/combine_soldier/vo/readycharges.wav")
-Schema.voices.Add("Combine", "READY JUDGE", "Ready to judge.", "npc/metropolice/vo/readytojudge.wav")
-Schema.voices.Add("Combine", "READY PROSECUTE", "Ready to prosecute!", "npc/metropolice/vo/readytoprosecute.wav")
-Schema.voices.Add("Combine", "READY WEAPONS", "Ready weapons!", "npc/combine_soldier/vo/readyweapons.wav")
-Schema.voices.Add("Combine", "REAPER", "Reaper.", "npc/combine_soldier/vo/reaper.wav")
-Schema.voices.Add("Combine", "REINFORCEMENT TEAMS", "Reinforcement-teams, code three!", "npc/metropolice/vo/reinforcementteamscode3.wav")
-Schema.voices.Add("Combine", "REPORT CLEAR", "Reporting clear.", "npc/combine_soldier/vo/reportingclear.wav")
-Schema.voices.Add("Combine", "REPORT IN", "CP requests all units, uhh... Location report-in.", "npc/metropolice/vo/cprequestsallunitsreportin.wav")
-Schema.voices.Add("Combine", "REPORT LOCATION", "All units, report location suspect!", "npc/metropolice/vo/allunitsreportlocationsuspect.wav")
-Schema.voices.Add("Combine", "REPORT STATUS", "Local CP-teams, report status.", "npc/metropolice/vo/localcptreportstatus.wav")
-Schema.voices.Add("Combine", "REPURPOSED", "Repurposed area.", "npc/metropolice/vo/repurposedarea.wav")
-Schema.voices.Add("Combine", "RESIDENTIAL BLOCK", "Residential block.", "npc/metropolice/vo/residentialblock.wav")
-Schema.voices.Add("Combine", "RESPOND CODE 3", "All units at location, responding code three!", "npc/metropolice/vo/allunitsrespondcode3.wav")
-Schema.voices.Add("Combine", "RESPONDING", "Responding.", "npc/metropolice/vo/responding2.wav")
-Schema.voices.Add("Combine", "RESTRICT", "Restrict!", "npc/metropolice/vo/restrict.wav")
-Schema.voices.Add("Combine", "RESTRICTED", "Restricted block.", "npc/metropolice/vo/restrictedblock.wav")
-Schema.voices.Add("Combine", "RESTRICTION ZONE", "Terminal restriction-zone!", "npc/metropolice/vo/terminalrestrictionzone.wav")
-Schema.voices.Add("Combine", "RIPCORD", "Ripcord!", "npc/combine_soldier/vo/ripcord.wav")
-Schema.voices.Add("Combine", "RODGER THAT", "Rodger that!", "npc/metropolice/vo/rodgerthat.wav")
-Schema.voices.Add("Combine", "ROLLER", "Roller!", "npc/metropolice/vo/roller.wav")
-Schema.voices.Add("Combine", "RUNNING", "He's running!", "npc/metropolice/vo/hesrunning.wav")
-Schema.voices.Add("Combine", "SACRIFICE CODE", "All units, sacrifice code one and maintain this CP!", "npc/metropolice/vo/sacrificecode1maintaincp.wav")
-Schema.voices.Add("Combine", "SAVAGE", "Savage.", "npc/combine_soldier/vo/savage.wav")
-Schema.voices.Add("Combine", "SCAR", "Scar.", "npc/combine_soldier/vo/scar.wav")
-Schema.voices.Add("Combine", "SEARCH", "Search!", "npc/metropolice/vo/search.wav")
-Schema.voices.Add("Combine", "SEARCHING FOR SUSPECT", "Searching for suspect.", "npc/metropolice/vo/searchingforsuspect.wav")
-Schema.voices.Add("Combine", "SECOND WARNING", "This is your second warning!", "npc/metropolice/vo/thisisyoursecondwarning.wav")
-Schema.voices.Add("Combine", "SECTOR NOT STERILE", "Confirmed- sector not sterile.", "npc/combine_soldier/vo/confirmsectornotsterile.wav")
-Schema.voices.Add("Combine", "SECTOR NOT SECURE", "Sector is not secure.", "npc/combine_soldier/vo/sectorisnotsecure.wav")
-Schema.voices.Add("Combine", "SECURE ADVANCE", "Assault-point secured, advance!", "npc/metropolice/vo/assaultpointsecureadvance.wav")
-Schema.voices.Add("Combine", "SECURE", "Secure.", "npc/combine_soldier/vo/secure.wav")
-Schema.voices.Add("Combine", "SENTENCE", "Sentence delivered.", "npc/metropolice/vo/sentencedelivered.wav")
-Schema.voices.Add("Combine", "SERVE", "Serve.", "npc/metropolice/vo/serve.wav")
-Schema.voices.Add("Combine", "SHADOW", "Shadow.", "npc/combine_soldier/vo/shadow.wav")
-Schema.voices.Add("Combine", "SHARPZONE", "Sharpzone.", "npc/combine_soldier/vo/sharpzone.wav")
-Schema.voices.Add("Combine", "SHIT", "Shit!", "npc/metropolice/vo/shit.wav")
-Schema.voices.Add("Combine", "SHOTS FIRED", "Shots fired, hostile malignants here!", "npc/metropolice/vo/shotsfiredhostilemalignants.wav")
-Schema.voices.Add("Combine", "SLAM", "Slam.", "npc/combine_soldier/vo/slam.wav")
-Schema.voices.Add("Combine", "SLASH", "Slash.", "npc/combine_soldier/vo/slash.wav")
-Schema.voices.Add("Combine", "SOCIOCIDE", "Sociocide.", "npc/metropolice/vo/sociocide.wav")
-Schema.voices.Add("Combine", "SOCIOSTABLE", "We are socio-stable at this location.", "npc/metropolice/vo/wearesociostablethislocation.wav")
-Schema.voices.Add("Combine", "SPEAR", "Spear.", "npc/combine_soldier/vo/spear.wav")
-Schema.voices.Add("Combine", "STAB", "Stab.", "npc/combine_soldier/vo/stab.wav")
-Schema.voices.Add("Combine", "STANDING BY", "Standing by.", "npc/combine_soldier/vo/standingby].wav")
-Schema.voices.Add("Combine", "STAR", "Star.", "npc/combine_soldier/vo/star.wav")
-Schema.voices.Add("Combine", "STATIONBLOCK", "Stationblock.", "npc/metropolice/vo/stationblock.wav")
-Schema.voices.Add("Combine", "STAY ALERT", "Stay alert.", "npc/combine_soldier/vo/stayalert.wav")
-Schema.voices.Add("Combine", "STERILIZE", "Sterilize!", "npc/metropolice/vo/sterilize.wav")
-Schema.voices.Add("Combine", "STINGER", "Stinger.", "npc/combine_soldier/vo/stinger.wav")
-Schema.voices.Add("Combine", "STORM", "Storm.", "npc/combine_soldier/vo/storm.wav")
-Schema.voices.Add("Combine", "STRIKE", "Striker.", "npc/combine_soldier/vo/striker.wav")
-Schema.voices.Add("Combine", "SUBJECT 505", "Subject is 505!", "npc/metropolice/vo/subjectis505.wav")
-Schema.voices.Add("Combine", "SUBJECT HIGH SPEED", "All units, be advised, subject is now high-speed!", "npc/metropolice/vo/subjectisnowhighspeed.wav")
-Schema.voices.Add("Combine", "SUBJECT", "Subject!", "npc/metropolice/vo/subject.wav")
-Schema.voices.Add("Combine", "SUNDOWN", "Sundown.", "npc/combine_soldier/vo/sundown.wav")
-Schema.voices.Add("Combine", "SUSPECT INCURSION", "Disp reports suspect-incursion at location.", "npc/metropolice/vo/dispreportssuspectincursion.wav")
-Schema.voices.Add("Combine", "SUSPECT MOVED TO", "Suspect has moved now to...", "npc/metropolice/vo/supsecthasmovednowto.wav")
-Schema.voices.Add("Combine", "SUSPECT RESTRICTED CANALS", "Suspect is using restricted canals at...", "npc/metropolice/vo/suspectusingrestrictedcanals.wav")
-Schema.voices.Add("Combine", "SUSPEND", "Suspend!", "npc/metropolice/vo/suspend.wav")
-Schema.voices.Add("Combine", "SWEEPER", "Sweeper.", "npc/combine_soldier/vo/sweeper.wav")
-Schema.voices.Add("Combine", "SWEEPING IN", "Sweeping in!", "npc/combine_soldier/vo/sweepingin.wav")
-Schema.voices.Add("Combine", "SWEEPING SUSPECT", "Sweeping for suspect!", "npc/metropolice/vo/sweepingforsuspect.wav")
-Schema.voices.Add("Combine", "SWIFT", "Swift.", "npc/combine_soldier/vo/swift.wav")
-Schema.voices.Add("Combine", "SWORD", "Sword.", "npc/combine_soldier/vo/sword.wav")
-Schema.voices.Add("Combine", "TAG 10-91D", "Tag 10-91d!", "npc/metropolice/vo/tag10-91d.wav")
-Schema.voices.Add("Combine", "TAG BUG", "Tag one bug!", "npc/metropolice/vo/tagonebug.wav")
-Schema.voices.Add("Combine", "TAG NECROTIC", "Tag one necrotic!", "npc/metropolice/vo/tagonenecrotic.wav")
-Schema.voices.Add("Combine", "TAG PARASITIC", "Tag one parasitic!", "npc/metropolice/vo/tagoneparasitic.wav")
-Schema.voices.Add("Combine", "TAKE A LOOK", "Going to take a look!", "npc/metropolice/vo/goingtotakealook.wav")
-Schema.voices.Add("Combine", "TAKE COVER", "Take cover!", "npc/metropolice/vo/takecover.wav")
-Schema.voices.Add("Combine", "TAP", "Tap!", "npc/metropolice/vo/tap.wav")
-Schema.voices.Add("Combine", "TARGET", "Target.", "npc/combine_soldier/vo/target.wav")
-Schema.voices.Add("Combine", "TEAM ADVANCE", "Team in position, advance!", "npc/metropolice/vo/teaminpositionadvance.wav")
-Schema.voices.Add("Combine", "TEAM HOLDING", "Stabilization team holding in position.", "npc/combine_soldier/vo/stabilizationteamholding.wav")
-Schema.voices.Add("Combine", "THERE HE GOES", "There he goes! He's at...", "npc/metropolice/vo/therehegoeshesat.wav")
-Schema.voices.Add("Combine", "THERE HE IS", "There he is!", "npc/metropolice/vo/thereheis.wav")
-Schema.voices.Add("Combine", "TRACKER", "Tracker.", "npc/combine_soldier/vo/tracker.wav")
-Schema.voices.Add("Combine", "TRANSITBLOCK", "Transit-block.", "npc/metropolice/vo/transitblock.wav")
-Schema.voices.Add("Combine", "TROUBLE", "Lookin' for trouble?", "npc/metropolice/vo/lookingfortrouble.wav")
-Schema.voices.Add("Combine", "UNDER FIRE", "Officer under fire, taking cover!", "npc/metropolice/vo/officerunderfiretakingcover.wav")
-Schema.voices.Add("Combine", "UNIFORM", "Uniform.", "npc/combine_soldier/vo/uniform.wav")
-Schema.voices.Add("Combine", "UNION", "Union!", "npc/metropolice/vo/union.wav")
-Schema.voices.Add("Combine", "UNKNOWN", "Suspect location unknown.", "npc/metropolice/vo/suspectlocationunknown.wav")
-Schema.voices.Add("Combine", "UP THERE", "He's up there!", "npc/metropolice/vo/hesupthere.wav")
-Schema.voices.Add("Combine", "UPI", "UPI.", "npc/metropolice/vo/upi.wav")
-Schema.voices.Add("Combine", "UTL SUSPECT", "UTL that suspect.", "npc/metropolice/vo/utlthatsuspect.wav")
-Schema.voices.Add("Combine", "UTL", "UTL suspect.", "npc/metropolice/vo/utlsuspect.wav")
-Schema.voices.Add("Combine", "VACATE", "Vacate, citizen!", "npc/metropolice/vo/vacatecitizen.wav")
-Schema.voices.Add("Combine", "VAMP", "Vamp.", "npc/combine_soldier/vo/vamp.wav")
-Schema.voices.Add("Combine", "VERDICT", "You want a malcompliance verdict?", "npc/metropolice/vo/youwantamalcomplianceverdict.wav")
-Schema.voices.Add("Combine", "VICE", "Vice!", "npc/metropolice/vo/vice.wav")
-Schema.voices.Add("Combine", "VICTOR", "Victor!", "npc/metropolice/vo/victor.wav")
-Schema.voices.Add("Combine", "VISCON", "Viscon.", "npc/combine_soldier/vo/viscon.wav")
-Schema.voices.Add("Combine", "VISUAL EXOGEN", "Visual on exogen.", "npc/combine_soldier/vo/visualonexogens.wav")
-Schema.voices.Add("Combine", "WARNING GIVEN", "Second warning given!", "npc/metropolice/vo/secondwarning.wav")
-Schema.voices.Add("Combine", "WASTERIVER", "Wasteriver.", "npc/metropolice/vo/wasteriver.wav")
-Schema.voices.Add("Combine", "WATCH IT", "Watch it!", "npc/metropolice/vo/watchit.wav")
-Schema.voices.Add("Combine", "WINDER", "Winder.", "npc/combine_soldier/vo/winder.wav")
-Schema.voices.Add("Combine", "WORKFORCE", "Workforce intake.", "npc/metropolice/vo/workforceintake.wav")
-Schema.voices.Add("Combine", "WRAP IT UP", "That's it, wrap it up.", "npc/combine_soldier/vo/thatsitwrapitup.wav")
-Schema.voices.Add("Combine", "XRAY", "XRay!", "npc/metropolice/vo/xray.wav")
-Schema.voices.Add("Combine", "YELLOW", "Yellow!", "npc/metropolice/vo/yellow.wav")
-Schema.voices.Add("Combine", "YOU CAN GO", "Alright, you can go.", "npc/metropolice/vo/allrightyoucango.wav")
-Schema.voices.Add("Combine", "ZONE", "Zone!", "npc/metropolice/vo/zone.wav")
+Schema.voices.Add("Combine", "Needs help.", "Officer needs help!", "npc/metropolice/vo/officerneedshelp.wav");
+Schema.voices.Add("Combine", "Now get out.", "Now get out of here.", "npc/metropolice/vo/nowgetoutofhere.wav");
+Schema.voices.Add("Combine", "Patrol.", "Patrol.", "npc/metropolice/vo/patrol.wav");
+Schema.voices.Add("Combine", "Move it 2.", "Move it!", "npc/metropolice/vo/moveit.wav");
+Schema.voices.Add("Combine", "Move back.", "Move back, right now!", "npc/metropolice/vo/movebackrightnow.wav");
+Schema.voices.Add("Combine", "Move.", "Move.", "npc/metropolice/vo/move.wav");
+Schema.voices.Add("Combine", "Minor hits.", "Minor hits, continuing prosecution.", "npc/metropolice/vo/minorhitscontinuing.wav");
+Schema.voices.Add("Combine", "Look out.", "Look out!", "npc/metropolice/vo/lookout.wav");
+Schema.voices.Add("Combine", "Trouble.", "Lookin' for trouble?", "npc/metropolice/vo/lookingfortrouble.wav");
+Schema.voices.Add("Combine", "Lock your position.", "All units, lock your position.", "npc/metropolice/vo/lockyourposition.wav");
+Schema.voices.Add("Combine", "Location.", "Location?", "npc/metropolice/vo/location.wav");
+Schema.voices.Add("Combine", "Lock.", "Lock!", "npc/metropolice/vo/lock.wav");
+Schema.voices.Add("Combine", "King.", "King!", "npc/metropolice/vo/king.wav");
+Schema.voices.Add("Combine", "Keep moving.", "Keep moving.", "npc/metropolice/vo/keepmoving.wav");
+Schema.voices.Add("Combine", "Jury.", "Jury!", "npc/metropolice/vo/jury.wav");
+Schema.voices.Add("Combine", "Malcompliance.", "Issuing Malcompliance citation!", "npc/metropolice/vo/issuingmalcompliantcitation.wav");
+Schema.voices.Add("Combine", "Isolate.", "Isolate!", "npc/metropolice/vo/isolate.wav");
+Schema.voices.Add("Combine", "I said move along.", "I said move along!", "npc/metropolice/vo/isaidmovealong.wav");
+Schema.voices.Add("Combine", "Position 1 ready.", "Is in position one, ready.", "npc/metropolice/vo/inpositiononeready.wav");
+Schema.voices.Add("Combine", "Inject.", "Inject!", "npc/metropolice/vo/inject.wav");
+Schema.voices.Add("Combine", "Hold it.", "Hold it right there!", "npc/metropolice/vo/holditrightthere.wav");
+Schema.voices.Add("Combine", "Hold.", "Hold it!", "npc/metropolice/vo/holdit.wav");
+Schema.voices.Add("Combine", "Running.", "He's running!", "npc/metropolice/vo/hesrunning.wav");
+Schema.voices.Add("Combine", "Help.", "Help!", "npc/metropolice/vo/help.wav");
+Schema.voices.Add("Combine", "Suspect 1.", "I got suspect 1 here.", "npc/metropolice/vo/gotsuspect1here.wav");
+Schema.voices.Add("Combine", "Get out.", "Get out of here.", "npc/metropolice/vo/getoutofhere.wav");
+Schema.voices.Add("Combine", "Get down.", "Get down!", "npc/metropolice/vo/getdown.wav");
+Schema.voices.Add("Combine", "Don't move.", "Don't move!", "npc/metropolice/vo/dontmove.wav");
+Schema.voices.Add("Combine", "Destroy Cover.", "Destroy that cover!", "npc/metropolice/vo/destroythatcover.wav");
+Schema.voices.Add("Combine", "63.", "63, criminal trespass.", "npc/metropolice/vo/criminaltrespass63.wav");
+Schema.voices.Add("Combine", "Copy.", "Copy.", "npc/metropolice/vo/copy.wav");
+Schema.voices.Add("Combine", "Citizen.", "Citizen.", "npc/metropolice/vo/citizen.wav");
+Schema.voices.Add("Combine", "Haha.", "Haha.", "npc/metropolice/vo/chuckle.wav");
+Schema.voices.Add("Combine", "Apply.", "Apply.", "npc/metropolice/vo/apply.wav");
+Schema.voices.Add("Combine", "Anticitizen.", "Anti-Citizen.", "npc/metropolice/vo/anticitizen.wav");
+Schema.voices.Add("Combine", "Amputate.", "Amputate.", "npc/metropolice/vo/amputate.wav");
+Schema.voices.Add("Combine", "Units to code 3.", "All units at location, report to code 3.", "npc/metropolice/vo/allunitsrespondcode3.wav");
+Schema.voices.Add("Combine", "Units move in.", "All units at, move in.", "npc/metropolice/vo/allunitsmovein.wav");
+Schema.voices.Add("Combine", "Administer.", "Administer.", "npc/metropolice/vo/administer.wav");
+Schema.voices.Add("Combine", "Administer.", "Administer", "npc/combine_soldier/vo/administer.wav");
+Schema.voices.Add("Combine", "Affirmative.", "Affirmative", "npc/combine_soldier/vo/affirmative.wav");
+Schema.voices.Add("Combine", "Affirmative 2.", "Affirmative.", "npc/combine_soldier/vo/affirmative2.wav");
+Schema.voices.Add("Combine", "Affirmative got him.", "Affirmative, we got him now.", "npc/combine_soldier/vo/affirmativewegothimnow.wav");
+Schema.voices.Add("Combine", "Alert 1.", "Alert one.", "npc/combine_soldier/vo/alert1.wav");
+Schema.voices.Add("Combine", "Anticitizen 1.", "Anti-Citizen One.", "npc/combine_soldier/vo/anticitizenone.wav");
+Schema.voices.Add("Combine", "Antiseptic.", "Antiseptic.", "npc/combine_soldier/vo/antiseptic.wav");
+Schema.voices.Add("Combine", "Apex.", "Apex.", "npc/combine_soldier/vo/apex.wav");
+Schema.voices.Add("Combine", "Bearing.", "Bearing.", "npc/combine_soldier/vo/bearing.wav");
+Schema.voices.Add("Combine", "Blade.", "Blade.", "npc/combine_soldier/vo/blade.wav");
+Schema.voices.Add("Combine", "Block 31 Mace.", "Block 31 Mace.", "npc/combine_soldier/vo/block31mace.wav");
+Schema.voices.Add("Combine", "Block 64 Jet.", "Block 64 Jet.", "npc/combine_soldier/vo/block64jet.wav");
+Schema.voices.Add("Combine", "Bodypack holding.", "Bodypack holding.", "npc/combine_soldier/vo/bodypackholding.wav");
+Schema.voices.Add("Combine", "Boomer.", "Boomer.", "npc/combine_soldier/vo/boomer.wav");
+Schema.voices.Add("Combine", "Bouncer.", "Bouncer, Bouncer!", "npc/combine_soldier/vo/bouncerbouncer.wav");
+Schema.voices.Add("Combine", "Call contact Parasitics.", "Call Contact, parasitics!", "npc/combine_soldier/vo/callcontactparasitics.wav");
+Schema.voices.Add("Combine", "Contact Target 1.", "Call Contact, Suspect Target One.", "npc/combine_soldier/vo/callcontacttarget1.wav");
+Schema.voices.Add("Combine", "Call hotpoint.", "Call hotpoint.", "npc/combine_soldier/vo/callhotpoint.wav");
+Schema.voices.Add("Combine", "Cleaned.", "Cleaned.", "npc/combine_soldier/vo/cleaned.wav");
+Schema.voices.Add("Combine", "Closing.", "Closing.", "npc/combine_soldier/vo/closing.wav");
+Schema.voices.Add("Combine", "Sector not sterile.", "Confirm, sector not Sterile", "npc/combine_soldier/vo/confirmsectornotsterile.wav");
+Schema.voices.Add("Combine", "Contact.", "Contact.", "npc/combine_soldier/vo/contact.wav");
+Schema.voices.Add("Combine", "Contact confirm.", "Contact confirm.", "npc/combine_soldier/vo/contactconfim.wav");
+Schema.voices.Add("Combine", "Contact confirm prosecuting.", "Contact Confirm, prosecuting!", "npc/combine_soldier/vo/contactconfirmprosecuting.wav");
+Schema.voices.Add("Combine", "Contained.", "Contained.", "npc/combine_soldier/vo/contained.wav");
+Schema.voices.Add("Combine", "Containment proceeding.", "Containment proceeding.", "npc/combine_soldier/vo/containmentproceeding.wav");
+Schema.voices.Add("Combine", "Copy.", "Copy.", "npc/combine_soldier/vo/copy.wav");
+Schema.voices.Add("Combine", "Copy that..", "Copy that.", "npc/combine_soldier/vo/copythat.wav");
+Schema.voices.Add("Combine", "Covering.", "Covering.", "npc/combine_soldier/vo/cover.wav");
+Schema.voices.Add("Combine", "Cover.", "Cover!", "npc/combine_soldier/vo/coverhurt.wav");
+Schema.voices.Add("Combine", "Cover me.", "Cover me.", "npc/combine_soldier/vo/coverme.wav");
+Schema.voices.Add("Combine", "Dagger.", "Dagger.", "npc/combine_soldier/vo/dagger.wav");
+Schema.voices.Add("Combine", "Dash.", "Dash!", "npc/combine_soldier/vo/dash.wav");
+Schema.voices.Add("Combine", "Degrees.", "Degrees.", "npc/combine_soldier/vo/degrees.wav");
+Schema.voices.Add("Combine", "Designate target.", "Designate target as.", "npc/combine_soldier/vo/designatetargetas.wav");
+Schema.voices.Add("Combine", "Displace.", "Displace.", "npc/combine_soldier/vo/displace.wav");
+Schema.voices.Add("Combine", "Displace2.", "Displace!", "npc/combine_soldier/vo/displace2.wav");
+Schema.voices.Add("Combine", "Echo.", "Echo.", "npc/combine_soldier/vo/echo.wav");
+Schema.voices.Add("Combine", "8.", "Eight.", "npc/combine_soldier/vo/eight.wav");
+Schema.voices.Add("Combine", "18.", "Eighteen.", "npc/combine_soldier/vo/eighteen.wav");
+Schema.voices.Add("Combine", "11.", "Eleven.", "npc/combine_soldier/vo/eleven.wav");
+Schema.voices.Add("Combine", "Engaged cleanup.", "Engaged in cleanup.", "npc/combine_soldier/vo/engagedincleanup.wav");
+Schema.voices.Add("Combine", "Engaging.", "Engaging.", "npc/combine_soldier/vo/engaging.wav");
+Schema.voices.Add("Combine", "Executing response.", "Executing full response.", "npc/combine_soldier/vo/executingfullresponse.wav");
+Schema.voices.Add("Combine", "Extractor away.", "Extractor away!", "npc/combine_soldier/vo/extractoraway.wav");
+Schema.voices.Add("Combine", "Extractor live.", "Extractor is live!", "npc/combine_soldier/vo/extractorislive.wav");
+Schema.voices.Add("Combine", "15.", "Fifteen.", "npc/combine_soldier/vo/fifteen.wav");
+Schema.voices.Add("Combine", "50.", "Fifty.", "npc/combine_soldier/vo/fifty.wav");
+Schema.voices.Add("Combine", "Fist.", "Fist.", "npc/combine_soldier/vo/fist.wav");
+Schema.voices.Add("Combine", "5.", "Five.", "npc/combine_soldier/vo/five.wav");
+Schema.voices.Add("Combine", "Fix sightlines move.", "Fix sightlines, move in.", "npc/combine_soldier/vo/fixsightlinesmovein.wav");
+Schema.voices.Add("Combine", "Flare down.", "Flare Down!", "npc/combine_soldier/vo/flaredown.wav");
+Schema.voices.Add("Combine", "Flash.", "Flash!", "npc/combine_soldier/vo/flash.wav");
+Schema.voices.Add("Combine", "Flatline.", "Flatline.", "npc/combine_soldier/vo/flatline.wav");
+Schema.voices.Add("Combine", "4.", "Four", "npc/combine_soldier/vo/four.wav");
+Schema.voices.Add("Combine", "14.", "Fourteen.", "npc/combine_soldier/vo/fourteen.wav");
+Schema.voices.Add("Combine", "40.", "Fourty.", "npc/combine_soldier/vo/fourty.wav");
+Schema.voices.Add("Combine", "Full active.", "Full active.", "npc/combine_soldier/vo/fullactive.wav");
+Schema.voices.Add("Combine", "Ghost.", "Ghost.", "npc/combine_soldier/vo/ghost.wav");
+Schema.voices.Add("Combine", "Go active intercept.", "Go active and intercept.", "npc/combine_soldier/vo/goactiveintercept.wav");
+Schema.voices.Add("Combine", "Go sharp.", "Go sharp!", "npc/combine_soldier/vo/gosharp.wav");
+Schema.voices.Add("Combine", "Go sharp2.", "Go sharp, go sharp!", "npc/combine_soldier/vo/gosharpgosharp.wav");
+Schema.voices.Add("Combine", "Grid.", "Grid", "npc/combine_soldier/vo/grid.wav");
+Schema.voices.Add("Combine", "Grid sundown 46..", "Grid sundown, four dash six.", "npc/combine_soldier/vo/gridsundown46.wav");
+Schema.voices.Add("Combine", "Hammer.", "Hammer.", "npc/combine_soldier/vo/hammer.wav");
+Schema.voices.Add("Combine", "Harden position.", "Harden that position.", "npc/combine_soldier/vo/hardenthatposition.wav");
+Schema.voices.Add("Combine", "Has negative movement.", "Has negative movement.", "npc/combine_soldier/vo/hasnegativemovement.wav");
+Schema.voices.Add("Combine", "Overwatch Heavy.", "Overwatch advise, we have heavy resistance!", "npc/combine_soldier/vo/heavyresistance.wav");
+Schema.voices.Add("Combine", "Helix.", "Helix.", "npc/combine_soldier/vo/helix.wav");
+Schema.voices.Add("Combine", "Hurricane.", "Hurricane.", "npc/combine_soldier/vo/hurricane.wav");
+Schema.voices.Add("Combine", "Ice.", "Ice.", "npc/combine_soldier/vo/ice.wav");
+Schema.voices.Add("Combine", "Inbound.", "Inbound.", "npc/combine_soldier/vo/inbound.wav");
+Schema.voices.Add("Combine", "Infected.", "Infected.", "npc/combine_soldier/vo/infected.wav");
+Schema.voices.Add("Combine", "Ion.", "Ion.", "npc/combine_soldier/vo/ion.wav");
+Schema.voices.Add("Combine", "Is at code.", "Is at code.", "npc/combine_soldier/vo/isatcode.wav");
+Schema.voices.Add("Combine", "Field Promoted.", "Is Field promoted to LEADER-1, holding.", "npc/combine_soldier/vo/isfieldpromoted.wav");
+Schema.voices.Add("Combine", "Final Unit.", "Is Final Team Unit, request backup.", "npc/combine_soldier/vo/isfinalteamunitbackup.wav");
+Schema.voices.Add("Combine", "Holding at Code.", "Is holding at Code.", "npc/combine_soldier/vo/isholdingatcode.wav");
+Schema.voices.Add("Combine", "Jet.", "Jet.", "npc/combine_soldier/vo/jet.wav");
+Schema.voices.Add("Combine", "Judge.", "Judge.", "npc/combine_soldier/vo/judge.wav");
+Schema.voices.Add("Combine", "Kilo.", "Kilo.", "npc/combine_soldier/vo/kilo.wav");
+Schema.voices.Add("Combine", "Leader.", "Leader.", "npc/combine_soldier/vo/leader.wav");
+Schema.voices.Add("Combine", "Lost Contact.", "Lost Contact.", "npc/combine_soldier/vo/lostcontact.wav");
+Schema.voices.Add("Combine", "Mace.", "Mace.", "npc/combine_soldier/vo/mace.wav");
+Schema.voices.Add("Combine", "Meters.", "Meters.", "npc/combine_soldier/vo/meters.wav");
+Schema.voices.Add("Combine", "Motion Check.", "Motion Check all Radials.", "npc/combine_soldier/vo/motioncheckallradials.wav");
+Schema.voices.Add("Combine", "Move in.", "Move in!", "npc/combine_soldier/vo/movein.wav");
+Schema.voices.Add("Combine", "Necrotics.", "Necrotics.", "npc/combine_soldier/vo/necrotics.wav");
+Schema.voices.Add("Combine", "Necrotics inbound.", "Necrotics inbound.", "npc/combine_soldier/vo/necroticsinbound.wav");
+Schema.voices.Add("Combine", "9.", "Niner.", "npc/combine_soldier/vo/niner.wav");
+Schema.voices.Add("Combine", "19.", "Nineteen.", "npc/combine_soldier/vo/nineteen.wav");
+Schema.voices.Add("Combine", "90.", "Ninety.", "npc/combine_soldier/vo/ninety.wav");
+Schema.voices.Add("Combine", "Nomad.", "Nomad.", "npc/combine_soldier/vo/nomad.wav");
+Schema.voices.Add("Combine", "Nova.", "Nova.", "npc/combine_soldier/vo/nova.wav");
+Schema.voices.Add("Combine", "No viscon.", "No viscon.", "npc/combine_soldier/vo/noviscon.wav");
+Schema.voices.Add("Combine", "Off1.", "*Vododed transmission ends*", "npc/combine_soldier/vo/off1.wav");
+Schema.voices.Add("Combine", "Off2.", "*Vododed transmission ends*", "npc/combine_soldier/vo/off2.wav");
+Schema.voices.Add("Combine", "Off3.", "*Vododed transmission ends*", "npc/combine_soldier/vo/off3.wav");
+Schema.voices.Add("Combine", "On1.", "*Vocoded transmission starts*", "npc/combine_soldier/vo/on1.wav");
+Schema.voices.Add("Combine", "On2.", "*Vocoded transmission starts*", "npc/combine_soldier/vo/on2.wav");
+Schema.voices.Add("Combine", "1.", "One.", "npc/combine_soldier/vo/one.wav");
+Schema.voices.Add("Combine", "1 contained.", "One contained.", "npc/combine_soldier/vo/onecontained.wav");
+Schema.voices.Add("Combine", "1 down.", "One down!", "npc/combine_soldier/vo/onedown.wav");
+Schema.voices.Add("Combine", "1 vacated.", "One, duty vacated!", "npc/combine_soldier/vo/onedutyvacated.wav");
+Schema.voices.Add("Combine", "100.", "One hundred", "npc/combine_soldier/vo/onehundred.wav");
+Schema.voices.Add("Combine", "Outbreak.", "Oubreak!", "npc/combine_soldier/vo/outbreak.wav");
+Schema.voices.Add("Combine", "Outbreak code.", "Outbreak status is code", "npc/combine_soldier/vo/outbreakstatusiscode.wav");
+Schema.voices.Add("Combine", "Overwatch.", "Overwatch!", "npc/combine_soldier/vo/overwatch.wav");
+Schema.voices.Add("Combine", "HVT Contained.", "Overwatch confirms, Helix Vector Tango is contained.", "npc/combine_soldier/vo/overwatchconfirmhvtcontained.wav");
+Schema.voices.Add("Combine", "Possible hostiles.", "Overwatch reports, possible hostiles inbound.", "npc/combine_soldier/vo/overwatchreportspossiblehostiles.wav");
+Schema.voices.Add("Combine", "Reinforcement.", "Overwatch, request reinforcement.", "npc/combine_soldier/vo/overwatchrequestreinforcement.wav");
+Schema.voices.Add("Combine", "Reserve activation.", "Overwatch, request reserve activation", "npc/combine_soldier/vo/overwatchrequestreserveactivation.wav");
+Schema.voices.Add("Combine", "Overwatch skyshield.", "Overwatch, request Skyshield.", "npc/combine_soldier/vo/overwatchrequestskyshield.wav");
+Schema.voices.Add("Combine", "Request winder.", "Overwatch, request Winder Dispatch.", "npc/combine_soldier/vo/overwatchrequestwinder.wav");
+Schema.voices.Add("Combine", "Sector overrun.", "Overwatch sector overrun, repeat sector overrun", "npc/combine_soldier/vo/overwatchsectoroverrun.wav");
+Schema.voices.Add("Combine", "Overwatch target sterilized.", "Overwatch, target one Sterilized.", "npc/combine_soldier/vo/overwatchtarget1sterilized.wav");
+Schema.voices.Add("Combine", "Target contained.", "Overwatch, target is contained.", "npc/combine_soldier/vo/overwatchtargetcontained.wav");
+Schema.voices.Add("Combine", "Team is down.", "Overwatch Team is down, Sector is not controlled", "npc/combine_soldier/vo/overwatchteamisdown.wav");
+Schema.voices.Add("Combine", "Orders stimboost.", "Overwatch orders 3cc stimboost", "npc/combine_soldier/vo/ovewatchorders3ccstimboost.wav");
+Schema.voices.Add("Combine", "Payback.", "Payback.", "npc/combine_soldier/vo/payback.wav");
+Schema.voices.Add("Combine", "Phantom.", "Phantom.", "npc/combine_soldier/vo/phantom.wav");
+Schema.voices.Add("Combine", "Prep Contact.", "Prep for Contact, report in.", "npc/combine_soldier/vo/prepforcontact.wav");
+Schema.voices.Add("Combine", "Priority Objective.", "Priority one Objective.", "npc/combine_soldier/vo/priority1objective.wav");
+Schema.voices.Add("Combine", "Priority 2.", "Priority two Escapee.", "npc/combine_soldier/vo/prioritytwoescapee.wav");
+Schema.voices.Add("Combine", "Activate Central.", "*Indistinct Radio Chatter*", "npc/combine_soldier/vo/prison_soldier_activatecentral.wav");
+Schema.voices.Add("Combine", "Boomers inbound.", "*Indistinct Radio Chatter*", "npc/combine_soldier/vo/prison_soldier_boomersinbound.wav");
+Schema.voices.Add("Combine", "Chatter1.", "*Indistinct Radio Chatter*", "npc/combine_soldier/vo/prison_soldier_bunker1.wav");
+Schema.voices.Add("Combine", "Chatter2.", "*Indistinct Radio Chatter*", "npc/combine_soldier/vo/prison_soldier_bunker2.wav");
+Schema.voices.Add("Combine", "Chatter3.", "*Indistinct Radio Chatter*", "npc/combine_soldier/vo/prison_soldier_bunker3.wav");
+Schema.voices.Add("Combine", "Chatter4.", "*Indistinct Radio Chatter*", "npc/combine_soldier/vo/prison_soldier_containd8.wav");
+Schema.voices.Add("Combine", "Chatter5.", "*Indistinct Radio Chatter*", "npc/combine_soldier/vo/prison_soldier_fallback_b4.wav");
+Schema.voices.Add("Combine", "Chatter6.", "*Indistinct Radio Chatter*", "npc/combine_soldier/vo/prison_soldier_freeman_antlions.wav");
+Schema.voices.Add("Combine", "Chatter7.", "*Indistinct Radio Chatter*", "npc/combine_soldier/vo/prison_soldier_fullbioticoverrun.wav");
+Schema.voices.Add("Combine", "Chatter8.", "*Indistinct Radio Chatter*", "npc/combine_soldier/vo/prison_soldier_leader9dead.wav");
+Schema.voices.Add("Combine", "Chatter9.", "*Indistinct Radio Chatter*", "npc/combine_soldier/vo/prison_soldier_negativecontainment.wav");
+Schema.voices.Add("Combine", "Chatter10.", "*Indistinct Radio Chatter*", "npc/combine_soldier/vo/prison_soldier_prosecuted7.wav");
+Schema.voices.Add("Combine", "Chatter11.", "*Indistinct Radio Chatter*", "npc/combine_soldier/vo/prison_soldier_sundown3dead.wav");
+Schema.voices.Add("Combine", "Chatter12.", "*Indistinct Radio Chatter*", "npc/combine_soldier/vo/prison_soldier_tohighpoints.wav");
+Schema.voices.Add("Combine", "Chatter13.", "*Indistinct Radio Chatter*", "npc/combine_soldier/vo/prison_soldier_visceratorsa5.wav");
+Schema.voices.Add("Combine", "Prosecuting.", "Prosecuting!", "npc/combine_soldier/vo/prosecuting.wav");
+Schema.voices.Add("Combine", "Quicksand.", "Quicksand!", "npc/combine_soldier/vo/quicksand.wav");
+Schema.voices.Add("Combine", "Range.", "Range.", "npc/combine_soldier/vo/range.wav");
+Schema.voices.Add("Combine", "Ranger.", "Ranger.", "npc/combine_soldier/vo/ranger.wav");
+Schema.voices.Add("Combine", "Razor.", "Razor!", "npc/combine_soldier/vo/razor.wav");
+Schema.voices.Add("Combine", "Ready Charges.", "Ready Charges!", "npc/combine_soldier/vo/readycharges.wav");
+Schema.voices.Add("Combine", "Ready Extractors.", "Ready Extractors!", "npc/combine_soldier/vo/readyextractors.wav");
+Schema.voices.Add("Combine", "Ready weapons.", "Ready weapons!", "npc/combine_soldier/vo/readyweapons.wav");
+Schema.voices.Add("Combine", "Ready weapons possible hostiles.", "Ready weapons, possible hostiles inbound!", "npc/combine_soldier/vo/readyweaponshostilesinbound.wav");
+Schema.voices.Add("Combine", "Reaper.", "Reaper!", "npc/combine_soldier/vo/reaper.wav");
+Schema.voices.Add("Combine", "Positions clear.", "Report all positions clear!", "npc/combine_soldier/vo/reportallpositionsclear.wav");
+Schema.voices.Add("Combine", "Radials free.", "Report all radials free.", "npc/combine_soldier/vo/reportallradialsfree.wav");
+Schema.voices.Add("Combine", "Reporting clear.", "Reporting clear!", "npc/combine_soldier/vo/reportingclear.wav");
+Schema.voices.Add("Combine", "Request medical.", "Request medical!", "npc/combine_soldier/vo/requestmedical.wav");
+Schema.voices.Add("Combine", "Request stimdose.", "Request stimdose!", "npc/combine_soldier/vo/requeststimdose.wav");
+Schema.voices.Add("Combine", "Ripcord.", "Ripcord.", "npc/combine_soldier/vo/ripcord.wav");
+Schema.voices.Add("Combine", "Ripcord2.", "Ripcord, ripcord!", "npc/combine_soldier/vo/ripcordripcord.wav");
+Schema.voices.Add("Combine", "Savage.", "Savage!", "npc/combine_soldier/vo/savage.wav");
+Schema.voices.Add("Combine", "Scar.", "Scar!", "npc/combine_soldier/vo/scar.wav");
+Schema.voices.Add("Combine", "Lock dash4.", "Section lock up dash-4.", "npc/combine_soldier/vo/scar.wav");
+Schema.voices.Add("Combine", "Sector.", "Sector.", "npc/combine_soldier/vo/sector.wav");
+Schema.voices.Add("Combine", "Sector not secure.", "Sector is not secure.", "npc/combine_soldier/vo/sectorisnotsecure.wav");
+Schema.voices.Add("Combine", "Sector is secure.", "Sector is secure, no viscon.", "npc/combine_soldier/vo/sectorissecurenovison.wav");
+Schema.voices.Add("Combine", "Secure.", "Secure.", "npc/combine_soldier/vo/secure.wav");
+Schema.voices.Add("Combine", "7.", "Seven.", "npc/combine_soldier/vo/seven.wav");
+Schema.voices.Add("Combine", "17.", "Seventeen.", "npc/combine_soldier/vo/seventeen.wav");
+Schema.voices.Add("Combine", "70.", "Seventy.", "npc/combine_soldier/vo/seventy.wav");
+Schema.voices.Add("Combine", "Shadow.", "Shadow.", "npc/combine_soldier/vo/shadow.wav");
+Schema.voices.Add("Combine", "SZ.", "Sharp zone.", "npc/combine_soldier/vo/sharpzone.wav");
+Schema.voices.Add("Combine", "Sightline clear.", "Sightline is clear.", "npc/combine_soldier/vo/sightlineisclear.wav");
+Schema.voices.Add("Combine", "6.", "Six.", "npc/combine_soldier/vo/six.wav");
+Schema.voices.Add("Combine", "16.", "Sixteen.", "npc/combine_soldier/vo/sixteen.wav");
+Schema.voices.Add("Combine", "60.", "Sixty.", "npc/combine_soldier/vo/sixty.wav");
+Schema.voices.Add("Combine", "Skyshield lost contact.", "Skyshield reports, lost contact.", "npc/combine_soldier/vo/skyshieldreportslostcontact.wav");
+Schema.voices.Add("Combine", "Slam.", "S.L.A.M.", "npc/combine_soldier/vo/slam.wav");
+Schema.voices.Add("Combine", "Slash.", "Slash.", "npc/combine_soldier/vo/slash.wav");
+Schema.voices.Add("Combine", "Spear.", "Spear!", "npc/combine_soldier/vo/spear.wav");
+Schema.voices.Add("Combine", "Stab.", "Stab!", "npc/combine_soldier/vo/stab.wav");
+Schema.voices.Add("Combine", "ST has control.", "Stabilization team has sector control!", "npc/combine_soldier/vo/stabilizationteamhassector.wav");
+Schema.voices.Add("Combine", "ST holding.", "Stabilization team holding in position.", "npc/combine_soldier/vo/stabilizationteamholding.wav");
+Schema.voices.Add("Combine", "Standing By.", "Standing by.", "npc/combine_soldier/vo/standingby].wav");
+Schema.voices.Add("Combine", "Star.", "Star!", "npc/combine_soldier/vo/star.wav");
+Schema.voices.Add("Combine", "Stay alert.", "Stay alert.", "npc/combine_soldier/vo/stayalert.wav");
+Schema.voices.Add("Combine", "Report sightlines.", "Stay alert, report sightlines.", "npc/combine_soldier/vo/stayalertreportsightlines.wav");
+Schema.voices.Add("Combine", "Stinger.", "Stinger.", "npc/combine_soldier/vo/stinger.wav");
+Schema.voices.Add("Combine", "Storm.", "Storm.", "npc/combine_soldier/vo/storm.wav");
+Schema.voices.Add("Combine", "Striker.", "Striker!", "npc/combine_soldier/vo/striker.wav");
+Schema.voices.Add("Combine", "Sundown.", "Sun down.", "npc/combine_soldier/vo/sundown.wav");
+Schema.voices.Add("Combine", "Suppressing.", "Suppressing.", "npc/combine_soldier/vo/suppressing.wav");
+Schema.voices.Add("Combine", "Swarm outbreak.", "Swarm outbreak in sector.", "npc/combine_soldier/vo/swarmoutbreakinsector.wav");
+Schema.voices.Add("Combine", "Sweeper.", "Sweeper.", "npc/combine_soldier/vo/sweeper.wav");
+Schema.voices.Add("Combine", "Sweeping in.", "Sweeping in!", "npc/combine_soldier/vo/sweepingin.wav");
+Schema.voices.Add("Combine", "Swift.", "Swift.", "npc/combine_soldier/vo/swift.wav");
+Schema.voices.Add("Combine", "Sword.", "Sword.", "npc/combine_soldier/vo/sword.wav");
+Schema.voices.Add("Combine", "Target.", "Target!", "npc/combine_soldier/vo/target.wav");
+Schema.voices.Add("Combine", "Target blackout.", "Target blackout, sweep to resume.", "npc/combine_soldier/vo/targetblackout.wav");
+Schema.voices.Add("Combine", "Target compromised.", "Target compromised, move in, move in!", "npc/combine_soldier/vo/targetcompromisedmovein.wav");
+Schema.voices.Add("Combine", "Target contact at.", "Target contact at...", "npc/combine_soldier/vo/targetcontactat.wav");
+Schema.voices.Add("Combine", "Target ineffective.", "Target ineffective!", "npc/combine_soldier/vo/targetineffective.wav");
+Schema.voices.Add("Combine", "Target is at.", "Target is at...", "npc/combine_soldier/vo/targetisat.wav");
+Schema.voices.Add("Combine", "Target my radial.", "Target my radial.", "npc/combine_soldier/vo/targetmyradial.wav");
+Schema.voices.Add("Combine", "Target 1.", "Target one.", "npc/combine_soldier/vo/targetone.wav");
+Schema.voices.Add("Combine", "Team deployed.", "Team is deployed and scanning.", "npc/combine_soldier/vo/teamdeployedandscanning.wav");
+Schema.voices.Add("Combine", "10.", "Ten.", "npc/combine_soldier/vo/ten.wav");
+Schema.voices.Add("Combine", "Wrap it up.", "That's it, wrap it up!", "npc/combine_soldier/vo/thatsitwrapitup.wav");
+Schema.voices.Add("Combine", "13.", "Thirteen.", "npc/combine_soldier/vo/thirteen.wav");
+Schema.voices.Add("Combine", "30.", "Thirty.", "npc/combine_soldier/vo/thirteen.wav");
+Schema.voices.Add("Combine", "3.", "Three.", "npc/combine_soldier/vo/three.wav");
+Schema.voices.Add("Combine", "300.", "Three hundred.", "npc/combine_soldier/vo/threehundred.wav");
+Schema.voices.Add("Combine", "Tracker.", "Tracker.", "npc/combine_soldier/vo/tracker.wav");
+Schema.voices.Add("Combine", "12.", "Twelve.", "npc/combine_soldier/vo/twelve.wav");
+Schema.voices.Add("Combine", "20.", "Twenty.", "npc/combine_soldier/vo/twenty.wav");
+Schema.voices.Add("Combine", "2.", "Two.", "npc/combine_soldier/vo/two.wav");
+Schema.voices.Add("Combine", "200.", "Two hundred.", "npc/combine_soldier/vo/twohundred.wav");
+Schema.voices.Add("Combine", "Uniform.", "Uniform.", "npc/combine_soldier/vo/uniform.wav");
+Schema.voices.Add("Combine", "Unit is closing.", "Unit is closing.", "npc/combine_soldier/vo/unitisclosing.wav");
+Schema.voices.Add("Combine", "Unit is inbound.", "Unit is inbound.", "npc/combine_soldier/vo/unitisinbound.wav");
+Schema.voices.Add("Combine", "Unit is moving in.", "Unit is moving in.", "npc/combine_soldier/vo/unitismovingin.wav");
+Schema.voices.Add("Combine", "Vamp.", "Vamp.", "npc/combine_soldier/vo/vamp.wav");
+Schema.voices.Add("Combine", "Viscon.", "Viscon!", "npc/combine_soldier/vo/viscon.wav");
+Schema.voices.Add("Combine", "Visual on exogens.", "Visual on exogens!", "npc/combine_soldier/vo/visualonexogens.wav");
+Schema.voices.Add("Combine", "Prep for contact.", "Weapons off safe, prep for contact.", "npc/combine_soldier/vo/visualonexogens.wav");
+Schema.voices.Add("Combine", "We are in IZ.", "We are in an infestation zone.", "npc/combine_soldier/vo/weareinaninfestationzone.wav");
+Schema.voices.Add("Combine", "Free parasites.", "We have free parasites.", "npc/combine_soldier/vo/wehavefreeparasites.wav");
+Schema.voices.Add("Combine", "Non-tagged viromes.", "We have non-tagged viromes.", "npc/combine_soldier/vo/wehavenontaggedviromes.wav");
+Schema.voices.Add("Combine", "Winder.", "Winder.", "npc/combine_soldier/vo/winder.wav");
+Schema.voices.Add("Combine", "0.", "Zero.", "npc/combine_soldier/vo/zero.wav");
 
-Schema.voices.Add("Dispatch", "ACTIVITY LEVEL 1", "You are charged with anti-civil activity level: ONE. Protection-unit prosecution code: DUTY, SWORD, OPERATE.", "npc/overwatch/cityvoice/f_anticivil1_5_spkr.wav", true)
-Schema.voices.Add("Dispatch", "ANTI-CITIZEN", "Attention, ground-units: Anti-citizen reported in this community. Code: LOCK, CAUTERIZE, STABILIZE.", "npc/overwatch/cityvoice/f_anticitizenreport_spkr.wav", true)
-Schema.voices.Add("Dispatch", "ANTI-CIVIL EVIDENCE", "Protection-team, alert: Evidence of anti-civil activity in this community. Code: ASSEMBLE, CLAMP, CONTAIN.", "npc/overwatch/cityvoice/f_anticivilevidence_3_spkr.wav", true)
-Schema.voices.Add("Dispatch", "ARE CHARGED WITH", "Individual, you are charged with capital malcompliance. Anti-citizen status, APPROVED.", "npc/overwatch/cityvoice/f_capitalmalcompliance_spkr.wav", true)
-Schema.voices.Add("Dispatch", "ASSUME POSITIONS", "Attention, please: All citizens in local residential block, assume your inspection-positions.", "npc/overwatch/cityvoice/f_trainstation_assumepositions_spkr.wav", true)
-Schema.voices.Add("Dispatch", "AUTONOMOUS JUDGMENT", "Attention, all ground-protection teams, autonomous judgment is now in effect. Sentencing is now discretionary. Code, AMPUTATE, ZERO, CONFIRM.", "npc/overwatch/cityvoice/f_protectionresponse_4_spkr.wav", true)
-Schema.voices.Add("Dispatch", "CITIZEN RELOCATION", "Citizen notice: Failure to co-operate will result in permanent off-world relocation.", "npc/overwatch/cityvoice/f_trainstation_offworldrelocation_spkr.wav", true)
-Schema.voices.Add("Dispatch", "CONSPIRACY", "Citizen reminder: Inaction is conspiracy. Report counter-behavior to a Civil-Protection team immediately.", "npc/overwatch/cityvoice/f_innactionisconspiracy_spkr.wav", true)
-Schema.voices.Add("Dispatch", "CONVICTED", "Individual, you are convicted of multi-anti-civil violations. Implict citizenship revoked. Status, MALIGNANT.", "npc/overwatch/cityvoice/f_citizenshiprevoked_6_spkr.wav", true)
-Schema.voices.Add("Dispatch", "DEDUCTED", "Attention, occupants: Your block is now charged with permissive inactive coersion. Five ration-units deducted.", "npc/overwatch/cityvoice/f_rationunitsdeduct_3_spkr.wav", true)
-Schema.voices.Add("Dispatch", "EVASION BEHAVIOR", "Attention, please, evasion behaviour consistent with malcompliant defendant. Ground protection-team, alert, code: ISOLATE, EXPOSE, ADMINISTER.", "npc/overwatch/cityvoice/f_evasionbehavior_2_spkr.wav", true)
-Schema.voices.Add("Dispatch", "INDIVIDUAL CHARGED WITH", "Individual, you are charged with socio-endangerment level: ONE. Protection-unit prosecution code, DUTY, SWORD, MIDNIGHT.", "npc/overwatch/cityvoice/f_sociolevel1_4_spkr.wav", true)
-Schema.voices.Add("Dispatch", "INSPECTION", "Citizen notice, priority identification-check in-progress. Please assemble in your designated inspection positions.", "npc/overwatch/cityvoice/f_trainstation_assemble_spkr.wav", true)
-Schema.voices.Add("Dispatch", "JUDGMENT WAIVER", "Attention, all ground-protection teams, judgment waiver now in effect. Capital prosecution is discretionary.", "npc/overwatch/cityvoice/f_protectionresponse_5_spkr.wav", true)
-Schema.voices.Add("Dispatch", "MISCOUNT DETECTED", "Attention, residents: Miscount detected in your block. Co-operation with your Civil Protection team permits full ration reward.", "npc/overwatch/cityvoice/f_trainstation_cooperation_spkr.wav", true)
-Schema.voices.Add("Dispatch", "MISSION FAILURE", "Attention, ground-units: Mission-failure will result in permanent off-world assignment. Code-reminder: SACRIFICE, COAGULATE, CLAMP.", "npc/overwatch/cityvoice/fprison_missionfailurereminder.wav", true)
-Schema.voices.Add("Dispatch", "OVERWATCH ACKNOWLEDGES", "Overwatch acknowledges critical exogen-breach. AirWatch augmentation-force dispatched and inbound. Hold for re-enforcement.", "npc/overwatch/cityvoice/fprison_airwatchdispatched.wav", true)
-Schema.voices.Add("Dispatch", "POTENTIAL INFECTION", "Attention, residents: This blocks contains potential civil infection. INFORM, CO-OPERATE, ASSEMBLE.", "npc/overwatch/cityvoice/f_trainstation_inform_spkr.wav", true)
-Schema.voices.Add("Dispatch", "RECEIVE YOUR VERDICT", "Individual, you are now charged with socio-endangerment level: FIVE. Cease evasion immediately, recieve your verdict.", "npc/overwatch/cityvoice/f_ceaseevasionlevelfive_spkr.wav", true)
-Schema.voices.Add("Dispatch", "STATUS EVASION", "Attention, protection-team, status evasion in progress in this community. RESPOND, ISOLATE, INQUIRE.", "npc/overwatch/cityvoice/f_protectionresponse_1_spkr.wav", true)
-Schema.voices.Add("Dispatch", "UNIDENTIFIED", "Attention, please: Unidentified person of interest, confirm your civil status with local protection-team immediately.", "npc/overwatch/cityvoice/f_confirmcivilstatus_1_spkr.wav", true)
-Schema.voices.Add("Dispatch", "UNREST PROCEDURE", "Attention, community: Unrest procedure code is now in effect. INNOCULATE, SHIELD, PACIFY. Code: PRESSURE, SWORD, STERILIZE.", "npc/overwatch/cityvoice/f_unrestprocedure1_spkr.wav", true)
-Schema.voices.Add("Dispatch", "UNREST STRUCTURE", "Alert, community ground-protection units, local unrest structure detected. ASSEMBLE, ADMINISTER, PACIFY.", "npc/overwatch/cityvoice/f_localunrest_spkr.wav", true)
+Schema.voices.Add("Combine", "Haha2", "Haha.", "ug/npc/soldiers/overwatchgrunt/laugh_05.wav");
+Schema.voices.Add("Combine", "Hey Watch it", "Hey, watch it.", "ug/npc/soldiers/overwatchgrunt/29_0008custom.wav");
+Schema.voices.Add("Combine", "I don't know.", "I don't know.", "ug/npc/soldiers/overwatchgrunt/30_0010wav");
+Schema.voices.Add("Combine", "Hands up", "Hands Up! Don't move!", "ug/npc/soldiers/overwatchgrunt/29_0001custom.wav");
+Schema.voices.Add("Combine", "I hate these things", "I hate these things.", "ug/npc/soldiers/overwatchgrunt/announceenemy_headcrabs_06.wav");
+Schema.voices.Add("Combine", "Gross", "Gross.", "ug/npc/soldiers/overwatchgrunt/announcekill_headcrab_06.wav");
+Schema.voices.Add("Combine", "God Damn It", "God damn it.", "ug/npc/soldiers/overwatchgrunt/lostenemy_02.wav");
+Schema.voices.Add("Combine", "Holy Shit", "Holy shit!", "ug/npc/soldiers/overwatchgrunt/nearpanic_05.wav");
+Schema.voices.Add("Combine", "Requesting location", "Requesting location.", "ug/npc/soldiers/overwatchgrunt/lostvisual_03.wav");
+Schema.voices.Add("Combine", "Negatory", "Negatory.", "ug/npc/soldiers/overwatchgrunt/unabletocommence_03.wav");
+Schema.voices.Add("Combine", "Don't resist", "Don't resist!", "ug/npc/soldiers/overwatchgrunt/firing_202.wav");
+Schema.voices.Add("Combine", "DISP Containment Failure", "Overwatch acknowledges containment failure. Hold for reinforcement.", "ug/npc/overwatchvoice/ugradiovoice/overwatch_radiocustom.wav");
+Schema.voices.Add("Combine", "Back to sleep", "Back to sleep", "ug/npc/soldiers/overwatchgrunt/announcekill_zombie_05.wav");
+Schema.voices.Add("Combine", "Infestation alert", "Infestation Alert.", "ug/npc/soldiers/overwatchgrunt/announceenemy_zombie_03.wav");
+Schema.voices.Add("Combine", "Probable AC", "Probable Anti-Citizen. Get a Scan.", "ug/npc/soldiers/overwatchgrunt/29_00524.wav");
+
+
+/* -------------------------------------------------------------------------- */
+/*                                  Overwatch                                 */
+/* -------------------------------------------------------------------------- */
+
+
+Schema.voices.Add("OTA", "Repair or extraction needed", "Repair or extraction needed.", "ug/npc/soldiers/overwatchgrunt/30_0009.wav");
+Schema.voices.Add("OTA", "Viscon lost", "Viscon lost.", "ug/npc/soldiers/overwatchgrunt/lostvisual_player_07custom.wav");
+Schema.voices.Add("OTA", "Target Life Limited", "Target one is life limited.", "ug/npc/soldiers/overwatchgrunt/announceattack_alyx_04.wav");
+Schema.voices.Add("OTA", "We don't care", "We don't care.", "ug/npc/soldiers/overwatchordinal/27_1108custom.wav");
+Schema.voices.Add("OTA", "Taking the shot", "Taking the shot.", "ug/npc/soldiers/overwatchgrunt/announceattack_06.wav");
+
+/* -------------------------------------------------------------------------- */
+/*                                    Grunt                                   */
+/* -------------------------------------------------------------------------- */
+
+Schema.voices.Add("GRUNT", "Active Hostiles", "Overwatch, we have active hostiles.", "ug/npc/soldiers/overwatchgrunt/combat_idle_010custom.wav");
+Schema.voices.Add("GRUNT", "Enemy time limited", "Contaminant is time limited.", "ug/npc/soldiers/overwatchgrunt/playerishurt_06custom.wav");
+Schema.voices.Add("GRUNT", "Keep Sightlines Open and Sound On", "Keep sightlines open and sound on.", "ug/npc/soldiers/overwatchgrunt/idle_09custom.wav");
+Schema.voices.Add("GRUNT", "Team Holding Position", "Stabilization team holding position. Lightviz at 73. Audibles at... 15. Stay alert.", "ug/npc/soldiers/overwatchgrunt/idle_20custom.wav");
+Schema.voices.Add("GRUNT", "Accept Update", "Copy. Accepted. Updating cognitive suppression biodats. Update complete in T minus three seconds... Dissonance resolved.", "ug/npc/soldiers/overwatchgrunt/idle_18.wav");
+Schema.voices.Add("GRUNT", "Order Update", "Overwatch is requesting all units refresh and resolve. Cognitive dissonance will not be tolerated. Negative... Memories included. Update is live. Acceptance is mandatory.", "ug/npc/soldiers/overwatchgrunt/idle_19.wav");
+Schema.voices.Add("GRUNT", "Sending Spikes", "Sending spikes.", "ug/npc/soldiers/overwatchgrunt/firing_172.wav");
+Schema.voices.Add("GRUNT", "Approaching target", "Approaching target.", "ug/npc/soldiers/overwatchgrunt/advancing_on_target_04.wav");
+Schema.voices.Add("GRUNT", "Moving", "Moving.", "ug/npc/soldiers/overwatchgrunt/advancing_on_target_01.wav");
+Schema.voices.Add("GRUNT", "Contact antlion", "Contact: Antlion.", "ug/npc/soldiers/overwatchgrunt/announceenemy_antlion_03.wav");
+Schema.voices.Add("GRUNT", "Contact parasitic", "Contact: Parasitic.", "ug/npc/soldiers/overwatchgrunt/announceenemy_headcrabs_05.wav");
+Schema.voices.Add("GRUNT", "Kill Confirmed", "Kill Confirmed.", "ug/npc/soldiers/overwatchgrunt/announcekill_03.wav");
+Schema.voices.Add("GRUNT", "Clean kill", "Clean kill.", "ug/npc/soldiers/overwatchgrunt/announcekill_04.wav");
+Schema.voices.Add("GRUNT", "Necro Contained", "Necro Contained", "ug/npc/soldiers/overwatchgrunt/announcekill_zombie_01.wav");
+Schema.voices.Add("GRUNT", "Stay Dead", "Stay dead", "ug/npc/soldiers/overwatchgrunt/announcekill_zombie_03.wav");
+Schema.voices.Add("GRUNT", "Stop Fire", "Stop fire, stop fire!", "ug/npc/soldiers/overwatchgrunt/fakeout_responseceasefire_05custom.wav");
+Schema.voices.Add("GRUNT", "Hostile killed", "Hostile neutralised.", "ug/npc/soldiers/overwatchgrunt/announcekill_13.wav");
+Schema.voices.Add("GRUNT", "Firing", "Engaged and firing.", "ug/npc/soldiers/overwatchgrunt/firing_110custom.wav");
+Schema.voices.Add("GRUNT", "Hostile scrambled", "Hostile scrambled.", "ug/npc/soldiers/overwatchgrunt/fakeout_success_03custom.wav");
+Schema.voices.Add("GRUNT", "Contact necrotic", "Contact: Necrotic.", "ug/npc/soldiers/overwatchgrunt/announceenemy_zombie_05.wav");
+Schema.voices.Add("GRUNT", "Red Leak", "Red Leak on hostile", "ug/npc/soldiers/overwatchgrunt/playerishurt_09.wav");
+Schema.voices.Add("GRUNT", "Tag on prime", "Possible tag on prime.", "ug/npc/soldiers/overwatchgrunt/playerishurt_10.wav");
+Schema.voices.Add("GRUNT", "Proceeding on infected", "Proceeding on infected", "ug/npc/soldiers/overwatchgrunt/advancing_on_target_06.wav");
+Schema.voices.Add("GRUNT", "I'm time limited", "I'm time limited!", "ug/npc/soldiers/overwatchgrunt/injured_06custom.wav");
+Schema.voices.Add("GRUNT", "Survival Mark", "Survival Mark deployed.", "ug/npc/soldiers/overwatchgrunt/squadmemberlost_lastman_07.wav");
+Schema.voices.Add("GRUNT", "hahaha", "Haha.", "ug/npc/soldiers/overwatchgrunt/laugh_02.wav");
+Schema.voices.Add("GRUNT", "Reloading", "Refilling daggers.", "ug/npc/soldiers/overwatchgrunt/reload_02.wav");
+Schema.voices.Add("GRUNT", "You can come out now", "You can come out now!", "ug/npc/soldiers/overwatchgrunt/taunt_042.wav");
+Schema.voices.Add("GRUNT", "They're going down", "They're going down!", "ug/npc/soldiers/overwatchgrunt/firing_151.wav");
+Schema.voices.Add("GRUNT", "Hostile experiencing panic", "Hostile is experiencing extreme panic.", "ug/npc/soldiers/overwatchgrunt/taunt_010.wav");
+Schema.voices.Add("GRUNT", "Target is unskilled", "Spikes ineffective, target is unskilled.", "ug/npc/soldiers/overwatchgrunt/takingfire_11.wav");
+Schema.voices.Add("GRUNT", "Going sharp", "Going sharp.", "ug/npc/soldiers/overwatchgrunt/announceattack_01.wav");
+Schema.voices.Add("GRUNT", "Taunt", "Jackpot Confirmed!", "ug/npc/soldiers/overwatchgrunt/firing_player_08custom.wav");
+Schema.voices.Add("GRUNT", "Area clear", "Area Clear.", "ug/npc/soldiers/overwatchgrunt/reconnoiter_finish_04.wav");
+Schema.voices.Add("GRUNT", "Get back", "Get back.", "ug/npc/soldiers/overwatchgrunt/customgetback.wav");
+Schema.voices.Add("GRUNT", "APF Firing", "APF is engaged and firing.", "ug/npc/soldiers/overwatchgrunt/firing_230.wav");
+Schema.voices.Add("GRUNT", "Ordinal Firing", "Ordinal is engaged and firing.", "ug/npc/soldiers/overwatchgrunt/firing_221.wav");
+Schema.voices.Add("GRUNT", "Wallhammer Firing", "Wallhammer is engaged and firing.", "ug/npc/soldiers/overwatchgrunt/firing_210.wav");
+Schema.voices.Add("GRUNT", "Radio Check", "One. Fourteen. Three. Six. Eleven. Check. And... all clear on Echo Four. Your turn. Over.", "ug/npc/soldiers/overwatchgrunt/idle_02.wav");
+Schema.voices.Add("GRUNT", "Awaiting Problem", "Awaiting problem.", "ug/npc/soldiers/overwatchgrunt/overwatch_14.wav");
+Schema.voices.Add("GRUNT", "Callout code", "Callout Code: Delta Echo seven niner alpha two winder zero... Confirmed.", "ug/npc/soldiers/overwatchgrunt/idle_15custom.wav");
+Schema.voices.Add("GRUNT", "Biodat Update", "Updating biodat... Stimdose: 32. Dagger: 78. Shield: 100. Biprox: 73. Audibles: 3. Lightvis: 15. Echo Out.", "ug/npc/soldiers/overwatchgrunt/idle_12.wav");
+Schema.voices.Add("GRUNT", "Locked and ready", "Locked and ready", "ug/npc/soldiers/overwatchgrunt/combat_idle_101custom2.wav");
+
+/* -------------------------------------------------------------------------- */
+/*                                  Wallhamer                                 */
+/* -------------------------------------------------------------------------- */
+
+Schema.voices.Add("WALLHAMMER", "Active Hostiles", "Overwatch, we have active hostiles.", "ug/npc/soldiers/overwatchheavy/combat_idle_012custom.wav");
+Schema.voices.Add("WALLHAMMER", "Moving", "Moving.", "ug/npc/soldiers/overwatchheavy/advancing_on_target_01.wav");
+Schema.voices.Add("WALLHAMMER", "Keep Sightlines Open and Sound On", "Keep sightlines open and sound on.", "ug/npc/soldiers/overwatchheavy/idle_09custom.wav");
+Schema.voices.Add("WALLHAMMER", "Team Holding Position", "Stabilization team holding position. Lightviz at 73. Audibles at... 15. Stay alert.", "ug/npc/soldiers/overwatchheavy/idle_20custom.wav");
+Schema.voices.Add("WALLHAMMER", "Accept Update", "Copy. Accepted. Updating cognitive suppression biodats. Update complete in T minus three seconds... Dissonance resolved.", "ug/npc/soldiers/overwatchheavy/idle_18.wav");
+Schema.voices.Add("WALLHAMMER", "Order Update", "Overwatch is requesting all units refresh and resolve. Cognitive dissonance will not be tolerated. Negative... Memories included. Update is live. Acceptance is mandatory.", "ug/npc/soldiers/overwatchheavy/idle_19.wav");
+Schema.voices.Add("WALLHAMMER", "Approaching target", "Approaching target.", "ug/npc/soldiers/overwatchheavy/advancing_on_target_04.wav");
+Schema.voices.Add("WALLHAMMER", "Sending Spikes", "Sending spikes.", "ug/npc/soldiers/overwatchheavy/firing_170.wav");
+Schema.voices.Add("WALLHAMMER", "Contact antlion", "Contact: Antlion.", "ug/npc/soldiers/overwatchheavy/announceenemy_antlion_03.wav");
+Schema.voices.Add("WALLHAMMER", "Contact parasitic", "Contact: Parasitic.", "ug/npc/soldiers/overwatchheavy/announceenemy_headcrabs_02.wav");
+Schema.voices.Add("WALLHAMMER", "Kill Confirmed", "Kill Confirmed.", "ug/npc/soldiers/overwatchheavy/announcekill_03.wav");
+Schema.voices.Add("WALLHAMMER", "Clean kill", "Clean kill.", "ug/npc/soldiers/overwatchheavy/announcekill_04.wav");
+Schema.voices.Add("WALLHAMMER", "Necro Contained", "Necro Contained", "ug/npc/soldiers/overwatchheavy/announcekill_zombie_01.wav");
+Schema.voices.Add("WALLHAMMER", "Stay Dead", "Stay dead", "ug/npc/soldiers/overwatchheavy/announcekill_zombie_03.wav");
+Schema.voices.Add("WALLHAMMER", "Stop Fire", "Stop fire, stop fire!", "ug/npc/soldiers/overwatchheavy/fakeout_responseceasefire_05custom.wav");
+Schema.voices.Add("WALLHAMMER", "Hostile killed", "Hostile neutralised.", "ug/npc/soldiers/overwatchheavy/announcekill_13.wav");
+Schema.voices.Add("WALLHAMMER", "Firing", "Enaged and firing.", "ug/npc/soldiers/overwatchheavy/firing_110.wav");
+Schema.voices.Add("WALLHAMMER", "Hostile scrambled", "Contaminant is scrambled.", "ug/npc/soldiers/overwatchheavy/flash_success_05.wav");
+Schema.voices.Add("WALLHAMMER", "Contact necrotic", "Contact: Necrotic.", "ug/npc/soldiers/overwatchheavy/announceenemy_zombie_05.wav");
+Schema.voices.Add("WALLHAMMER", "Tag on prime", "Possible tag on prime.", "ug/npc/soldiers/overwatchheavy/playerishurt_10.wav");
+Schema.voices.Add("WALLHAMMER", "Red Leak", "Red Leak on hostile", "ug/npc/soldiers/overwatchheavy/playerishurt_09.wav");
+Schema.voices.Add("WALLHAMMER", "Proceeding on infected", "Proceeding on infected", "ug/npc/soldiers/overwatchheavy/advancing_on_target_06.wav");
+Schema.voices.Add("WALLHAMMER", "Survival Mark", "Survival Mark deployed.", "ug/npc/soldiers/overwatchheavy/squadmemberlost_lastman_07.wav");
+Schema.voices.Add("WALLHAMMER", "hahaha", "Haha.", "ug/npc/soldiers/overwatchheavy/laugh_03.wav");
+Schema.voices.Add("WALLHAMMER", "You can come out now", "You can come out now!", "ug/npc/soldiers/overwatchheavy/taunt_040.wav");
+Schema.voices.Add("WALLHAMMER", "They're going down", "They're going down!", "ug/npc/soldiers/overwatchheavy/firing_150.wav");
+Schema.voices.Add("WALLHAMMER", "Hostile experiencing panic", "Hostile is experiencing extreme panic.", "ug/npc/soldiers/overwatchheavy/taunt_010.wav");
+Schema.voices.Add("WALLHAMMER", "Target is unskilled", "Spikes ineffective, target is unskilled.", "ug/npc/soldiers/overwatchheavy/takingfire_11.wav");
+Schema.voices.Add("WALLHAMMER", "Reloading", "Hammer renew.", "ug/npc/soldiers/overwatchheavy/reload_09.wav");
+Schema.voices.Add("WALLHAMMER", "Going sharp", "Going sharp.", "ug/npc/soldiers/overwatchheavy/announceattack_01.wav");
+Schema.voices.Add("WALLHAMMER", "Taunt", "Haha, hostile is ineffective.", "ug/npc/soldiers/overwatchheavy/injured_06custom.wav");
+Schema.voices.Add("WALLHAMMER", "Area clear", "Area Clear.", "ug/npc/soldiers/overwatchheavy/reconnoiter_finish_04.wav");
+Schema.voices.Add("WALLHAMMER", "Get back", "Get back.", "ug/npc/soldiers/overwatchheavy/retreat_05custom.wav.wav");
+Schema.voices.Add("WALLHAMMER", "APF Firing", "APF is engaged and firing.", "ug/npc/soldiers/overwatchheavy/firing_232.wav");
+Schema.voices.Add("WALLHAMMER", "Ordinal Firing", "Ordinal is engaged and firing.", "ug/npc/soldiers/overwatchheavy/firing_220.wav");
+Schema.voices.Add("WALLHAMMER", "Wallhammer Firing", "Wallhammer is engaged and firing.", "ug/npc/soldiers/overwatchheavy/firing_210.wav");
+Schema.voices.Add("WALLHAMMER", "Radio Check", "One. Fourteen. Three. Six. Eleven. Check. All clear on Echo Four. Over.", "ug/npc/soldiers/overwatchheavy/idle_02.wav");
+Schema.voices.Add("WALLHAMMER", "Awaiting Problem", "Awaiting problem.", "ug/npc/soldiers/overwatchheavy/overwatch_14.wav");
+Schema.voices.Add("WALLHAMMER", "Callout Code", "Callout code: Delta echo seven niner alpha two winder zero... . Confirmed.", "ug/npc/soldiers/overwatchheavy/idle_15.wav");
+Schema.voices.Add("WALLHAMMER", "Biodate Update", "	Updating biodat... Stimdose: 32. Dagger: 78. Shield: 100. Biprox: 73. Audibles: 3. Lightvis: 15. Over.", "ug/npc/soldiers/overwatchheavy/idle_12.wav");
+Schema.voices.Add("WALLHAMMER", "Locked and ready", "Locked and ready.", "ug/npc/soldiers/overwatchheavy/combat_idle_102custom2.wav");
+
+/* -------------------------------------------------------------------------- */
+/*                                   ORDINAL                                  */
+/* -------------------------------------------------------------------------- */
+
+Schema.voices.Add("ORDINAL", "Active Hostiles", "Overwatch, we have active hostiles.", "ug/npc/soldiers/overwatchordinal/combat_idle_012custom.wav");
+Schema.voices.Add("ORDINAL", "Moving", "Moving now.", "ug/npc/soldiers/overwatchordinal/advancing_on_target_02.wav");
+Schema.voices.Add("ORDINAL", "Enemy time limited", "Hostile is time limited.", "ug/npc/soldiers/overwatchordinal/playerishurt_06custom.wav");
+Schema.voices.Add("ORDINAL", "Keep Sightlines Open and Sound On", "Keep sightlines open and sound on.", "ug/npc/soldiers/overwatchordinal/idle_09custom.wav");
+Schema.voices.Add("ORDINAL", "Death Ineffective", "Death Ineffective.", "ug/npc/soldiers/overwatchordinal/injured_06.wav");
+Schema.voices.Add("ORDINAL", "hahaha", "Haha.", "ug/npc/soldiers/overwatchordinal/laugh_02.wav");
+Schema.voices.Add("ORDINAL", "Approaching target", "Approaching target.", "ug/npc/soldiers/overwatchordinal/advancing_on_target_04.wav");
+Schema.voices.Add("ORDINAL", "I'm time limited", "Unit is life limited.", "ug/npc/soldiers/overwatchordinal/injured_01custom.wav");
+Schema.voices.Add("ORDINAL", "Ordinal Life Limited", "Ordinal is life limited.", "ug/npc/soldiers/overwatchordinal/injured_01.wav");
+Schema.voices.Add("ORDINAL", "Sending Spikes", "Sending Spikes.", "ug/npc/soldiers/overwatchordinal/firing_171.wav");
+Schema.voices.Add("ORDINAL", "Identify and prosecute", "Identify and prosecute.", "ug/npc/soldiers/overwatchordinal/identifyprosecutecustom.wav");
+Schema.voices.Add("ORDINAL", "Infection is spreading", "Overwatch, the infection is spreading.", "ug/npc/soldiers/overwatchordinal/squadmemberlost_lastman_10.wav");
+Schema.voices.Add("ORDINAL", "Team Holding Position", "Stabilization team holding position. Lightviz at 73. Audibles at 15. Stay alert.", "ug/npc/soldiers/overwatchordinal/idle_20custom.wav");
+Schema.voices.Add("ORDINAL", "Accept Update", "Copy. Accepted. Updating cognitive suppression biodats. Update complete in T minus three seconds... Dissonance resolved.", "ug/npc/soldiers/overwatchordinal/idle_18.wav");
+Schema.voices.Add("ORDINAL", "Order Update", "Overwatch is requesting all units refresh and resolve. Cognitive dissonance will not be tolerated. Negative... Memories included. Update is live. Acceptance is mandatory.", "ug/npc/soldiers/overwatchordinal/idle_19.wav");
+Schema.voices.Add("ORDINAL", "Contact antlion", "Contact: Antlion.", "ug/npc/soldiers/overwatchordinal/announceenemy_antlion_03.wav");
+Schema.voices.Add("ORDINAL", "Contact parasitic", "Contact: Parasitic.", "ug/npc/soldiers/overwatchordinal/announceenemy_headcrabs_05.wav");
+Schema.voices.Add("ORDINAL", "Kill Confirmed", "Kill Confirmed.", "ug/npc/soldiers/overwatchordinal/announcekill_03.wav");
+Schema.voices.Add("ORDINAL", "Clean kill", "Clean kill.", "ug/npc/soldiers/overwatchordinal/announcekill_04.wav");
+Schema.voices.Add("ORDINAL", "Necro Contained", "Necro Contained", "ug/npc/soldiers/overwatchordinal/announcekill_zombie_01.wav");
+Schema.voices.Add("ORDINAL", "Cleanse Successful", "Cleanse successful", "ug/npc/soldiers/overwatchordinal/announcekill_zombie_03.wav");
+Schema.voices.Add("ORDINAL", "Stop Fire", "Cease fire, cease fire!", "ug/npc/soldiers/overwatchordinal/fakeout_responseceasefire_03.wav");
+Schema.voices.Add("ORDINAL", "Hostile killed", "Hostile neutralised.", "ug/npc/soldiers/overwatchordinal/announcekill_09.wav");
+Schema.voices.Add("ORDINAL", "Firing", "Engaged and firing.", "ug/npc/soldiers/overwatchordinal/firing_111.wav");
+Schema.voices.Add("ORDINAL", "Hostile scrambled", "Hostile scrambled.", "ug/npc/soldiers/overwatchordinal/fakeout_success_03custom.wav");
+Schema.voices.Add("ORDINAL", "Contact necrotic", "Contact: Necrotic.", "ug/npc/soldiers/overwatchordinal/announceenemy_zombie_05.wav");
+Schema.voices.Add("ORDINAL", "Red Leak", "Red Leak on hostile", "ug/npc/soldiers/overwatchordinal/playerishurt_09.wav");
+Schema.voices.Add("ORDINAL", "Tag on prime", "Possible tag on prime.", "ug/npc/soldiers/overwatchordinal/playerishurt_10.wav");
+Schema.voices.Add("ORDINAL", "Proceeding on infected", "Proceeding on infected", "ug/npc/soldiers/overwatchordinal/advancing_on_target_06.wav");
+Schema.voices.Add("ORDINAL", "You can come out now", "You can come out now!", "ug/npc/soldiers/overwatchordinal/taunt_041.wav");
+Schema.voices.Add("ORDINAL", "They're going down", "They're going down!", "ug/npc/soldiers/overwatchordinal/firing_150.wav");
+Schema.voices.Add("ORDINAL", "Hostile experiencing panic", "Hostile is experiencing extreme panic.", "ug/npc/soldiers/overwatchordinal/taunt_010.wav");
+Schema.voices.Add("ORDINAL", "Target is unskilled", "Spikes ineffective, target is unskilled.", "ug/npc/soldiers/overwatchordinal/takingfire_08.wav");
+Schema.voices.Add("ORDINAL", "Reloading", "Weapon renew.", "ug/npc/soldiers/overwatchordinal/reload_04.wav");
+Schema.voices.Add("ORDINAL", "Going sharp", "Going sharp.", "ug/npc/soldiers/overwatchordinal/announceattack_01.wav");
+Schema.voices.Add("ORDINAL", "Taunt", "Hello target one.", "ug/npc/soldiers/overwatchordinal/announceattack_alyx_01.wav");
+Schema.voices.Add("ORDINAL", "Area clear", "Area Clear.", "ug/npc/soldiers/overwatchordinal/reconnoiter_finish_04.wav");
+Schema.voices.Add("ORDINAL", "Survival Mark", "Survival Mark deployed.", "ug/npc/soldiers/overwatchordinal/squadmemberlost_lastman_07.wav");
+Schema.voices.Add("ORDINAL", "Get back", "Step back.", "ug/npc/soldiers/overwatchordinal/nearpanic_05custom.wav");
+Schema.voices.Add("ORDINAL", "Callout Code", "Callout code: Delta echo seven niner alpha two winder zero... Confirmed.", "ug/npc/soldiers/overwatchordinal/idle_15.wav");
+Schema.voices.Add("ORDINAL", "Radio Check", "Fourteen. One. Six. Three. Eleven. And your turn. Over.", "ug/npc/soldiers/overwatchordinal/idle_02.wav");
+Schema.voices.Add("ORDINAL", "Awaiting Problem", "Awaiting problem.", "ug/npc/soldiers/overwatchordinal/overwatch_14.wav");
+Schema.voices.Add("ORDINAL", "Locked and ready", "Locked and ready.", "ug/npc/soldiers/overwatchordinal/combat_idle_102custom2.wav");
+
+/* -------------------------------------------------------------------------- */
+/*                         Anti-Body Protection Force                         */
+/* -------------------------------------------------------------------------- */
+
+Schema.voices.Add("APF", "Active Hostiles", "Overwatch, we have active hostiles.", "ug/npc/soldiers/overwatchsuppressor/combat_idle_012custom.wav");
+Schema.voices.Add("APF", "Keep Sightlines Open and Sound On", "Keep sightlines open and sound on.", "ug/npc/soldiers/overwatchsuppressor/idle_09custom.wav");
+Schema.voices.Add("APF", "Team Holding Position", "Stabilization team holding position. Stay alert.", "ug/npc/soldiers/overwatchsuppressor/idle_20.wav");
+Schema.voices.Add("APF", "Accept Update", "Copy. Accepted. Update complete in T minus three seconds... Dissonance resolved.", "ug/npc/soldiers/overwatchsuppressor/idle_18.wav");
+Schema.voices.Add("APF", "Order Update", "Update is live. Acceptance is mandatory.", "ug/npc/soldiers/overwatchsuppressor/idle_19.wav");
+Schema.voices.Add("APF", "Sending Spikes", "Sending spikes.", "ug/npc/soldiers/overwatchsuppressor/firing_171.wav");
+Schema.voices.Add("APF", "Approaching target", "Approaching target.", "ug/npc/soldiers/overwatchsuppressor/advancing_on_target_04.wav");
+Schema.voices.Add("APF", "Moving", "Moving.", "ug/npc/soldiers/overwatchsuppressor/advancing_on_target_01.wav");
+Schema.voices.Add("APF", "Contact antlion", "Contact: Antlion.", "ug/npc/soldiers/overwatchsuppressor/announceenemy_antlion_03.wav");
+Schema.voices.Add("APF", "Contact parasitic", "Call Contact: Parasitic.", "ug/npc/soldiers/overwatchsuppressor/announceenemy_headcrabs_02.wav");
+Schema.voices.Add("APF", "Kill Confirmed", "Kill Confirmed.", "ug/npc/soldiers/overwatchsuppressor/announcekill_03.wav");
+Schema.voices.Add("APF", "Clean kill", "Clean kill.", "ug/npc/soldiers/overwatchsuppressor/announcekill_08.wav");
+Schema.voices.Add("APF", "Necro Contained", "Necro Contained", "ug/npc/soldiers/overwatchsuppressor/announcekill_zombie_01.wav");
+Schema.voices.Add("APF", "Stay Dead", "Stay dead", "ug/npc/soldiers/soldiers/overwatchsuppressor/announcekill_zombie_03.wav");
+Schema.voices.Add("APF", "Cleanse Successful", "Cleanse successful", "ug/npc/soldiers/overwatchsuppressor/announcekill_zombie_07.wav");
+Schema.voices.Add("APF", "Contact necrotic", "Contact: Necrotic.", "ug/npc/soldiers/overwatchsuppressor/announceenemy_zombie_05.wav");
+Schema.voices.Add("APF", "Stop Fire", "Stop fire, stop fire!", "ug/npc/soldiers/overwatchsuppressor/fakeout_responseceasefire_05custom.wav");
+Schema.voices.Add("APF", "Hostile killed", "Hostile neutralised.", "ug/npc/soldiers/overwatchsuppressor/announcekill_13.wav");
+Schema.voices.Add("APF", "Firing", "Engaged and firing.", "ug/npc/soldiers/overwatchsuppressor/firing_111.wav");
+Schema.voices.Add("APF", "Hostile scrambled", "Hostile is scrambled.", "ug/npc/soldiers/overwatchsuppressor/fakeout_success_03custom.wav");
+Schema.voices.Add("APF", "Red Leak", "Red Leak on hostile", "ug/npc/soldiers/overwatchsuppressor/playerishurt_09.wav");
+Schema.voices.Add("APF", "Tag on prime", "Possible tag on prime.", "ug/npc/soldiers/overwatchsuppressor/playerishurt_10.wav");
+Schema.voices.Add("APF", "Proceeding on infected", "Proceeding on infected", "ug/npc/soldiers/overwatchsuppressor/advancing_on_target_06.wav");
+Schema.voices.Add("APF", "Survival Mark", "Survival Mark deployed.", "ug/npc/soldiers/overwatchsuppressor/squadmemberlost_lastman_07.wav");
+Schema.voices.Add("APF", "hahaha", "Haha.", "ug/npc/soldiers/overwatchsuppressor/laugh_03.wav");
+Schema.voices.Add("APF", "You can come out now", "You can come out now!", "ug/npc/soldiers/overwatchsuppressor/taunt_042.wav");
+Schema.voices.Add("APF", "They're going down", "They're going down!", "ug/npc/soldiers/overwatchsuppressor/firing_151.wav");
+Schema.voices.Add("APF", "Hostile experiencing panic", "Hostile is experiencing extreme panic.", "ug/npc/soldiers/overwatchsuppressor/taunt_010.wav");
+Schema.voices.Add("APF", "Target is unskilled", "Spikes ineffective, target is unskilled.", "ug/npc/soldiers/overwatchsuppressor/takingfire_11.wav");
+Schema.voices.Add("APF", "Reloading", "Renewing dagger.", "ug/npc/soldiers/overwatchsuppressor/reload_09.wav");
+Schema.voices.Add("APF", "Going sharp", "Going sharp.", "ug/npc/soldiers/overwatchsuppressor/announceattack_01.wav");
+Schema.voices.Add("APF", "Taunt", "Target has failed.", "ug/npc/soldiers/overwatchsuppressor/takingfire_08.wav");
+Schema.voices.Add("APF", "Area clear", "Area Clear.", "ug/npc/soldiers/overwatchsuppressor/reconnoiter_finish_04.wav");
+Schema.voices.Add("APF", "Get back", "Get back.", "ug/npc/soldiers/overwatchsuppressor/danger_grenade_09.wav");
+Schema.voices.Add("APF", "Radio Check", "Three. Eleven. One. Fourteen. Six. Check. Your turn. Over.", "ug/npc/soldiers/overwatchsuppressor/idle_02.wav");
+Schema.voices.Add("APF", "Awaiting Problem", "Awaiting problem.", "ug/npc/soldiers/overwatchsuppressor/overwatch_14.wav");
+Schema.voices.Add("APF", "Callout Code", "Callout Code: two winder zero... Confirmed.", "ug/npc/soldiers/overwatchsuppressor/idle_15.wav");
+Schema.voices.Add("APF", "Biodate Update", "Updating biodat... Audibles: 3. Lightvis: 15. Over.", "ug/npc/soldiers/overwatchsuppressor/idle_12.wav");
+Schema.voices.Add("APF", "Locked and ready", "Locked and ready.", "ug/npc/soldiers/overwatchsuppressor/combat_idle_102custom2.wav");
 
 Schema.voices.AddClass("Combine", function(client)
 	return client:IsCombine()
@@ -404,3 +908,5 @@ end)
 Schema.voices.AddClass("Dispatch", function(client)
 	return client:IsDispatch()
 end)
+
+/* ------------------------------- Placeholder ------------------------------ */

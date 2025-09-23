@@ -3,16 +3,22 @@ Schema.voices.stored = {}
 Schema.voices.classes = {}
 
 function Schema.voices.Add(class, key, text, sound, global)
-	class = string.lower(class)
-	key = string.lower(key)
+    class = string.lower(class)
+    key = string.lower(key)
 
-	Schema.voices.stored[class] = Schema.voices.stored[class] or {}
-	Schema.voices.stored[class][key] = {
-		text = text,
-		sound = sound,
-		global = global
-	}
+    -- remove trailing dot if it exists
+    if string.sub(key, -1) == "." then
+        key = string.sub(key, 1, -2)
+    end
+
+    Schema.voices.stored[class] = Schema.voices.stored[class] or {}
+    Schema.voices.stored[class][key] = {
+        text = text,
+        sound = sound,
+        global = global
+    }
 end
+
 
 function Schema.voices.Get(class, key)
 	class = string.lower(class)
