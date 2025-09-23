@@ -68,6 +68,7 @@ end
 
 function PLUGIN:HUDPaint()
 	local client = LocalPlayer()
+	local socioStatus = self:GetData()
 
 	if (client:IsCombine()) then
 		local colorRed = Color(255, 0, 0, 255)
@@ -90,18 +91,18 @@ function PLUGIN:HUDPaint()
 
 		local biosignalExpiry = ix.config.Get("expireBiosignals")
 
-		local socioColor = self.sociostatusColors[self.socioStatus] or color_white
+		local socioColor = self.sociostatusColors[socioStatus] or color_white
 
 		local info = {x = ScrW() - 8, y = 8}
 
-		if (self.socioStatus == "BLACK") then
+		if (socioStatus == "BLACK") then
 			local tsin = TimedSin(1, 0, 255, 0)
 			socioColor = Color(tsin, tsin, tsin)
 		end
 
 		socioColor = Color(socioColor.r, socioColor.g, socioColor.b, 255)
 
-		draw.SimpleText("<:: Sociostatus = " .. self.socioStatus .. " ::>", "BudgetLabel", info.x, info.y, socioColor, TEXT_ALIGN_RIGHT)
+		draw.SimpleText("<:: Sociostatus = " .. socioStatus .. " ::>", "BudgetLabel", info.x, info.y, socioColor, TEXT_ALIGN_RIGHT)
 		info.y = info.y + fontHeight
 
 		for k, v in ipairs(self.hudObjectives) do
@@ -282,6 +283,14 @@ function PLUGIN:HUDPaint()
 
 						draw.SimpleText(showDetail and text or lowDetailText, "BudgetLabel", toScreen.x, toScreen.y, color, 1, 1)
 						toScreen.y = toScreen.y + fontHeight
+					else
+						local text = "<:: ".. v:GetName() .." ::>"
+						local color = team.GetColor(v:Team()) or color_white
+
+						if (v:IsCombine()) then
+							draw.SimpleText(showDetail and text or lowDetailText, "BudgetLabel", toScreen.x, toScreen.y, color, 1, 1)
+							toScreen.y = toScreen.y + fontHeight
+						end
 					end
 
 					local violations = {}
@@ -291,14 +300,14 @@ function PLUGIN:HUDPaint()
 					if (v:Crouching()) then violations[#violations + 1] = "<:: 1xDucking ::>" end
 					if (v:GetLocalVar("ragdoll")) then violations[#violations + 1] = "<:: 1xLaying ::>"	end
 
-					if (#violations > 0) then
-						draw.SimpleText("<:: Possible Violation ::>", "BudgetLabel", toScreen.x, toScreen.y, colorRed, 1, 1)
+					-- if (#violations > 0) then
+					-- 	draw.SimpleText("<:: Possible Violation ::>", "BudgetLabel", toScreen.x, toScreen.y, colorRed, 1, 1)
 
-						for i, violation in ipairs(violations) do
-							toScreen.y = toScreen.y + fontHeight
-							draw.SimpleText(showDetail and violation or lowDetailText, "BudgetLabel", toScreen.x, toScreen.y, color_white, 1, 1)
-						end
-					end
+					-- 	for i, violation in ipairs(violations) do
+					-- 		toScreen.y = toScreen.y + fontHeight
+					-- 		draw.SimpleText(showDetail and violation or lowDetailText, "BudgetLabel", toScreen.x, toScreen.y, color_white, 1, 1)
+					-- 	end
+					-- end
 				end
 			end
 		end
