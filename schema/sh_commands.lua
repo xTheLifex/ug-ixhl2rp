@@ -14,8 +14,36 @@ do
 		end
 	end
 
+	function COMMAND:OnCheckAccess(client)
+		return client.IsHighRank and client:IsHighRank() or client:IsAdmin()
+	end
+
 	ix.command.Add("Dispatch", COMMAND)
 end
+
+/* -------------------------------------------------------------------------- */
+/*                               Radio Dispatch                               */
+/* -------------------------------------------------------------------------- */
+
+
+do
+	local COMMAND = {}
+	COMMAND.arguments = ix.type.text
+	function COMMAND:OnRun(client, message)
+		if (!client:IsRestricted()) then
+			ix.chat.Send(client, "radio", message, true)
+		else
+			return "@notNow"
+		end
+	end
+
+	function COMMAND:OnCheckAccess(client)
+		return client.IsHighRank and client:IsHighRank() or client:IsAdmin()
+	end
+
+	ix.command.Add("RadioDispatch", COMMAND)
+end
+
 
 /* -------------------------------------------------------------------------- */
 /*                                    Radio                                   */

@@ -589,6 +589,7 @@ Schema.voices.Add("Combine", "Sweeping For Suspect.", "Sweeping for suspect.", "
 Schema.voices.Add("Combine", "Sweeping in.", "Sweeping in!", "npc/combine_soldier/vo/sweepingin.wav");
 Schema.voices.Add("Combine", "Swift.", "Swift.", "npc/combine_soldier/vo/swift.wav");
 Schema.voices.Add("Combine", "Sword.", "Sword.", "npc/combine_soldier/vo/sword.wav");
+Schema.voices.Add("Combine", "Shit", "Shit!", "npc/metropolice/vo/shit.wav");
 Schema.voices.Add("Combine", "SZ.", "Sharp zone.", "npc/combine_soldier/vo/sharpzone.wav");
 Schema.voices.Add("Combine", "Tac.", "Tac.", "npc/metropolice/vo/tap.wav");
 Schema.voices.Add("Combine", "Tag 10-107.", "I have a 10-107 here, send Airwatch for tag.", "npc/metropolice/vo/gota10-107sendairwatch.wav");
@@ -689,16 +690,15 @@ Schema.voices.Add("Combine", "Yup.", "Yup.", "npc/metropolice/mc2ans_yup.wav");
 
 Schema.voices.Add("Combine", "Haha2", "Haha.", "ug/npc/soldiers/overwatchgrunt/laugh_05.wav");
 Schema.voices.Add("Combine", "Hey Watch it", "Hey, watch it.", "ug/npc/soldiers/overwatchgrunt/29_0008custom.wav");
-Schema.voices.Add("Combine", "I don't know.", "I don't know.", "ug/npc/soldiers/overwatchgrunt/30_0010wav");
+Schema.voices.Add("Combine", "I dont know.", "I don't know.", "ug/npc/soldiers/overwatchgrunt/30_0010.wav");
 Schema.voices.Add("Combine", "Hands up", "Hands Up! Don't move!", "ug/npc/soldiers/overwatchgrunt/29_0001custom.wav");
 Schema.voices.Add("Combine", "I hate these things", "I hate these things.", "ug/npc/soldiers/overwatchgrunt/announceenemy_headcrabs_06.wav");
 Schema.voices.Add("Combine", "Gross", "Gross.", "ug/npc/soldiers/overwatchgrunt/announcekill_headcrab_06.wav");
 Schema.voices.Add("Combine", "God Damn It", "God damn it.", "ug/npc/soldiers/overwatchgrunt/lostenemy_02.wav");
-Schema.voices.Add("Combine", "Holy Shit", "Holy shit!", "ug/npc/soldiers/overwatchgrunt/nearpanic_05.wav");
+Schema.voices.Add("Combine", "Holy Shit", "Holy sh-", "ug/npc/soldiers/overwatchgrunt/nearpanic_05.wav");
 Schema.voices.Add("Combine", "Requesting location", "Requesting location.", "ug/npc/soldiers/overwatchgrunt/lostvisual_03.wav");
 Schema.voices.Add("Combine", "Negatory", "Negatory.", "ug/npc/soldiers/overwatchgrunt/unabletocommence_03.wav");
-Schema.voices.Add("Combine", "Don't resist", "Don't resist!", "ug/npc/soldiers/overwatchgrunt/firing_202.wav");
-Schema.voices.Add("Combine", "DISP Containment Failure", "Overwatch acknowledges containment failure. Hold for reinforcement.", "ug/npc/overwatchvoice/ugradiovoice/overwatch_radiocustom.wav");
+Schema.voices.Add("Combine", "Dont resist", "Don't resist!", "ug/npc/soldiers/overwatchgrunt/firing_202.wav");
 Schema.voices.Add("Combine", "Back to sleep", "Back to sleep", "ug/npc/soldiers/overwatchgrunt/announcekill_zombie_05.wav");
 Schema.voices.Add("Combine", "Infestation alert", "Infestation Alert.", "ug/npc/soldiers/overwatchgrunt/announceenemy_zombie_03.wav");
 Schema.voices.Add("Combine", "Probable AC", "Probable Anti-Citizen. Get a Scan.", "ug/npc/soldiers/overwatchgrunt/29_00524.wav");

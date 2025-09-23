@@ -107,6 +107,13 @@ function Schema:PlayerMessageSend(speaker, chatType, text, anonymous, receivers,
             classes = {"dispatch"}
         end
 
+        -- Dispatch radio
+        if (chatType == "radio") then
+            if anonymous then
+                classes = {"scanner"}
+            end
+        end
+
 		for k, v in pairs(classes) do
             local texts = GetVoiceCommands(rawText, v, separator)
             local isGlobal = false

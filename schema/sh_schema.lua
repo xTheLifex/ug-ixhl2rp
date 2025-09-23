@@ -78,9 +78,12 @@ do
 		return bHasRadio
 	end
 
-	function CLASS:OnChatAdd(speaker, text)
+	function CLASS:OnChatAdd(speaker, text, anon)
+		local name = speaker:Name()
+		if anon then name = "Dispatch" end
+		if not (speaker.IsHighRank and speaker:IsHighRank() or speaker:IsAdmin()) and anon then return end
 		text = speaker:IsCombine() and string.format("<:: %s ::>", text) or text
-		chat.AddText(self.color, string.format(self.format, speaker:Name(), text))
+		chat.AddText(self.color, string.format(self.format, name, text))
 	end
 
 	ix.chat.Register("radio", CLASS)
