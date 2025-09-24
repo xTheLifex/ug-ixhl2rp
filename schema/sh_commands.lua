@@ -31,11 +31,13 @@ do
 	COMMAND.arguments = ix.type.text
 	COMMAND.alias = {"RadioDisp", "DispRadio"}
 	function COMMAND:OnRun(client, message)
-		if (!client:IsRestricted()) then
-			ix.chat.Send(client, "radio", message, true)
-		else
-			return "@notNow"
+		local receivers = {}
+		for k,v in ipairs(player.GetAll()) do
+			if (v:IsCombine()) then
+				table.insert(receivers, v)
+			end
 		end
+		ix.chat.Send(client, "radio", message, true, receivers, {dispatch=true})
 	end
 
 	function COMMAND:OnCheckAccess(client)

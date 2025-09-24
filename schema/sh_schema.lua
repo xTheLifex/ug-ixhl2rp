@@ -63,10 +63,19 @@ do
 	CLASS.color = Color(75, 150, 50)
 	CLASS.format = "%s radios in \"%s\""
 
-	function CLASS:CanHear(speaker, listener)
+	function CLASS:CanHear(speaker, listener, data)
 		local character = listener:GetCharacter()
 		local inventory = character:GetInventory()
 		local bHasRadio = false
+
+		local dispatch = data and data.dispatch
+
+		if (dispatch) then
+			local radio = inventory:HasItem("handheld_radio")
+			if (radio and radio:GetData("enabled", false) and listener:IsCombine()) then
+				return true
+			end
+		end
 
 		for k, v in pairs(inventory:GetItemsByUniqueID("handheld_radio", true)) do
 			if (v:GetData("enabled", false) and speaker:GetCharacter():GetData("frequency") == character:GetData("frequency")) then
@@ -78,10 +87,12 @@ do
 		return bHasRadio
 	end
 
-	function CLASS:OnChatAdd(speaker, text, anon)
+	function CLASS:OnChatAdd(speaker, text, anon, data)
 		local name = speaker:Name()
-		if anon then name = "Dispatch" end
-		if not (speaker.IsHighRank and speaker:IsHighRank() or speaker:IsAdmin()) and anon then return end
+		local dispatch = data and data.dispatch
+
+		if (dispatch) then name = "Dispatch" end
+
 		text = speaker:IsCombine() and string.format("<:: %s ::>", text) or text
 		chat.AddText(self.color, string.format(self.format, name, text))
 	end
