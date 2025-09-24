@@ -1,6 +1,7 @@
 PLUGIN.name = "Life's Health Items"
 PLUGIN.description = "A bunch of items."
 PLUGIN.author = "TheLife"
+PLUGIN.authorColor = Color(235,85,255)
 PLUGIN.maxLength = 512
 
 function PLUGIN:AddItemTable(t)
