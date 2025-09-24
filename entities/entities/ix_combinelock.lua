@@ -12,11 +12,52 @@ ENT.bNoPersist = true
 function ENT:SetupDataTables()
 	self:NetworkVar("Bool", 0, "Locked")
 	self:NetworkVar("Bool", 1, "DisplayError")
+	self:NetworkVar("Int", 0, "LockType")
 
 	if (SERVER) then
 		self:NetworkVarNotify("Locked", self.OnLockChanged)
 	end
 end
+
+ix.CombineLockTypes = {
+	[0] = {
+		name = "Civil Worker's Union",
+		color = Color(225,225,0),
+		check = function(client, character)
+			local faction = character:GetFaction()
+			return (class == FACTION_CWU) or (faction == FACTION_ADMIN) or client:IsCombine()
+		end
+	},
+	[1] = {
+		name = "Metropolice Force",
+		color = Color(0, 100, 255, 255),
+		check = function(client, character)
+			return client:IsCombine()
+		end
+	},
+	[2] = {
+		name = "Metropolice High Command",
+		color = Color(0, 100, 255, 255),
+		check = function(client, character)
+			return (client:IsCombine() and character:GetClass() == CLASS_EMP)
+		end
+	},
+	[3] = {
+		name = "Overwatch Transhuman Arm",
+		color = Color(255,120,120, 255),
+		check = function(client, character)
+			return (character:GetFaction() == FACTION_OTA)
+		end
+	},
+	[4] = {
+		name = "Civil Administration",
+		color = Color(225,125,75,255),
+		check = function(client, character)
+			local faction = character:GetFaction()
+			return ((faction == FACTION_ADMIN) or (faction == FACTION_OTA))
+		end
+	}
+}
 
 if (SERVER) then
 	function ENT:GetLockPosition(door, normal)
@@ -57,6 +98,7 @@ if (SERVER) then
 		self:SetPos(position)
 		self:SetAngles(angles)
 		self:SetParent(door)
+		self:SetLockType(1)
 	end
 
 	function ENT:SpawnFunction(client, trace)
@@ -149,10 +191,24 @@ if (SERVER) then
 			return
 		end
 
-		if (!client:IsCombine() and client:Team() != FACTION_ADMIN) then
+		-- Default Behaviour Disabled
+		-- if (!client:IsCombine() and client:Team() != FACTION_ADMIN) then
+		-- 	self:DisplayError()
+		-- 	self.nextUseTime = CurTime() + 2
+
+		-- 	return
+		-- end
+		
+		local id = self:GetLockType()
+		local lockType = ix.CombineLockTypes[id]
+		local character = client:GetCharacter()
+		
+		-- lockType must exist
+		-- if lockType.check isnt defined, check for combine.
+		-- else, execute the custom check.
+		if not lockType or (not lockType.check and not client:IsCombine()) or (lockType.check and not lockType.check(client, character)) then
 			self:DisplayError()
 			self.nextUseTime = CurTime() + 2
-
 			return
 		end
 
@@ -167,7 +223,15 @@ else
 	local glowMaterial = ix.util.GetMaterial("sprites/glow04_noz")
 	local color_green = Color(0, 255, 0, 255)
 	local color_blue = Color(0, 100, 255, 255)
-	local color_red = Color(255, 50, 50, 255)
+	local color_red = Color(255, 20, 20, 255)
+	local color_error = Color(255,0,255)
+
+	function ENT:GetDisplayColor()
+		local id = self:GetLockType()
+		local lockType = ix.CombineLockTypes[id]
+		if not lockType then return color_error end
+		return lockType.color or color_error
+	end
 
 	function ENT:Draw()
 		self:DrawModel()
@@ -177,7 +241,7 @@ else
 		if (self:GetDisplayError()) then
 			color = color_red
 		elseif (self:GetLocked()) then
-			color = color_blue
+			color = self:GetDisplayColor()
 		end
 
 		local position = self:GetPos() + self:GetUp() * -8.7 + self:GetForward() * -3.85 + self:GetRight() * -6

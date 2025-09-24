@@ -39,6 +39,78 @@ if (SERVER) then
 		return dispenser
 	end
 
+	function ENT:GetRationType(client)
+		local DEFAULT_RATION = "package_standardration"
+	
+		local plugin = ix.plugin.Get("simpledatafile")
+		if not plugin then return DEFAULT_RATION end
+	
+		local character = client:GetCharacter()
+		if not character then return DEFAULT_RATION end
+	
+		local datafileID = character:GetDatafile()
+		if not datafileID or datafileID <= 0 then return DEFAULT_RATION end
+	
+		local datafile = ix.datafile.cached[datafileID]
+		if not datafile or not datafile.points then return DEFAULT_RATION end
+	
+		local points = tonumber(datafile.points)
+		local faction = character:GetFaction()
+		local class = character:GetClass()
+	
+		-- Faction checks
+		local isBiotic = faction == FACTION_BIOTIC
+		local isCityAdmin = faction == FACTION_ADMIN
+		local isOTA = faction == FACTION_OTA
+		local isCWU = faction == FACTION_CWU
+	
+		-- Free Vorts
+		if isBiotic then
+			return false
+		end
+	
+		-- Enslaved Vorts get biotic rations
+		if isBiotic then
+			return "package_bioticration"
+		end
+	
+		-- Points-based ration packages
+		-- Thresholds are applied in ascending order
+		if points < -10 then
+			return false -- Deny rations for extremely negative loyalty
+		end
+	
+		local ration = DEFAULT_RATION
+		local delay = 10.2
+
+		local thresholds = {
+			{ threshold = -10, package = "package_minimalration", delay = 10.2 },
+			{ threshold = 0,   package = "package_standardration", delay = 8 },
+			{ threshold = 40,  package = "package_loyalistration", delay = 6 },
+			{ threshold = 80,  package = "package_priorityration", delay = 1 },
+		}
+	
+		for _, entry in ipairs(thresholds) do
+			if points >= entry.threshold then
+				ration = entry.package
+				delay = entry.delay
+			end
+		end
+	
+		-- Civil Workers always get loyalist rations or better
+		if isCWU and points < 40 then
+			ration = "package_loyalistration"
+		end
+	
+		-- City Admins always get top-tier rations
+		if isCityAdmin then
+			ration = "package_priorityration"
+		end
+	
+		return ration, delay
+	end
+	
+
 	function ENT:Initialize()
 		self:SetModel("models/props_junk/watermelon01.mdl")
 		self:SetSolid(SOLID_VPHYSICS)
@@ -80,7 +152,8 @@ if (SERVER) then
 	function ENT:SpawnRation(callback, releaseDelay)
 		releaseDelay = releaseDelay or 1.2
 
-		local itemTable = ix.item.Get("ration")
+		local ration = self.rationType or "ration"
+		local itemTable = ix.item.Get(ration)
 
 		self.dummy:SetModel(itemTable:GetModel())
 		self.dummy:SetNoDraw(false)
@@ -90,7 +163,7 @@ if (SERVER) then
 		end
 
 		timer.Simple(releaseDelay, function()
-			ix.item.Spawn("ration", self.dummy:GetPos(), function(item, entity)
+			ix.item.Spawn(ration, self.dummy:GetPos(), function(item, entity)
 				self.dummy:SetNoDraw(true)
 			end, self.dummy:GetAngles())
 
@@ -134,45 +207,68 @@ if (SERVER) then
 			return
 		end
 
-		if (client:Team() == FACTION_CITIZEN) then
-			if (!self:GetEnabled()) then
-				self:DisplayError(6)
-				return
-			end
-
-			local cid = client:GetCharacter():GetInventory():HasItem("cid")
-
-			if (!cid) then
-				self:DisplayError(7)
-				return
-			end
-
-			-- display checking message
-			self.canUse = false
-			self:SetDisplay(2)
-			self:EmitSound("ambient/machines/combine_terminal_idle2.wav")
-
-			-- check cid ration time and dispense if allowed
-			timer.Simple(math.random(1.8, 2.2), function()
-				if (cid:GetData("nextRationTime", 0) < os.time()) then
-					self:SetDisplay(8)
-					self:EmitSound("ambient/machines/combine_terminal_idle3.wav")
-
-					timer.Simple(10.2, function()
-						self:StartDispense()
-						cid:SetData("nextRationTime", os.time() + ix.config.Get("rationInterval", 1))
-					end)
-				else
-					self:DisplayError(4)
-				end
-			end)
-		elseif (client:IsCombine()) then
+		if (client:IsCombine()) then
 			self:SetEnabled(!self:GetEnabled())
 			self:EmitSound(self:GetEnabled() and "buttons/combine_button1.wav" or "buttons/combine_button2.wav")
 
 			Schema:SaveRationDispensers()
 			self.nextUseTime = CurTime() + 2
+			return
 		end
+
+		if (!self:GetEnabled()) then
+			self:DisplayError(6)
+			return
+		end
+
+		local factions = {FACTION_ADMIN, FACTION_CITIZEN, FACTION_CWU, FACTION_BIOTIC}
+		local allowed = false
+		for _,f in ipairs(factions) do
+			if (client:Team() == f) then
+				allowed = true
+			end
+		end
+
+		if !allowed then 
+			self:DisplayError(7)
+			return
+		end
+
+		local cid = client:GetCharacter():GetInventory():HasItem("cid")
+
+		if (!cid) then
+			self:DisplayError(7)
+			return
+		end
+
+		-- if theres no ration type it means rations are denied for this person
+		self.rationType, self.delay = self:GetRationType(client)
+		if (!self.rationType) then
+			self:DisplayError(7)
+			return
+		end
+
+		-- display checking message
+		self.canUse = false
+		self:SetDisplay(2)
+		self:EmitSound("ambient/machines/combine_terminal_idle2.wav")
+
+		-- check cid ration time and dispense if allowed
+		timer.Simple(math.random(1.8, 2.2), function()
+			if (cid:GetData("nextRationTime", 0) < os.time()) then
+				self:SetDisplay(8)
+				self:EmitSound("ambient/machines/combine_terminal_idle3.wav")
+
+				timer.Simple(self.delay, function()
+					self:StartDispense()
+					cid:SetData("nextRationTime", os.time() + ix.config.Get("rationInterval", 1))
+				end)
+			else
+				self:DisplayError(4)
+			end
+		end)
+
+
 	end
 
 	function ENT:OnRemove()

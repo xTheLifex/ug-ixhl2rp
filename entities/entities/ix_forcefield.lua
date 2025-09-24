@@ -12,14 +12,96 @@ ENT.bNoPersist = true
 
 function ENT:SetupDataTables()
 	self:NetworkVar("Int", 0, "Mode")
+	self:NetworkVar("Bool", 0, "Enabled")
 	self:NetworkVar("Entity", 0, "Dummy")
 end
 
-local MODE_ALLOW_ALL = 1
-local MODE_ALLOW_CID = 2
-local MODE_ALLOW_NONE = 3
+local MODE_ALLOW_CID = 1 -- Valid CID
+local MODE_ALLOW_NONE = 2 -- Full restrict
+local MODE_ALLOW_CWU = 3 -- Only CWU
+local MODE_ALLOW_OTA = 4 -- Only OTA
+local MODE_ALLOW_CA = 5 -- Only OTA and CA
+
+ix.ForcefieldTypes = {
+	{
+		function(client)
+			local character = client:GetCharacter()
+			if not character then return true end
+			if (client:IsCombine() or character:GetFaction() == FACTION_ADMIN) then return false end
+
+			if (character and character:GetInventory() and !character:GetInventory():HasItem("cid")) then
+				return true
+			else
+				return false
+			end
+		end,
+		"Only allow with valid CID.",
+		Color(90,255,255),
+		"Citizen"
+	},
+	{
+		function(client)
+			local character = client:GetCharacter()
+			if not character then return true end
+			return !(client:IsCombine() or character:GetFaction() == FACTION_ADMIN)
+		end,
+		"Never allow citizens.",
+		Color(95,150,255),
+		"Combine"
+	},
+	{
+		function(client)
+			local character = client:GetCharacter()
+			if not character then return true end
+			local faction = character:GetFaction()
+
+			if (faction == FACTION_CWU or faction == FACTION_ADMIN or client:IsCombine()) then
+				return false
+			end
+			return true
+		end,
+		"Allow Civil Workers.",
+		Color(255,225,95),
+		"Civil Worker's Union"
+	},
+	{
+		function(client)
+			local character = client:GetCharacter()
+			if not character then return true end
+			local faction = character:GetFaction()
+			if (faction == FACTION_OTA) then
+				return false
+			end
+
+			return true
+		end,
+		"Allow Overwatch.",
+		Color(255,95,95),
+		"Overwatch"
+	},
+	{
+		function(client)
+			local character = client:GetCharacter()
+			if not character then return true end
+			local faction = character:GetFaction()
+			if (faction == FACTION_OTA or faction == FACTION_ADMIN) then
+				return false
+			end
+
+			return true
+		end,
+		"Allow only Civil Administration.",
+		Color(255,95,95),
+		"City Administration"
+	}
+}
 
 if (SERVER) then
+	resource.AddFile("sound/ug/ForcefieldEnemy.wav")
+	resource.AddFile("sound/ug/ForcefieldFriend.wav")
+	local ALARM_ENEMY = "ug/ForcefieldEnemy.wav"
+	local ALARM_FRIEND = "ug/ForcefieldFriend.wav"
+
 	function ENT:SpawnFunction(client, trace)
 		local angles = (client:GetPos() - trace.HitPos):Angle()
 		angles.p = 0
@@ -91,8 +173,61 @@ if (SERVER) then
 		self:SetMoveType(MOVETYPE_NOCLIP)
 		self:SetMoveType(MOVETYPE_PUSH)
 		self:MakePhysicsObjectAShadow()
-		self:SetMode(MODE_ALLOW_ALL)
+		self:SetMode(MODE_ALLOW_NONE)
+		self:SetEnabled(true)
 	end
+
+	function ENT:IsPlayerInForcefield(client)
+		if not IsValid(client) or not client:IsPlayer() then return false end
+		
+		local dummy = self:GetDummy()
+		if not IsValid(dummy) then return false end
+	
+		local pos1 = self:GetPos()
+		local pos2 = dummy:GetPos()
+		local playerPos = client:GetPos()
+	
+		local height = 190
+		local thickness = 32
+	
+		-- Flatten to same Z to get direction in 2D
+		local dir = (pos2 - pos1)
+		dir.z = 0
+		local length = dir:Length()
+		dir:Normalize()
+	
+		-- Vector from pos1 to player, flattened
+		local toPlayer = playerPos - pos1
+		toPlayer.z = 0
+	
+		-- Project player onto the axis
+		local forwardDist = toPlayer:Dot(dir)
+	
+		
+		-- Check if within field length
+		if forwardDist < 0 or forwardDist > length then return false end
+		
+		-- Check if within side bounds (thickness)
+		local sideDist = toPlayer:Cross(dir):Length()
+		if sideDist > thickness then return false end
+
+		return true
+	end	
+
+	function ENT:PlaySound(clip)
+		-- Play sound on the current entity
+		self:EmitSound(clip)
+	
+		-- Play sound on the dummy (other model)
+		local dummy = self:GetDummy()
+		if IsValid(dummy) then
+			dummy:EmitSound(clip)
+		end
+
+		-- Play sound at the center of the forcefield (middle point between self and dummy)
+		local middlePos = (self:GetPos() + dummy:GetPos()) / 2
+		sound.Play(clip, middlePos, 75, 100, 1)
+	end	
 
 	function ENT:StartTouch(entity)
 		if (!self.buzzer) then
@@ -126,33 +261,6 @@ if (SERVER) then
 		end
 	end
 
-	local MODES = {
-		{
-			function(client)
-				return false
-			end,
-			"Off."
-		},
-		{
-			function(client)
-				local character = client:GetCharacter()
-
-				if (character and character:GetInventory() and !character:GetInventory():HasItem("cid")) then
-					return true
-				else
-					return false
-				end
-			end,
-			"Only allow with valid CID."
-		},
-		{
-			function(client)
-				return true
-			end,
-			"Never allow citizens."
-		}
-	}
-
 	function ENT:Use(activator)
 		if ((self.nextUse or 0) < CurTime()) then
 			self.nextUse = CurTime() + 1.5
@@ -160,55 +268,134 @@ if (SERVER) then
 			return
 		end
 
-		if (activator:IsCombine()) then
-			self:SetMode(self:GetMode() + 1)
+		if (self:CanDisable(activator)) then
+			self:SetEnabled(!self:GetEnabled())
 
-			if (self:GetMode() > #MODES) then
-				self:SetMode(1)
-
+			if (!self:GetEnabled()) then
 				self:SetSkin(1)
 				self.dummy:SetSkin(1)
-				self:EmitSound("npc/turret_floor/die.wav")
+				self:PlaySound("npc/turret_floor/die.wav")
 			else
 				self:SetSkin(0)
 				self.dummy:SetSkin(0)
 			end
 
-			self:EmitSound("buttons/combine_button5.wav", 140, 100 + (self:GetMode() - 1) * 15)
-			activator:ChatPrint("Changed barrier mode to: "..MODES[self:GetMode()][2])
+			self:PlaySound("buttons/combine_button5.wav")
+
+			if (self:GetEnabled()) then
+				activator:ChatPrint("Activated forcefield.")
+			else
+				activator:ChatPrint("Disabled forcefield.")
+			end
 
 			Schema:SaveForceFields()
 		else
-			self:EmitSound("buttons/combine_button3.wav")
+			self:PlaySound("buttons/combine_button3.wav")
 		end
 	end
 
-	hook.Add("ShouldCollide", "ix_forcefields", function(a, b)
-		local client
-		local entity
+	function ENT:CanDisable(client)
+		local mode = self:GetMode() or 1
+		local collides = (istable(ix.ForcefieldTypes[mode]) and ix.ForcefieldTypes[mode][1](client)) or false
+		local character = client:GetCharacter()
+		local isCombineAffiliated = character:GetFaction() == FACTION_ADMIN or client:IsCombine()
 
-		if (a:IsPlayer()) then
-			client = a
-			entity = b
-		elseif (b:IsPlayer()) then
-			client = b
-			entity = a
-		end
+		return (!collides and isCombineAffiliated)
+	end
 
-		if (IsValid(entity) and entity:GetClass() == "ix_forcefield") then
-			if (IsValid(client)) then
-				if (client:IsCombine() or client:Team() == FACTION_ADMIN) then
-					return false
+	function ENT:Think()
+		if not self:GetEnabled() then return end
+	
+		self.currentColliders = self.currentColliders or {}
+		self.lastColliders = self.lastColliders or {}
+		self.wasInFieldLastTick = self.wasInFieldLastTick or {}
+		self.rubTimers = self.rubTimers or {}
+		self.rubStrikes = self.rubStrikes or {}
+	
+		local interval = 5
+		local strikeThresholds = {
+			[1] = 5,  -- Strike 1
+			[2] = 10,  -- Strike 2 - Warning!
+			[3] = 15,  -- Strike 3
+			[4] = 20, -- Strike 4
+			[5] = 25, -- Strike 5
+			[6] = 30, -- ! Prosecute !
+		}
+	
+		for _, ply in ipairs(player.GetAll()) do
+			if not ply:Alive() then continue end
+			if ply:GetMoveType() == MOVETYPE_NOCLIP then continue end
+	
+			local inField = self:IsPlayerInForcefield(ply)
+			local wasInField = self.wasInFieldLastTick[ply] or false
+			local mode = self:GetMode() or 1
+			local collides = (istable(ix.ForcefieldTypes[mode]) and ix.ForcefieldTypes[mode][1](ply)) or false
+
+			if inField then
+				if not wasInField then
+					-- Just entered forcefield
+					self.rubTimers[ply] = CurTime()
+					self.rubStrikes[ply] = 0
+	
+					local last = self.lastColliders[ply] or 0
+					if CurTime() - last > interval then
+						self.lastColliders[ply] = CurTime()
+						self:PlaySound(collides and ALARM_ENEMY or ALARM_FRIEND)
+					end
+				elseif collides then
+					-- Still in field, check strike progression
+					local timeInField = CurTime() - (self.rubTimers[ply] or 0)
+	
+					for strikeLevel = 1, #strikeThresholds do
+						if self.rubStrikes[ply] < strikeLevel and timeInField >= strikeThresholds[strikeLevel] then
+							self.rubStrikes[ply] = strikeLevel
+	
+							if strikeLevel == 1 then
+								-- * STRIKE 1 *
+								self:PlaySound(ALARM_ENEMY)
+							elseif strikeLevel == 2 then
+								-- * STRIKE 2 *
+								self:PlaySound(ALARM_ENEMY)
+								timer.Simple(1, function ()
+									if (!IsValid(self)) then return end
+									if (!self.lastWarning or (CurTime() - self.lastWarning > 120)) then
+										self:PlaySound("ug/npc/overwatchvoice/ugcityvoice/overwatch_shortaccess.wav")
+										self.lastWarning = CurTime()
+									end
+								end)
+							elseif strikeLevel == 3 then
+								-- * STRIKE 3 *
+								self:PlaySound(ALARM_ENEMY)
+							elseif strikeLevel == 4 then
+								self:PlaySound(ALARM_ENEMY)
+							elseif strikeLevel == 5 then
+								self:PlaySound(ALARM_ENEMY)
+							elseif strikeLevel == 6 then
+								-- ! PROSECUTE ! -
+								self:PlaySound(ALARM_ENEMY)
+								timer.Simple(1, function ()
+									if (!IsValid(self)) then return end
+									if (!self.lastDispatch or (CurTime() - self.lastDispatch > 120)) then
+										self:PlaySound("ug/npc/overwatchvoice/ugcityvoice/overwatch_restricted.wav")
+										self.lastDispatch = CurTime()
+									end
+								end)
+							end
+						end
+					end
 				end
-
-				local mode = entity:GetMode() or 1
-
-				return istable(MODES[mode]) and MODES[mode][1](client)
 			else
-				return entity:GetMode() != 4
+				-- Left forcefield, reset rub state
+				self.rubTimers[ply] = nil
+				self.rubStrikes[ply] = nil
 			end
+	
+			self.wasInFieldLastTick[ply] = inField
 		end
-	end)
+	
+		self:NextThink(CurTime() + 0.1)
+		return true
+	end	
 else
 	local SHIELD_MATERIAL = ix.util.GetMaterial("effects/combineshield/comshieldwall3")
 
@@ -231,7 +418,10 @@ else
 	function ENT:Draw()
 		self:DrawModel()
 
-		if (self:GetMode() == 1) then
+		local mode = self:GetMode() or 1
+		local color = istable(ix.ForcefieldTypes[mode]) and ix.ForcefieldTypes[mode][3] or Color(255,255,255)
+
+		if (!self:GetEnabled()) then
 			return
 		end
 
@@ -241,13 +431,14 @@ else
 		matrix:Rotate(angles)
 
 		render.SetMaterial(SHIELD_MATERIAL)
+		render.SetColorModulation(color.r / 255, color.g / 255, color.b / 255)
 
 		local dummy = self:GetDummy()
-
+		
 		if (IsValid(dummy)) then
 			local vertex = self:WorldToLocal(dummy:GetPos())
 			self:SetRenderBounds(vector_origin, vertex + self:GetUp() * 150)
-
+			
 			cam.PushModelMatrix(matrix)
 				self:DrawShield(vertex)
 			cam.PopModelMatrix()
@@ -262,22 +453,76 @@ else
 	end
 
 	function ENT:DrawShield(vertex)
+		local height = 190
+		local width = vertex:Length()
+	
+		local uScale = math.max(width / 64, 1)
+		local vScale = math.max(height / 64, 1)
+		
 		mesh.Begin(MATERIAL_QUADS, 1)
 			mesh.Position(vector_origin)
 			mesh.TexCoord(0, 0, 0)
 			mesh.AdvanceVertex()
-
-			mesh.Position(self:GetUp() * 190)
-			mesh.TexCoord(0, 0, 3)
+	
+			mesh.Position(self:GetUp() * height)
+			mesh.TexCoord(0, 0, vScale)
 			mesh.AdvanceVertex()
-
-			mesh.Position(vertex + self:GetUp() * 190)
-			mesh.TexCoord(0, 3, 3)
+	
+			mesh.Position(vertex + self:GetUp() * height)
+			mesh.TexCoord(0, uScale, vScale)
 			mesh.AdvanceVertex()
-
+	
 			mesh.Position(vertex)
-			mesh.TexCoord(0, 3, 0)
+			mesh.TexCoord(0, uScale, 0)
 			mesh.AdvanceVertex()
 		mesh.End()
 	end
+	
 end
+
+local rats = {
+	["npc_rat_hostile"] = true,
+	["npc_rat"] = true,
+	["npc_rat_big"] = true,
+}
+
+-- Shared collide for clientside prediction.
+hook.Add("ShouldCollide", "ix_forcefields", function(a, b)
+	local entity
+	local other
+	-- Check if either a or b is the forcefield
+	if (IsValid(a) and a:GetClass() == "ix_forcefield") then
+		entity = a
+		other = b
+	elseif (IsValid(b) and b:GetClass() == "ix_forcefield") then
+		entity = b
+		other = a
+	end
+
+	if (IsValid(entity)) then
+		if (!entity:GetEnabled()) then
+			return false -- Forcefield disabled = no collisions at all
+		end
+
+		local client = (a:IsPlayer() and a) or (b:IsPlayer() and b)
+
+		if (IsValid(client)) then
+			local mode = entity:GetMode() or 1
+			local collides = istable(ix.ForcefieldTypes[mode]) and ix.ForcefieldTypes[mode][1](client)
+			return collides
+		else
+			-- TODO: Call a hook to allow plugins to override behavior
+			entity.lastNPCTimer = entity.lastNPCTimer or {}
+			if (rats[other:GetClass()] == true and SERVER) then
+				local lastTime = entity.lastNPCTimer[other] or 0
+				if (CurTime() - lastTime > 10) then
+					entity:PlaySound("storm/ForcefieldEnemy.wav")
+					entity.lastNPCTimer[other] = CurTime()
+				end
+				return true
+			end
+
+			return false -- default: don't collide with props/ents when enabled
+		end
+	end
+end)
