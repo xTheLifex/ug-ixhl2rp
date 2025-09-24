@@ -336,3 +336,81 @@ do
 		end;
 	})
 end
+
+/* -------------------------------------------------------------------------- */
+/*                                Set Lock Type                               */
+/* -------------------------------------------------------------------------- */
+
+do
+	local COMMAND = {}
+	COMMAND.adminOnly = true
+	COMMAND.alias = {"SetLockType"}
+	COMMAND.arguments = {
+		ix.type.string
+	}
+    COMMAND.argumentNames = {"Door Type"}
+    COMMAND.description = "Sets the combine lock type on the door you're facing."
+
+	function COMMAND:OnRun(client, argument)
+		local data = {}
+			data.start = client:GetShootPos()
+			data.endpos = data.start + client:GetAimVector() * 96
+			data.filter = client
+		local target = util.TraceLine(data).Entity
+
+		if (IsValid(target)) then
+			local lock = ((target:GetClass() == "ix_combinelock") and target) or (target.ixLock)
+			if not lock then return "Something went wrong!" end
+
+			local str = string.lower(argument)
+			for id, lockType in pairs(ix.CombineLockTypes) do
+				if (ix.util.StringMatches(lockType.name, str)) then
+					lock:SetLockType(id)
+					return "Type set to " .. lockType.name
+				end
+			end
+			return "Couldn't find a valid lock type for '" .. argument .. "'"
+		else
+			return "Not a valid combine lock!"
+		end
+	end
+
+	ix.command.Add("DoorSetLockType", COMMAND)
+end
+
+/* -------------------------------------------------------------------------- */
+/*                             Set Forcefield Type                            */
+/* -------------------------------------------------------------------------- */
+
+do
+	local COMMAND = {}
+	COMMAND.adminOnly = true
+	COMMAND.alias = {"SetCombineForcefieldType"}
+	COMMAND.arguments = {
+		ix.type.string
+	}
+	COMMAND.argumentNames = {"Forcefield Type"}
+	COMMAND.description = "Sets the forcefield type on the forcefield you're facing."
+
+	function COMMAND:OnRun(client, argument)
+		local trace = client:GetEyeTrace()
+		local target = trace.Entity
+
+		if IsValid(target) and target:GetClass() == "ix_forcefield" then
+			local str = string.lower(argument)
+
+			for id, forcefieldType in pairs(ix.ForcefieldTypes or {}) do
+				if ix.util.StringMatches(forcefieldType[2], str) or ix.util.StringMatches(forcefieldType[4], str) then
+					target:SetMode(id)
+					return "Type set to " .. forcefieldType[2]
+				end
+			end
+
+			return "Couldn't find a valid forcefield type for '" .. argument .. "'"
+		else
+			return "You're not looking at a valid forcefield!"
+		end
+	end
+
+	ix.command.Add("SetForcefieldType", COMMAND)
+end

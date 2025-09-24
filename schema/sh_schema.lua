@@ -28,6 +28,9 @@ ix.anim.SetModelClass("models/eliteshockcp.mdl", "metrocop")
 ix.anim.SetModelClass("models/leet_police2.mdl", "metrocop")
 ix.anim.SetModelClass("models/sect_police2.mdl", "metrocop")
 ix.anim.SetModelClass("models/policetrench.mdl", "metrocop")
+ix.anim.SetModelClass("models/ug/police_custom.mdl", "metrocop")
+ix.anim.SetModelClass("models/ug/combine_soldier_ug.mdl", "overwatch")
+
 
 function Schema:ZeroNumber(number, length)
 	local amount = math.max(0, length - string.len(number))
