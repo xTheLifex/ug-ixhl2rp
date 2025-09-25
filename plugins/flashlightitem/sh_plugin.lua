@@ -25,26 +25,3 @@ function PLUGIN:PlayerSwitchFlashlight(client, bEnabled)
 
 	return false
 end
-
-function PLUGIN:Think()
-	if not SERVER then return end
-	self.nextThink = self.nextThink or 0
-	if (self.nextThink > CurTime()) then return end
-	self.nextThink = CurTime() + 1
-
-	for _, ply in ipairs(player.GetAll()) do
-		local char = ply:GetCharacter()
-		if (ply:FlashlightIsOn()) then
-			local flashlight = char:GetInventory():HasItem("flashlight")
-			if flashlight then
-				local decay = 10
-				local charge = math.Clamp((flashlight:GetData("battery", 0) - decay), 0, 100)
-				flashlight:SetData("battery", charge)
-				if (charge <= 0) then
-					ply:Flashlight(false)
-					ply:Notify("Your flashlight's battery is depleted!")
-				end
-			end
-		end
-	end
-end

@@ -11,7 +11,7 @@ function ITEM:PopulateTooltip(tooltip)
 	local charge = self:GetData("power", 0)
 	local font = "ixSmallFont"
 	local info = tooltip:AddRowAfter("description", "info")
-	local text = "Charge: " .. charge .. "%"
+	local text = string.format("Charge %s%%", charge)
 
 	local color = Color(0,255,0)
 
