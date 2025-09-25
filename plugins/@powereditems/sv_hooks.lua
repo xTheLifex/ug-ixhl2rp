@@ -1,6 +1,5 @@
 
 function PLUGIN:Think()
-	if not SERVER then return end
 	self.nextThink = self.nextThink or 0
 	if (self.nextThink > CurTime()) then return end
 	self.nextThink = CurTime() + 1
@@ -10,10 +9,10 @@ function PLUGIN:Think()
         local inventory = char and char:GetInventory()
 
         if not inventory then continue end
-
-        for _, item in ipairs(inventory:GetItems(false)) do
+        
+        for _, item in pairs(inventory:GetItems(false)) do
             if (item.base == "base_powered") then
-                if (item:IsConsumingBattery()) then
+                if (item:IsConsumingBattery(item)) then
                     local decay = 100/ (item.batteryLife or 3600)
                     local charge = math.Clamp((item:GetData("battery", 0) - decay), 0, 100)
                     item:SetData("battery", charge)

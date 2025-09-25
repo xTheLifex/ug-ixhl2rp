@@ -32,7 +32,7 @@ function ITEM:PopulateTooltip(tooltip)
 end
 
 function ITEM:OnBatteryRemoved()
-	
+
 end
 
 function ITEM:OnBatteryDepleted()
@@ -77,7 +77,8 @@ ITEM.functions.RemoveBattery = {
 		end
 
 		item:OnBatteryRemoved()
-		item:SetData("battery", 0)
+		client:Notify(string.format("You remove the battery from the %s.", (item:GetName() or item.name)))
+		item:SetData("battery", 0) 
 		return false
 	end,
 	OnCanRun = function (item, data)
@@ -109,7 +110,7 @@ ITEM.functions.combine = {
 			client:Notify(string.format("You replace the battery in the %s.", (item:GetName() or item.name)))
 			item:OnBatteryReplaced()
 		else
-			client:Notify("You insert the battery in the %s.", (item:GetName() or item.name))
+			client:Notify(string.format("You insert the battery in the %s.", (item:GetName() or item.name)))
 			item:OnBatteryInserted()
 		end
 		return false

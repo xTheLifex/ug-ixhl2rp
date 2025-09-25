@@ -5,4 +5,4 @@ PLUGIN.authorColor = Color(235,85,255)
 PLUGIN.maxLength = 512
 
 
-
+ix.util.Include("sv_hooks.lua")

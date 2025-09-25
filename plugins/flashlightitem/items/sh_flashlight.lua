@@ -6,16 +6,20 @@ ITEM.width = 1
 ITEM.height = 1
 ITEM.description = "A standard flashlight that can be toggled."
 ITEM.category = "Tools"
-ITEM.batteryLife = 3600 -- seconds
+ITEM.batteryLife = 5 -- seconds
 
 ITEM:Hook("drop", function(item)
 	item.player:Flashlight(false)
 end)
 
+function ITEM:IsConsumingBattery()
+	return self:GetOwner():FlashlightIsOn()
+end
+
 function ITEM:OnBatteryRemoved()
-	item.player:Flashlight(false)
+	self:GetOwner():Flashlight(false)
 end
 
 function ITEM:OnBatteryDepleted()
-	item.player:Flashlight(false)
+	self:GetOwner():Flashlight(false)
 end
