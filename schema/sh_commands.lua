@@ -282,8 +282,8 @@ do
 					elseif (CurTime() > target.pendingSearch.expireTime) then
 						target.pendingSearch = nil
 					elseif (target.pendingSearch.consent == true) then
-						Schema:SearchPlayer(client, target)
-						client:Notify("Searching " .. target:GetName() .. "...")
+						-- Schema:SearchPlayer(client, target)
+						-- client:Notify("Searching " .. target:GetName() .. "...")
 						return
 					else
 						client:Notify("Please wait for their consent!")
@@ -323,10 +323,17 @@ do
 		end
 
 		local requester = client.pendingSearch.requester
+
+		if (IsValid(requester) and requester:GetPos():Distance(client:GetPos()) > 96) then
+			client.pendingSearch = nil
+			requester:Notify("The person you were trying to search gave consent, but you are too far away!")
+			return "The person trying to search you is now too far away!"
+		end
+
 		client.pendingSearch.consent = true
-		client:Notify("You have consented to being searched! Tell them to /CharSearch again.")
+		client:Notify("You have consented to being searched!")
 		requester:Notify(client:GetName() .. " has consented to your search!")
-		
+		Schema:SearchPlayer(requester, client)
 	end
 
 	ix.command.Add("AcceptSearch", COMMAND)
