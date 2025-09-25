@@ -257,14 +257,18 @@ do
 	local CONSENT_TIMEOUT = 20 -- seconds
 
 	function COMMAND:OnRun(client, arguments)
+		if client:IsRestricted() then
+			return "You cannot do this while tied up!"
+		end
+
 		local data = {}
 			data.start = client:GetShootPos()
 			data.endpos = data.start + client:GetAimVector() * 96
 			data.filter = client
 		local target = util.TraceLine(data).Entity
 
-		if (IsValid(target) and target:IsPlayer() and target:IsRestricted()) then
-			if (!client:IsRestricted()) then
+		if (IsValid(target) and target:IsPlayer()) then
+			if (target:IsRestricted()) then
 				Schema:SearchPlayer(client, target)
 			else
 				client.nextSearchAttempt = client.nextSearchAttempt or 0
@@ -277,8 +281,12 @@ do
 						target.pendingSearch = nil
 					elseif (CurTime() > target.pendingSearch.expireTime) then
 						target.pendingSearch = nil
-					else
+					elseif (target.pendingSearch.consent == true) then
 						Schema:SearchPlayer(client, target)
+						client:Notify("Searching " .. target:GetName() .. "...")
+						return
+					else
+						client:Notify("Please wait for their consent!")
 						return
 					end
 				end
@@ -289,14 +297,41 @@ do
 				}
 
 				target:Notify(client:GetName() .. " wants to search you. Type /AcceptSearch to allow. Expires in " .. CONSENT_TIMEOUT .. " seconds.")
-				client.nextSearchAttempt = CurTime() + 2
+				client.nextSearchAttempt = CurTime() + 1
 				return "Search request sent..."
 			end
+		else
+			return "You must look at someone!"
 		end
 	end
 
 	ix.command.Add("CharSearch", COMMAND)
 end
+
+/* -------------------------------------------------------------------------- */
+/*                                Accept Search                               */
+/* -------------------------------------------------------------------------- */
+do
+	local COMMAND = {}
+	
+	function COMMAND:OnRun(client, arguments)
+		if not client.pendingSearch then return "You do not have a pending search request!" end
+
+		if (client.pendingSearch.expireTime < CurTime()) then
+			client.pendingSearch = nil
+			return "The request has expired!"
+		end
+
+		local requester = client.pendingSearch.requester
+		client.pendingSearch.consent = true
+		client:Notify("You have consented to being searched! Tell them to /CharSearch again.")
+		requester:Notify(client:GetName() .. " has consented to your search!")
+		
+	end
+
+	ix.command.Add("AcceptSearch", COMMAND)
+end
+
 
 /* -------------------------------------------------------------------------- */
 /*                                Check Edicts                                */
