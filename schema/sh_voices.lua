@@ -81,8 +81,8 @@ Schema.voices.Add("Combine", "70.", "Seventy.", "npc/metropolice/vo/seventy.wav"
 Schema.voices.Add("Combine", "8.", "Eight.", "npc/combine_soldier/vo/eight.wav");
 Schema.voices.Add("Combine", "8.", "Eight.", "npc/metropolice/vo/eight.wav");
 Schema.voices.Add("Combine", "80.", "Eighty.", "npc/metropolice/vo/eighty.wav");
-Schema.voices.Add("Combine", "9.", "Nine.", "npc/metropolice/vo/nine.wav");
-Schema.voices.Add("Combine", "9.", "Niner.", "npc/combine_soldier/vo/niner.wav");
+Schema.voices.Add("Metropolice", "9.", "Nine.", "npc/metropolice/vo/nine.wav");
+Schema.voices.Add("Overwatch", "9.", "Niner.", "npc/combine_soldier/vo/niner.wav");
 Schema.voices.Add("Combine", "90.", "Ninety.", "npc/combine_soldier/vo/ninety.wav");
 Schema.voices.Add("Combine", "90.", "Ninety.", "npc/metropolice/vo/ninety.wav");
 Schema.voices.Add("Combine", "A 10-30.", "I have a 10-30 at my 10-20, responding code 2.", "npc/metropolice/vo/ihave10-30my10-20responding.wav");
@@ -1095,9 +1095,16 @@ Schema.voices.Add("Dispatch", "Malcompliance", "Individual. You are charged with
 Schema.voices.Add("Dispatch", "Exogen", "Overwatch acknowledges critical exogen breach, AirWatch augmentation force dispatched and inbound. Hold for reinforcements.", "npc/overwatch/cityvoice/fprison_airwatchdispatched.wav")
 Schema.voices.Add("Dispatch", "Failure", "Attention ground units. Mission failure will result in permanent off-world assignment. Code reminder: SACRIFICE, COAGULATE, PLAN.", "npc/overwatch/cityvoice/fprison_missionfailurereminder.wav")
 
-
 Schema.voices.AddClass("Combine", function(client)
 	return client:IsCombine() and not client:IsAirwatch()
+end)
+
+Schema.voices.AddClass("Overwatch", function(client)
+	return client:IsCombine() and (client:Team() == FACTION_OTA)
+end)
+
+Schema.voices.AddClass("Metropolice", function(client)
+	return client:IsCombine() and (client:Team() == FACTION_MPF)
 end)
 
 Schema.voices.AddClass("Dispatch", function(client)
