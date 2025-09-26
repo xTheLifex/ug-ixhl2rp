@@ -119,6 +119,7 @@ else
                         spawnmenu.CreateContentIcon("item", self.PropPanel, {
                             nicename = (item.GetName and item:GetName()) or item.name,
                             spawnname = item.uniqueID,
+                            skin = item.skin,
                         })
                     end
     
@@ -152,6 +153,7 @@ else
                         spawnmenu.CreateContentIcon("item", self.PropPanel, {
                             nicename = name,
                             spawnname = item.uniqueID,
+                            skin = item.skin
                         })
                     end
                 end
@@ -180,13 +182,14 @@ else
     spawnmenu.AddContentType("item", function(p, data)
         local n = data.nicename
         local u = data.spawnname
+        local s = data.skin or 0
         local icon = vgui.Create("SpawnIcon", p)
         icon:SetWide(64)
         icon:SetTall(64)
         icon:InvalidateLayout(true)
         local t = ix.item.list
         local i = t[u]
-        icon:SetModel((i.GetModel and i:GetModel()) or i.model)
+        icon:SetModel((i.GetModel and i:GetModel()) or i.model, s)
         icon:SetTooltip(n)
 
         icon.OnMousePressed = function(this, code)
