@@ -349,6 +349,21 @@ function Schema:PlayerSpray(client)
 	return true
 end
 
+function Schema:Think()
+	for _, ply in ipairs(player.GetAll()) do
+		local character = ply:GetCharacter()
+		local inventory = character and character:GetInventory()
+		if not inventory then continue end
+
+		if (ix.storage.InUse(inventory)) then
+			if (ply:GetVelocity():LengthSqr() > 0 ) then
+				ix.storage.Close(inventory)
+			end
+		end
+	end
+end
+
+
 netstream.Hook("PlayerChatTextChanged", function(client, key)
 	if (client:IsCombine() and !client.bTypingBeep
 	and (key == "y" or key == "w" or key == "r" or key == "t")) then
