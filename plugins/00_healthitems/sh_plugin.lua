@@ -1,4 +1,4 @@
-PLUGIN.name = "Life's Filler Items"
+PLUGIN.name = "Life's Health Items"
 PLUGIN.description = "A bunch of items."
 PLUGIN.author = "TheLife"
 PLUGIN.authorColor = Color(235,85,255)
@@ -6,9 +6,10 @@ PLUGIN.maxLength = 512
 
 function PLUGIN:AddItemTable(t)
     for id, data in pairs(t) do
-        local ITEM = ix.item.Register(id, nil, false, nil, true)
+        --           ix.item.Register(uniqueID, baseID, isBaseItem, path, luaGenerated)
+        local ITEM = ix.item.Register(id, "base_health_item", false, nil, true)
         if (!ITEM) then
-            print("[Life's Filler Items] Failed to register " .. id)
+            print("[Life's Health Items] Failed to register " .. id)
             continue
         end
 
@@ -16,15 +17,11 @@ function PLUGIN:AddItemTable(t)
             ITEM[k] = v
         end
 
-        if (data.OnUse) then
-            ITEM.functions.OnUse = data.OnUse
-        end
-
+        ITEM.category = "Medical"
         ITEM.description = data.desc or data.description
-        ITEM.category = data.category or "Junk"
-        ITEM.base = "base_random_model"    
     end
 end
 
+
 /* -------------------------------- Includes -------------------------------- */
-ix.util.Include("sh_filleritems.lua")
+ix.util.Include("sh_healthitems.lua")
