@@ -1,4 +1,21 @@
 
+do
+	local font = ix.config.Get("font")
+	surface.CreateFont("ixPluginsAuthor", {
+		font = font,
+		size = math.max(ScreenScale(5), 16),
+		extended = true,
+		weight = 500
+	})
+
+	surface.CreateFont("ixHelpSmallText", {
+		font = font,
+		size = math.max(ScreenScale(3), 16),
+		extended = true,
+		weight = 500
+	})
+end
+
 function Schema:PopulateCharacterInfo(client, character, tooltip)
 	if (client:IsRestricted()) then
 		local panel = tooltip:AddRowAfter("name", "ziptie")
@@ -234,7 +251,7 @@ function Schema:PopulateHelpMenu(tabs)
 				title:SizeToContents()
 
 				local description = container:Add("DLabel")
-				description:SetFont("ixSmallFont")
+				description:SetFont("ixHelpSmallText")
 				description:SetText(info.text)
 				description:Dock(TOP)
 				description:SetTextColor(color_white)
@@ -262,7 +279,7 @@ hook.Add("PopulateHelpMenu", "@ixPluginMenu", function (tabs)
 
 			-- author
 			local author = container:Add("DLabel")
-			author:SetFont("ixSmallFont")
+			author:SetFont("ixPluginsAuthor")
 			author:SetText(v.author)
 			author:Dock(TOP)
 			author:SetTextColor(v.authorColor or color_white)
@@ -270,9 +287,6 @@ hook.Add("PopulateHelpMenu", "@ixPluginMenu", function (tabs)
 			author:SetWrap(true)
 			author:SetAutoStretchVertical(true)
 			author:SizeToContents()
-			if (v.authorColor) then
-				author:SetFont("ixMinimalTitleFont")
-			end
 
 			
 			-- description
@@ -280,7 +294,7 @@ hook.Add("PopulateHelpMenu", "@ixPluginMenu", function (tabs)
 
 			if (descriptionText != "") then
 				local description = container:Add("DLabel")
-				description:SetFont("ixSmallFont")
+				description:SetFont("ixHelpSmallText")
 				description:SetText(descriptionText)
 				description:Dock(TOP)
 				description:SetTextColor(color_white)
