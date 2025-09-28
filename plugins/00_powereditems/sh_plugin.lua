@@ -1,7 +1,7 @@
 PLUGIN.name = "Powered Items"
 PLUGIN.description = "Adds powered items."
 PLUGIN.author = "TheLife"
-PLUGIN.authorColor = Color(235,85,255)
+PLUGIN.authorColor = Color(55,180,230)
 PLUGIN.maxLength = 512
 
 

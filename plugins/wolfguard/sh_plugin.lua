@@ -34,7 +34,7 @@
 
 PLUGIN.name = "WolfGuard"
 PLUGIN.author = "TheLife"
-PLUGIN.authorColor = Color(235,85,255)
+PLUGIN.authorColor = Color(55,180,230)
 PLUGIN.description = "Provides several staff utilities to watch over your server."
 PLUGIN.license = [[Mozilla Public License Version 2.0]]
 PLUGIN.version = "Early-Development 0.1.0"
