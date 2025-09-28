@@ -77,6 +77,28 @@ function PLUGIN:WipeTables()
     self:AlertAdmins(Color(255,0,0), "Server database is being wiped.")
 end
 
+function PLUGIN:Think(deltaTime)
+    self.nextThink = self.nextThink or 0
+    if (self.nextThink > CurTime()) then
+        return
+    end
+
+    for k,ply in ipairs(player.GetAll()) do
+        ply.idleTime = ply.idleTime or 0
+
+        if (ply:GetVelocity():LengthSqr() > 0) then
+            ply.idleTime = 0
+        else
+            ply.idleTime = ply.idleTime + 1
+        end
+
+        
+
+    end
+
+    self.nextThink = CurTime() + 1
+end
+
 local white = Color(255,255,255)
 local gray = Color(125,125,125)
 local red = Color(125,25,25)
