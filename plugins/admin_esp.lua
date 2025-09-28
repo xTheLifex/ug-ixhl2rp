@@ -256,6 +256,12 @@ function PLUGIN:PostDrawTranslucentRenderables(bDepth, bSkybox)
 		return
 	end
 
+	local betterArea = ix.plugin.Get("betterarea")
+	if (betterArea and betterArea.DrawAllAreas) then
+		betterArea:DrawAllAreas()
+		return
+	end
+
 	-- draw all areas
 	for k, v in pairs(ix.area.stored) do
 		local center, min, max = self:GetLocalAreaPosition(v.startPosition, v.endPosition)
@@ -277,18 +283,4 @@ function PLUGIN:PostDrawTranslucentRenderables(bDepth, bSkybox)
 		cam.End2D()
 	end
 
-	-- draw currently edited area
-	if (self.editStart) then
-		local center, min, max = self:GetLocalAreaPosition(self.editStart, self:GetPlayerAreaTrace().HitPos)
-		local color = Color(255, 255, 255, 25 + (1 + math.sin(SysTime() * 6)) * 115)
-
-		render.DrawWireframeBox(center, angle_zero, min, max, color)
-
-		cam.Start2D()
-			local centerScreen = center:ToScreen()
-
-			draw.SimpleText(L("areaNew"), "BudgetLabel",
-				centerScreen.x, centerScreen.y, color_white, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
-		cam.End2D()
-	end
 end
